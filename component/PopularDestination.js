@@ -4,7 +4,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Link from 'next/link';
 import Image from "next/image"
-import island from "/Users/HP/Documents/GitHub/flyinateNext/flyinate/public/images/island.jpg"
+
 
 export default function PopularDestinations() {
   return (
