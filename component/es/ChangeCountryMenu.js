@@ -21,23 +21,21 @@ export default function ChangeCountryMenu() {
             </span> </>}
             variant="outline-secondary">
             <div className='curr-block py-4'>
-                <h5 className='mb-3 text-center'>Select Language</h5>
+                <h5 className='mb-3 text-center'>Seleccione el idioma</h5>
                 <Row>
                 <Col xs="6">
-                        <Dropdown.Item onClick={(e) => { setLang('ES') }} href={'/es'} className={'btn btn-site ripple-effbtn btn-40 btn-block text-center ' + (lang === 'ES' ? 'active' : '')}><span>Spanish</span></Dropdown.Item>
-                    </Col>
-                    <Col xs="6">
                         <Dropdown.Item onClick={(e) => { setLang('EN') }} href={'/'} className={'btn btn-site ripple-effbtn btn-40 btn-block text-center ' + (lang === 'EN' ? 'active' : '')}><span>English</span></Dropdown.Item>
                     </Col>
-                    
+                    <Col xs="6">
+                        <Dropdown.Item onClick={(e) => { setLang('ES') }} href={'/es/'} className={'btn btn-site ripple-effbtn btn-40 btn-block text-center ' + (lang === 'ES' ? 'active' : '')}><span>Spanish</span></Dropdown.Item>
+                    </Col>
                 </Row>
             </div>
 
 
             {/* <Dropdown.Divider className='my-3'/>
     <div className='curr-block'>
-    <h5>Select Currency</h5>
- 
+    <h5>Select Currency</h5> 
 
     <Row className='selcur-rew'>
             <Col xs="6" md="3">

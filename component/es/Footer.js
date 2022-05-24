@@ -11,54 +11,64 @@ export default function Footer() {
   return (
     <>
       <footer className="footer-area full-w">
-        <Container className="inner_container_1">
+        <Container className='inner_container_1'>
           <Row>
             <Col xs={12} md={6} xl={3}>
               <>
                 <h5 className="use-head">Enlaces útiles</h5>
                 <ul className="use-li">
                   <li>
-                    <Link href="/articulos">
-                      <a className="ripple-effbtn d-inline-block"><span>articulos</span></a>
+                    <Link href="/es/articulos">
+                      <a className='ripple-effbtn d-inline-block'>
+                        <span>Artículos</span>
+                      </a>
                     </Link>
                   </li>
                   <li>
-                    <Link  href="/vuelos" >
-                      <a className="ripple-effbtn d-inline-block"><span>vuelos</span></a>
+                    <Link href="/es/vuelos">
+                      <a className='ripple-effbtn d-inline-block'>
+                        <span>Vuelos</span>
+                      </a>
                     </Link>
                   </li>
                 </ul>
               </>
+
             </Col>
             <Col xs={12} md={6} xl={3}>
               <h5 className="use-head">Sobre nosotras</h5>
               <ul className="use-li">
                 {/* <li>
-                  <Link href="/contact-us">
-                    <a className="ripple-effbtn d-inline-block"><span>Contact Us</span></a>
-                  </Link>
-                </li> */}
+                                    <Link href="/es/contacta-con-nosotras">
+                                    <a className='ripple-effbtn d-inline-block'>
+                                        <span>Contacta con nosotras</span>
+                                        </a>
+                                        </Link>
+                                </li> */}
                 <li>
-                  <Link href="/sobre-nosotras">
-                    <a className="ripple-effbtn d-inline-block"><span>Sobre-nosotras</span></a>
+                  <Link href="/es/sobre-nosotras">
+                    <a className='ripple-effbtn d-inline-block'>
+                      <span>Sobre nosotras</span>
+                    </a>
                   </Link>
                 </li>
                 <li>
-                  <Link href="/">
-                    <a className="ripple-effbtn d-inline-block"><span>Privacy Policy</span></a>
+                  <Link href="/es/politica">
+                    <a className='ripple-effbtn d-inline-block'>
+                      <span>Política de privacidad</span>
+                    </a>
                   </Link>
                 </li>
                 <li>
-                  <Link href="/terms">
-                    <a className="ripple-effbtn d-inline-block"><span>Terms &amp; Conditions</span></a>
+                  <Link href="/es/terminos">
+                    <a className='ripple-effbtn d-inline-block'>
+                      <span>Términos y condiciones</span>
+                    </a>
                   </Link>
                 </li>
-                {/* <li>
-                  <Link href="/site-map">
-                    <a className="ripple-effbtn d-inline-block"><span>Site Map</span></a>
-                  </Link>
-                </li> */}
+
               </ul>
+
             </Col>
             <Col xs={12} md={6} xl={3}>
               <h5 className="use-head">Conecta con nosotras</h5>
@@ -71,18 +81,14 @@ export default function Footer() {
                 <li>
                   <p className="footer_email">
                     <span>Correo electrónico:</span>
-                    <a
-                      href="mailto:support@flyinate.com"
-                      className="d-inline-block"
-                      target="_blank">
+                    <a href="mailto:support@flyinate.com" className='d-inline-block' target="_blank">
                       support@flyinate.com
                     </a>
                   </p>
                 </li>
-
                 <li>
                   <p className="F_social_icon">
-                  <a
+                    <a
                       className="d-inline-flex Ffacebook"
                       href="https://www.facebook.com/flyinate"
                       target="_blank"
@@ -112,20 +118,18 @@ export default function Footer() {
                     </a>
                   </p>
                 </li>
+
               </ul>
+
             </Col>
 
             <Col xs={12} md={6} xl={3}>
               <div className="subscribe">
-                <h3 className="use-head">Suscribir</h3>
+                <h3 className='use-head'>Suscribir</h3>
                 <form className="subscribe-form" id="myForm">
-                  <InputGroup className="flex-column">
-                    <FormControl
-                      type="email"
-                      className="subscribe w-100"
-                      placeholder="Su dirección de correo electrónico"
-                    />
-                    <Button className="btn btn-site btn-block ripple-effbtn  w-100">
+                  <InputGroup>
+                    <FormControl type="email" className="subscribe" placeholder="Su dirección de correo electrónico" />
+                    <Button className='btn btn-site btn-block ripple-effbtn'>
                       <span>Suscribir</span>
                     </Button>
                   </InputGroup>
@@ -136,20 +140,17 @@ export default function Footer() {
           </Row>
         </Container>
 
-        <div className="footer_logos_bottom">
-          <Container className="inner_container_2">
+        <div className='footer_logos_bottom'>
+          <Container className='inner_container_2'>
             <Row>
-              <Col xs={12} className="text-center">
+              <Col xs={12} className='text-center'>
                 <p className="footer_logos">
-                  <img
-                    alt="logos"
-                    src="/images/card-logos-footer.png"
-                    width={`780`}
-                    height={`100%`}
-                  />
+                  <img alt="logos" src={process.env.PUBLIC_URL + "/images/card-logos-footer.png"} width="780" />
                 </p>
                 <p className="footer_disclaimer">
-                © 2022 flyinate.com, teniendo su domicilio social en el estado de EE.UU. ubicado en W Ray Rd en la ciudad de Chandler con Código Postal 85226. Todos los derechos reservado.
+                  © 2022 flyinate.com, teniendo su domicilio social en el estado de EE.UU.
+                  ubicado en W Ray Rd en la ciudad de Chandler con Código Postal 85226. Todos los derechos
+                  reservado.
                 </p>
               </Col>
             </Row>
