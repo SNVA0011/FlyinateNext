@@ -2,25 +2,49 @@ import React, { useContext, useEffect, useState } from 'react'
 
 import Container from 'react-bootstrap/Container';
 import Image from "next/image"
-import { useRouter } from 'next/router';
+import Link from "next/link"
 import Footer from '../../component/Footer';
-import Navbar from "../../component/Navbar" 
+import Header from "../../component/Navbar";
+import BreadHero from "../../component/BreadHero";
+import Head from 'next/head'
 
 export default function BlogDetails(props) {
-   
+
   useEffect(() => {
-    window.scrollTo(0, 0) 
+    window.scrollTo(0, 0)
   }, [])
 
   return (
     <>
-      <Navbar />
-      {console.log("checking-", props.singleblog)}
+
+
+      {props.singleblog?.length > 0 ?
+        <>
+          {props.singleblog.map((items, i) => (
+            <>
+              <Head>
+                <html lang="en" />
+                <title>{items.title}</title>
+                <meta name="description" content={items.description} />
+                <meta name="keywords" content={items.keywords} />
+                <link rel="canonical" href={'https://www.flyinate.com/blog/' + items.titleUrl} />
+              </Head>
+
+              <Header />
+
+              <BreadHero linkhtml={<>
+                <h1 className="text-white">{items.title}</h1>
+                <ul className='breadcrumb text-white'>
+                  <li className="breadcrumb-item" ><Link href="/">Home</Link></li>
+                  <li className='breadcrumb-item active' aria-current="page">Blog Details</li> </ul></>} />
+            </>
+          ))}
+        </>
+        : <Header />
+      }
+
       <div className='blogadda'>
-
-
         <div className='popular-destination blogaddalist details full-w'>
-
 
           <Container>
             {

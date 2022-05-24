@@ -1,19 +1,22 @@
-import { useEffect, useState } from 'react' 
+import { useEffect, useState } from 'react'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Link from "next/link"
 import Footer from '../component/Footer';
-import Navbar from "../component/Navbar"
+import Header from "../component/Navbar";
+import Head from 'next/head'
+import BreadHero from "../component/BreadHero";
+
 // import ScrollAnimation from 'react-animate-on-scroll';
 
 // import loading from "../Atoms/Image/load.gif"
 
 
 
- 
+
 export default function Blog(props) {
- 
+
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
@@ -21,65 +24,66 @@ export default function Blog(props) {
 
   return (
     <>
-      <Navbar />
-      {/* {load? */}
-      <div>
-        <div className='blogadda'>
-
-          {/* <Helmet>
-        <title>	Blog - Flyinate</title>
-        <meta name="description" content="text" />
-        <meta name="keywords" content="text" />
-        <link rel="canonical" href={window.location.href}/> 
-      </Helmet>
-
-      <BreadHero title="Blog" linkhtml={<><ul className='breadcrumb text-white'> <li className="breadcrumb-item" > <Linkhref="/">Home</Link> </li> <li className='breadcrumb-item active' aria-current="page">Blog</li> </ul></>} /> */}
-
-          <div className='popular-destination blogaddalist full-w'>
-            <Container>
-              <div className="top-title text-center">
-                <p>Blog lists</p>
-                <h2>
-                  Latest <span>Blog</span>
-                </h2>
-              </div>
+      <Head>
+        <html lang="en" />
+        <title>Blog - Flyinate</title>
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <link rel="canonical" href="https://www.flyinate.com/blog" />
+      </Head>
 
 
-              {
-                props.allblog?.length > 0 ?
-                  <Row>
-                    {props.allblog.map((items, i) => (
-                      <Col xs={12} md={6}>
-                        <div className='blogaddalist-round'>
-                          <div className='image_area_partition'>
-                            <div className='wrapper'>
-                              <span>{items.posttime}</span>
-                            </div>
-                          </div>
-                          <div className='blogaddalist-inner'>
-                            <div className='h4 title'>
-                              {items.title}
-                            </div>
-                            <p>{items.description}</p>
-                            <hr className="mx-row-hr" />
-                            <Link href={`/blog/${items.titleUrl}`}>
-                              <a className='btn btn-site ripple-effbtn btn-40'>
-                                <span>Read More</span>
-                              </a>
-                            </Link>
+      <Header />
+
+      <div className='blogadda'>
+        <BreadHero title="Blog" linkhtml={<><ul className='breadcrumb text-white'>
+          <li className="breadcrumb-item" > <Link href="/">Home</Link> </li>
+          <li className='breadcrumb-item active' aria-current="page">Blog</li> </ul></>} />
+
+        <div className='popular-destination blogaddalist full-w'>
+          <Container>
+            <div className="top-title text-center">
+              <p>Blog lists</p>
+              <h2>
+                Latest <span>Blog</span>
+              </h2>
+            </div>
+
+
+            {
+              props.allblog?.length > 0 ?
+                <Row>
+                  {props.allblog.map((items, i) => (
+                    <Col xs={12} md={6}>
+                      <div className='blogaddalist-round'>
+                        <div className='image_area_partition'>
+                          <div className='wrapper'>
+                            <span>{items.posttime}</span>
                           </div>
                         </div>
-                      </Col>
-                    ))}
+                        <div className='blogaddalist-inner'>
+                          <div className='h4 title'>
+                            {items.title}
+                          </div>
+                          <p>{items.description}</p>
+                          <hr className="mx-row-hr" />
+                          <Link href={`/blog/${items.titleUrl}`}>
+                            <a className='btn btn-site ripple-effbtn btn-40'>
+                              <span>Read More</span>
+                            </a>
+                          </Link>
+                        </div>
+                      </div>
+                    </Col>
+                  ))}
 
-                  </Row>
-                  : 'No items found !'
-              }
- 
-            </Container>
-          </div>
+                </Row>
+                : 'No items found !'
+            }
+
+          </Container>
         </div>
-      </div> 
+      </div>
 
       <Footer />
     </>
@@ -87,7 +91,7 @@ export default function Blog(props) {
 }
 
 
-export async function getServerSideProps() { 
+export async function getServerSideProps() {
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
   var raw = JSON.stringify({
@@ -120,8 +124,8 @@ export async function getServerSideProps() {
     redirect: 'follow'
   };
   const res = await fetch("https://cms.travomint.com/travoles-content/showblogdata?authcode=Trav3103s987876", requestOptions)
-  const json = await res.json()  
+  const json = await res.json()
   return {
-    props: {allblog: json.response}
+    props: { allblog: json.response }
   }
 }

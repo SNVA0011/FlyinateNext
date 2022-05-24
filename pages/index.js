@@ -7,18 +7,16 @@ import Header from '../component/Navbar'
 import PopularDestinations from '../component/PopularDestination'
 import { useRouter } from 'next/router';
 
-export default function Home() {
-  const useroute = useRouter();
-  const canonicalURL = 'https://www.flyinate.com/' + useroute.pathname;
+export default function Home() { 
   return (
-    <div>
+    <>
       <Head>
-        <html lang="en" />
+      <html lang="en"/>
         <title>Flyinate | Book Low Fares Flights Tickets & Rental Cars</title>
         <meta name="description" content="" />
         <meta name="keywords" content="" /> 
-        <link rel="canonical" href={canonicalURL} />
-        <link rel="alternate" href={canonicalURL} />
+        <link rel="canonical" href="https://www.flyinate.com" />
+        <link rel="alternate" href="https://www.flyinate.com" />
       </Head>
       <Header />
       <Enginebox />
@@ -26,6 +24,6 @@ export default function Home() {
       <CustomizeTravel />
       <Footer />
 
-    </div>
+    </>
   )
 }
