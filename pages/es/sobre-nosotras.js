@@ -19,7 +19,7 @@ export default function sobrenosotras() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  
+
   return (
     <>
  <Head>
@@ -29,7 +29,7 @@ export default function sobrenosotras() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-<Header/>
+      <Header />
       <BreadHero
         title="sobre nosotras"
         linkhtml={
@@ -38,7 +38,7 @@ export default function sobrenosotras() {
               {" "}
               <li className="breadcrumb-item">
                 {" "}
-                <Link href="/">Casa</Link>{" "}
+                <Link href="/es">Casa</Link>{" "}
               </li>{" "}
               <li className="breadcrumb-item active" aria-current="page">
                 {" "}
@@ -56,29 +56,29 @@ export default function sobrenosotras() {
               <h2 className="sub-title">sobre nosotras</h2>
 
               <p>
-              Viajar no es solo una parte del turismo; es el medio para cumplir la pasión y los sueños de uno. Es a la vez tranquilo y caótico, pacífico y aventurero. Cuando viajas por negocios, necesitas asesoramiento profesional, pero cuando viajas por tus sueños, necesitas magia y un poco de todo.{" "}
+                Viajar no es solo una parte del turismo; es el medio para cumplir la pasión y los sueños de uno. Es a la vez tranquilo y caótico, pacífico y aventurero. Cuando viajas por negocios, necesitas asesoramiento profesional, pero cuando viajas por tus sueños, necesitas magia y un poco de todo.{" "}
               </p>
 
               <p>
-              En Flyinate lo entendemos perfectamente. Lo que necesitas y lo que tu corazón desea son dos cosas diferentes y, a veces, tienes que elegir entre estas dos. ¡Ya no! No tiene que conformarse con lo mundano para sus viajes de negocios; o el mínimo indispensable si tiene poco presupuesto; desde las últimas ofertas hasta los viajes y viajes más baratos, te lo ofrecemos todo.
+                En Flyinate lo entendemos perfectamente. Lo que necesitas y lo que tu corazón desea son dos cosas diferentes y, a veces, tienes que elegir entre estas dos. ¡Ya no! No tiene que conformarse con lo mundano para sus viajes de negocios; o el mínimo indispensable si tiene poco presupuesto; desde las últimas ofertas hasta los viajes y viajes más baratos, te lo ofrecemos todo.
 
 
               </p>
 
               <p>
-              Con conexiones con los lugares más exóticos, aerolíneas y estadías en hoteles, permítanos planificar su viaje desde cero. La satisfacción del cliente es lo que prosperamos porque nuestro trabajo se basa en la confianza. Asegurándonos de que siga viniendo a nosotros una y otra vez, siempre nos aseguramos de que pueda viajar a lo grande, sin importar cuán pequeño sea el presupuesto.
+                Con conexiones con los lugares más exóticos, aerolíneas y estadías en hoteles, permítanos planificar su viaje desde cero. La satisfacción del cliente es lo que prosperamos porque nuestro trabajo se basa en la confianza. Asegurándonos de que siga viniendo a nosotros una y otra vez, siempre nos aseguramos de que pueda viajar a lo grande, sin importar cuán pequeño sea el presupuesto.
 
-{" "}
+                {" "}
               </p>
 
               <p>
-              La seguridad, el mantenimiento del presupuesto, tomar la decisión correcta, elegir el precio más justo y hospedarse en los lugares más impresionantes son la esencia de un viaje; y nos aferramos a ellos con mucho cariño.
+                La seguridad, el mantenimiento del presupuesto, tomar la decisión correcta, elegir el precio más justo y hospedarse en los lugares más impresionantes son la esencia de un viaje; y nos aferramos a ellos con mucho cariño.
 
-{" "}
+                {" "}
               </p>
 
               <p>
-              Así que no espere, haga esa llamada, envíe ese correo electrónico o haga clic en ese botón; nuestros representantes están esperando ansiosamente para diseñar un viaje solo para usted.
+                Así que no espere, haga esa llamada, envíe ese correo electrónico o haga clic en ese botón; nuestros representantes están esperando ansiosamente para diseñar un viaje solo para usted.
 
 
               </p>

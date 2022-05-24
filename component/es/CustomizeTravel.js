@@ -34,7 +34,7 @@ export default function CustomizeTravel() {
 
                     <Row>
                         <Col xs={12} md={6} lg={4}>
-                            <Link href="/customize/business-travel">
+                            <Link href="/es/customize/business-travel">
                             <a  className='image_area_partition'>
                                 <Image src="/images/business_travel.jpg" width="500" height="300" alt='business_travel' className='object-cover'></Image>
                                 <div className='wrapper'>
@@ -44,7 +44,7 @@ export default function CustomizeTravel() {
                             </Link>
                         </Col>
                         <Col xs={12} md={6} lg={4}>
-                            <Link href="/">
+                            <Link href="/es">
                             <a  className='image_area_partition'>
                                 <Image src="/images/corporate_travel.jpg"width="500" height="300" alt='corporate_travel' className='object-cover'></Image>
                                 <div className='wrapper'>
@@ -54,7 +54,7 @@ export default function CustomizeTravel() {
                             </Link>
                         </Col>
                         <Col xs={12} lg={4}>
-                            <Link href="/customize/group-travel">
+                            <Link href="/es/customize/group-travel">
                             <a  className='image_area_partition'>
                                 <Image src="/images/group_travel.jpg"width="500" height="300" alt='group_travel' className='object-cover'></Image>
                                 <div className='wrapper'>

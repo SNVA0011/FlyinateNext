@@ -600,7 +600,7 @@ img.object-cover {
 }
 
 .footer-area .subscribe-form .form-control {
-    background: rgba(0, 0, 0, .3);
+    background:#222222
 }
 
 .footer-area .subscribe-form .form-control {
@@ -713,7 +713,7 @@ img.object-cover {
     -o-transition: all 300ms linear 0s;
     transition: all 300ms linear 0s;
 }
-
+/* 
 .breadcrumb_area ul li a:before {
     content: "\f105";
     position: absolute;
@@ -726,7 +726,7 @@ img.object-cover {
     -webkit-transition: all 300ms linear 0s;
     -o-transition: all 300ms linear 0s;
     transition: all 300ms linear 0s;
-}
+} */
 
 .breadcrumb_area ul li:first-child a:before {
     display: none;
