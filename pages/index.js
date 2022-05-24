@@ -11,7 +11,7 @@ export default function Home() {
   const useroute = useRouter();
   const canonicalURL = 'https://www.flyinate.com/' + useroute.pathname;
   return (
-    <>
+    <div>
       <Head>
         <html lang="en" />
         <title>Flyinate | Book Low Fares Flights Tickets & Rental Cars</title>
