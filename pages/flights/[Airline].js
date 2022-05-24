@@ -13,66 +13,17 @@ export default function Airline(props) {
     window.scrollTo(0, 0)
   }, [])
 
-
-
-  // const [data, setData] = useState([])
-  // const [load, setLoad] = useState(false)
-
-
-
-  // function Getdata() {
-  //   var myHeaders = new Headers();
-  //   myHeaders.append("Content-Type", "application/json");
-
-  //   var raw = JSON.stringify({
-  //     "contentId": "",
-  //     "pageType": "Airline",
-  //     "pageValue": pageTypeAndValue.PageTyeAndValue[0].pageValue,
-  //     "pageName": "",
-  //     "metaTitle": "",
-  //     "metaKeyword": "",
-  //     "metaDesc": "",
-  //     "otherMeta": "",
-  //     "dealCode": "",
-  //     "dealTitle": "",
-  //     "contentTitle": "",
-  //     "contentData": "",
-  //     "contentImage": "",
-  //     "siteId": "139",
-  //     "status": "",
-  //     "count": "",
-  //     "url": pageTypeAndValue.PageTyeAndValue[0].url,
-  //     "modifyBy": "",
-  //     "modifyDate": ""
-  //   });
-
-  //   var requestOptions = {
-  //     method: 'POST',
-  //     headers: myHeaders,
-  //     body: raw,
-  //     redirect: 'follow'
-  //   };
-
-  //   fetch("https://cms.travomint.com/travoles-content/showcontent?authcode=Trav3103s987876", requestOptions)
-  //     .then(response => response.json())
-  //     .then(result => {
-  //       setData(result.response)
-  //       setLoad(true)
-  //     })
-  //     .catch(error => console.log('error', error));
-  // }
-
-  // console.log("finl", data)
-  // useEffect(() => {
-  //   Getdata()
-  // }, [])
+console.log("mm",props.flight)
 
   return (
     <>
     <Head>
+    <html lang="en"/>
     <title>	{props.flight[0].metaTitle}</title>
             <meta name="description" content="" />
             <meta name="keywords" content="" />
+            <link rel="canonical" href={`https://www.flyinate.com/flights/${props.flight[0].url}-${props.flight[0].pageValue}`} />
+        <link rel="alternate" href={`https://www.flyinate.com/flights/${props.flight[0].url}-${props.flight[0].pageValue}`} />
     </Head>
       <Navbar />
 {console.log("hjhj",props.flight)}

@@ -9,7 +9,7 @@ import BreadHero from '../../component/BreadHero';
 import Head from 'next/head'
 
 export default function BlogDetails(props) {
-
+console.log('kkkkk',props.singleblog)
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
@@ -18,8 +18,11 @@ export default function BlogDetails(props) {
     <>
     <Head>
     <title>	{props.singleblog[0].title}</title>
+    <html lang="en"/>
             <meta name="description" content="" />
             <meta name="keywords" content="" />
+            <link rel="canonical" href={`https://www.flyinate.com/blog/${props.singleblog[0].titleUrl}`} />
+        <link rel="alternate" href={`https://www.flyinate.com/blog/${props.singleblog[0].titleUrl}`} />
     </Head>
       <Navbar />
 

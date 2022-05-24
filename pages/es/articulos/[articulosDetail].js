@@ -23,6 +23,9 @@ export default function BlogDetails(props) {
     <html lang="es" />
         <title>{props.singleblog[0].title}</title>
         <meta name="description" content="" />
+        <link rel="canonical" href={`https://www.flyinate.com/es/articulos/${props.singleblog[0].titleUrl}`} />
+        <link rel="alternate" href={`https://www.flyinate.com/es/articulos/${props.singleblog[0].titleUrl}`} />
+
     </Head>
       <Header />
 
