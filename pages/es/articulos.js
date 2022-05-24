@@ -9,7 +9,7 @@ import BreadHero from '../../component/BreadHero'
 import Header from '../../component/es/Navbar'
 import Footer from '../../component/es/Footer'
 // import loading from "../Atoms/Image/load.gif"
-
+import Head from 'next/head'
 
 
  
@@ -22,6 +22,11 @@ export default function articulos(props) {
 
   return (
     <>
+    <Head>
+    <html lang="es" />
+        <title>Articulos - Flyinate</title>
+        <meta name="description" content="" />
+    </Head>
       <Header />
       {/* {load? */}
       <div>

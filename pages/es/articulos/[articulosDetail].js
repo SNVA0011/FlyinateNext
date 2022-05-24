@@ -3,7 +3,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import Container from 'react-bootstrap/Container';
 import Image from "next/image"
 import { useRouter } from 'next/router';
-
+import Head from 'next/head'
 
 import Link from "next/link"
 import BreadHero from '../../../component/BreadHero';
@@ -19,6 +19,11 @@ export default function BlogDetails(props) {
 
   return (
     <>
+      <Head>
+    <html lang="es" />
+        <title>{props.singleblog[0].title}</title>
+        <meta name="description" content="" />
+    </Head>
       <Header />
 
       <div className='blogadda'>

@@ -9,7 +9,7 @@ import Link from "next/link"
 // import loading from "../Atoms/Image/load.gif"
 // import ScrollAnimation from 'react-animate-on-scroll';
 import Image from "next/image"
-
+import Head from 'next/head'
 
 export default function Flights(props, pageValue, pageType) {
   useEffect(() => {
@@ -26,6 +26,15 @@ export default function Flights(props, pageValue, pageType) {
 
   return (
     <div>
+      <Head>
+      <Head>
+    <title>	Blog - Flyinate</title>
+            <meta name="description" content="" />
+            <meta name="keywords" content="" />
+        <link rel="canonical" href="https://www.flyinate.com/flights" />
+        <link rel="alternate" href="https://www.flyinate.com/flights" />
+    </Head>
+      </Head>
 
       <Navbar />
       <div>

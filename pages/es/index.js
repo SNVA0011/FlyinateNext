@@ -15,8 +15,8 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <html lang="en" />
-        <title>Flyinate | Book Low Fares Flights Tickets & Rental Cars</title>
+        <html lang="es" />
+        <title>Flyinate | Reserve boletos de vuelos con tarifas bajas y autos de alquiler</title>
         <meta name="description" content="" />
         <meta name="keywords" content="" /> 
         <link rel="canonical" href={canonicalURL} />

@@ -10,7 +10,7 @@ import Link from "next/link"
 import Image from "next/image"
 import Header from '../../component/es/Navbar';
 import Footer from '../../component/es/Footer';
-
+import Head from 'next/head'
 
 export default function vuelos(props, pageValue, pageType) {
   useEffect(() => {
@@ -27,6 +27,12 @@ export default function vuelos(props, pageValue, pageType) {
 
   return (
     <div>
+        <Head>
+        <html lang="es" />
+        <title>	Vuelos - Flyinate</title>
+            <meta name="description" content="" />
+            <meta name="keywords" content="" />
+        </Head>
 
       <Header />
       <div>

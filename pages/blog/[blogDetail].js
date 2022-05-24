@@ -6,7 +6,7 @@ import Link from "next/link"
 import Footer from '../../component/Footer';
 import Navbar from "../../component/Navbar" 
 import BreadHero from '../../component/BreadHero';
-
+import Head from 'next/head'
 
 export default function BlogDetails(props) {
 
@@ -16,6 +16,11 @@ export default function BlogDetails(props) {
 
   return (
     <>
+    <Head>
+    <title>	{props.singleblog[0].title}</title>
+            <meta name="description" content="" />
+            <meta name="keywords" content="" />
+    </Head>
       <Navbar />
 
       <div className='blogadda'>

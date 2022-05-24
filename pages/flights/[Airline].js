@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 import Footer from '../../component/Footer';
 import Navbar from "../../component/Navbar"
 import BreadHero from '../../component/BreadHero';
-
+import Head from 'next/head'
 
 export default function Airline(props) {
 
@@ -69,7 +69,11 @@ export default function Airline(props) {
 
   return (
     <>
-
+    <Head>
+    <title>	{props.flight[0].metaTitle}</title>
+            <meta name="description" content="" />
+            <meta name="keywords" content="" />
+    </Head>
       <Navbar />
 {console.log("hjhj",props.flight)}
 
