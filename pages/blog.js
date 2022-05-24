@@ -12,53 +12,10 @@ import Navbar from "../component/Navbar"
 // import loading from "../Atoms/Image/load.gif"
 
 
-export async function getServerSideProps() { 
-  var myHeaders = new Headers();
-  myHeaders.append("Content-Type", "application/json");
-  var raw = JSON.stringify({
-    "id": "",
-    "title": "",
-    "titleUrl": "",
-    "content": "",
-    "description": "",
-    "keywords": "",
-    "posttime": "",
-    "status": "",
-    "heading": "",
-    "img_url": "",
-    "siteId": "139",
-    "categoryName": "",
-    "blogdes2": "",
-    "blogTagsName2": "",
-    "extarTag": "",
-    "tfnHeader": "",
-    "tfnFooter1": "",
-    "tfnFooter2": "",
-    "tfnFooter3": "",
-    "tfnPopup": ""
-  });
 
-  var requestOptions = {
-    method: 'POST',
-    headers: myHeaders,
-    body: raw,
-    redirect: 'follow'
-  };
-  const res = await fetch("https://cms.travomint.com/travoles-content/showblogdata?authcode=Trav3103s987876", requestOptions)
-  const json = await res.json()  
-  return {
-    props: {allblog: json.response}
-  }
-}
-
-
-
-
+ 
 export default function Blog(props) {
-
-  console.log('props-'+JSON.stringify(props)) 
-
-
+ 
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
@@ -120,19 +77,53 @@ export default function Blog(props) {
                   </Row>
                   : 'No items found !'
               }
-
-
-
-
+ 
             </Container>
           </div>
         </div>
-      </div>
-      {/* //  :<div className='loading'>
-    //       Blog loading...
-    //    </div>} */}
+      </div> 
 
       <Footer />
     </>
   )
+}
+
+
+export async function getServerSideProps() { 
+  var myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+  var raw = JSON.stringify({
+    "id": "",
+    "title": "",
+    "titleUrl": "",
+    "content": "",
+    "description": "",
+    "keywords": "",
+    "posttime": "",
+    "status": "",
+    "heading": "",
+    "img_url": "",
+    "siteId": "139",
+    "categoryName": "",
+    "blogdes2": "",
+    "blogTagsName2": "",
+    "extarTag": "",
+    "tfnHeader": "",
+    "tfnFooter1": "",
+    "tfnFooter2": "",
+    "tfnFooter3": "",
+    "tfnPopup": ""
+  });
+
+  var requestOptions = {
+    method: 'POST',
+    headers: myHeaders,
+    body: raw,
+    redirect: 'follow'
+  };
+  const res = await fetch("https://cms.travomint.com/travoles-content/showblogdata?authcode=Trav3103s987876", requestOptions)
+  const json = await res.json()  
+  return {
+    props: {allblog: json.response}
+  }
 }
