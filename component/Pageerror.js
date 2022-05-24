@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react'
-import { Helmet } from "react-helmet";
+import React, { useEffect } from 'react' 
 import { Link } from "react-router-dom";
 
 export default function Pageerror() {
@@ -8,13 +7,13 @@ export default function Pageerror() {
     }, [])
     return (
         <div className="pageerror-wrap d-flex flex-row align-items-center full-w py-5">
-            <Helmet>
+            {/* <Helmet>
                 <html lang="en" />
                 <title>404 Page Not Found</title>
                 <meta name="description" content="" />
                 <meta name="keywords" content="" />
                 <link rel="canonical" href={window.location.href} />
-            </Helmet>
+            </Helmet> */}
 
             <div className="container py-5">
                 <div className="row justify-content-center">

@@ -4,29 +4,53 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Link from "next/link"
 import Image from "next/image"
+import { useRouter } from 'next/router';
 import Navbar from "../component/Navbar"
 import Footer from "../component/Footer"
+import BreadHero from '../component/BreadHero';
+import Head from 'next/head'
 
 export default function AboutUs() {
+
+  const useroute = useRouter();
+  const canonicalURL = 'https://www.flyinate.com/' + useroute.pathname;
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+  
   return (
-    <div>
+    <>
+     <Head>
+        <html lang="en" />
+        <title>Flyinate | Book Low Fares Flights Tickets & Rental Cars</title>
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <link rel="canonical" href={canonicalURL} />
+        <link rel="alternate" href={canonicalURL} />
+      </Head>
 
+      <Navbar />
 
-  {/* <BreadHero
+      <BreadHero
         title="ABOUT US"
         linkhtml={
           <>
             <ul className="breadcrumb text-white">
-              <li className="breadcrumb-item"><Link to="/"><a>Home</a></Link></li>
-              <li className="breadcrumb-item active" aria-current="page">ABOUT US</li>
+              {" "}
+              <li className="breadcrumb-item">
+                {" "}
+                <Link href="/">Home</Link>{" "}
+              </li>{" "}
+              <li className="breadcrumb-item active" aria-current="page">
+                {" "}
+                ABOUT US{" "}
+              </li>{" "}
             </ul>
           </>
-        }  />  */}
+        }
+      />
 
-<Navbar/>
       <div className="about-uspage full-w pyblock-80">
         <Container>
           <Row>
@@ -101,7 +125,7 @@ export default function AboutUs() {
           </Row>
         </Container>
       </div>
-      <Footer/>
-    </div>
+      <Footer />
+    </>
   );
 }
