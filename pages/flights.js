@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
-
+import Footer from '../component/Footer';
+import Navbar from "../component/Navbar"
 import Container from 'react-bootstrap/Container'
 // import Enginebox from '../Molecules/Home/Enginebox';
-// import BreadHero from '../Atoms/BreadHero';
+import BreadHero from '../component/BreadHero';
 import { Button, Col, Row } from 'react-bootstrap';
 import Link from "next/link"
 // import loading from "../Atoms/Image/load.gif"
@@ -26,51 +27,39 @@ export default function Flights(props, pageValue, pageType) {
   return (
     <div>
 
+      <Navbar />
       <div>
-        <div className='blogadda'>
+        <div className='blogadda'> 
 
-
-
-          {/* <BreadHero title="Flights" linkhtml={<><ul className='breadcrumb text-white'> <li className="breadcrumb-item" > <Link to="/">Home</Link> </li> <li className='breadcrumb-item active' aria-current="page">Flights</li> </ul></>} /> */}
+          <BreadHero title="Flights" linkhtml={<><ul className='breadcrumb text-white'> <li className="breadcrumb-item" > <Link href="/">Home</Link> </li> <li className='breadcrumb-item active' aria-current="page">Flights</li> </ul></>} />
 
           <div className='popular-destination blogaddalist full-w'>
             <Container>
               <div className="top-title text-center">
                 <p>Flights</p>
                 <h2>
-                  <span>Flighs -{props.allflights?.length }</span>
+                  <span>Flights</span>
                 </h2>
               </div>
 
 
               {
-                props.allflights?.length > 0 ?
+                props.allflights.filter((items) => items.pageType === "Airline")?.length > 0 ?
                   <Row>
 
-                    {props.allflights.map((items, i) => (
+                    {props.allflights.filter((items) => items.pageType === "Airline").map((items, i) => ( 
                       <Col xs={12} md={6}>
-                        {/* <ScrollAnimation duration={1.2} animateOnce={true} animateIn='fadeInUp' animateOut='fadeOutDownBig' className='blogaddalist-round'> */}
-                        <Link href={`/flights/${items.url}-${items.pageValue}`}>
-                          <a className='image_area_partition'>
-                            <Image src='/images/business_travel.jpg' width="500" height="300" alt='business_travel'></Image>
-                            <div className='wrapper'>
-                              <span></span>
-                            </div>
-                          </a>
-                        </Link>
-                        <div className='blogaddalist-inner'>
+                        <div className='blogaddalist-round'> 
+                          <div className='blogaddalist-inner'>
+                          <span className='h4 title'>{items.pageName}-{items.pageValue}</span>
+                            <hr className="mx-row-hr" />
+                            <Link onClick={() => SendingPageType(items)} href={`/flights/${items.url}-${items.pageValue}`}>
+                              <a className='btn btn-site ripple-effbtn btn-40'> <span>Read More</span></a> 
+                            </Link>
 
-                          <Link href={`/flights/${items.url}`}>
-                            <a className='h4 title'><span>{items.pageName}-{items.pageValue}</span></a>
-                          </Link>
-                          <hr className="mx-row-hr" />
-                          <Link onClick={() => SendingPageType(items)} href={`/flights/${items.url}-${items.pageValue}`}>
-                            <a className='btn btn-site ripple-effbtn btn-40'>
-                              <span>Read More</span>
-                            </a>
-                          </Link>
+                          </div>
                         </div>
-                      </Col>
+                      </Col> 
 
                     ))}
                   </Row>
@@ -81,6 +70,8 @@ export default function Flights(props, pageValue, pageType) {
           </div>
         </div>
       </div>
+
+      <Footer />
     </div>
   )
 }

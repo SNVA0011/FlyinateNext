@@ -3,9 +3,8 @@ import Navbar from 'react-bootstrap/Navbar'
 import Container from 'react-bootstrap/Container'
 import Nav from 'react-bootstrap/Nav'
 import Link from 'next/link';
-
+import ChangeCountryMenu from './ChangeCountryMenu';
 import Subheader from './Subheader';
-// import ChangeCountryMenu from '../Atoms/ChangeCountryMenu';
 
 export default function Header() {
     const [expanded, setExpanded] = useState(false);
@@ -21,7 +20,7 @@ export default function Header() {
 
                 <Container className='navtop_2'>
                     <Link href="/" activeclassname="active" onClick={() => window.innerWidth < 1200 ? setExpanded(false) : ''}>
-                      <a className='navbar-brand'> <img src='/images/logo.png' alt='Flowers' width={`100%`} height={`100%`}></img></a>
+                      <a className='navbar-brand'> <img src='/images/logo.png' alt='Flowers' width={`211`}></img></a>
                     </Link>
  
 
@@ -29,12 +28,9 @@ export default function Header() {
                    
                    
                     <div className='headerusd-dropdown position-relative order-xl-3'>
-                        {/* <ChangeCountryMenu /> */}
+                        <ChangeCountryMenu />
                       
-                    </div> 
-
-
-                    
+                    </div>  
                     <Navbar.Collapse id="responsive-navbar-nav" className='order-4 order-xl-1'>
                         <Nav className="ml-auto text-capitalize">
                             <Link href="/" onClick={() => window.innerWidth < 1200 ? setExpanded(expanded ? false : "expanded") : ''} activeclassname="active"><a className='border-first'>Home</a></Link>
