@@ -2,25 +2,27 @@ import React, { useContext, useEffect, useState } from 'react'
 
 import Container from 'react-bootstrap/Container';
 import Image from "next/image"
+import { useRouter } from 'next/router';
+
+
 import Link from "next/link"
-import Footer from '../../component/Footer';
-import Navbar from "../../component/Navbar" 
-import BreadHero from '../../component/BreadHero';
-import Link from "next/link"
+import BreadHero from '../../../component/BreadHero';
+import Header from '../../../component/es/Navbar';
+import Footer from '../../../component/es/Footer';
 
 
 export default function BlogDetails(props) {
-
+   
   useEffect(() => {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0) 
   }, [])
 
   return (
     <>
-      <Navbar />
+      <Header />
 
       <div className='blogadda'>
-      <BreadHero title="Blogs" linkhtml={<><ul className='breadcrumb text-white'> <li className="breadcrumb-item" > <Link href="/">Home</Link> </li> <li className='breadcrumb-item active' aria-current="page"> <Link href="/blog"> Blog </Link></li> <li className='breadcrumb-item active' aria-current="page">{props.singleblog[0].title}</li> </ul></>} />
+      <BreadHero title="articulos" linkhtml={<><ul className='breadcrumb text-white'> <li className="breadcrumb-item" > <Link href="/">Home</Link> </li> <li className='breadcrumb-item active' aria-current="page"> <Link href="/articulos"> articulos </Link></li> <li className='breadcrumb-item active' aria-current="page">{props.singleblog[0].title}</li> </ul></>} />
 
 
         <div className='popular-destination blogaddalist details full-w'>
@@ -63,25 +65,24 @@ export async function getServerSideProps(context) {
   var raw = JSON.stringify({
     "id": "",
     "title": "",
-    "titleUrl": params.blogDetail,
+    "titleUrl": params.articulosDetail,
     "content": "",
     "description": "",
     "keywords": "",
     "posttime": "",
     "status": "",
     "heading": "",
-    "img_url": "",
-    "siteId": "139",
     "categoryName": "",
-    "blogdes2": "",
-    "blogTagsName2": "",
-    "extarTag": "",
+    "siteId": "139",
+    "pageType": "Articulo",
+    "extraTag": "",
     "tfnHeader": "",
     "tfnFooter1": "",
     "tfnFooter2": "",
     "tfnFooter3": "",
-    "tfnPopup": ""
-  });
+    "tfnPopup": "",
+  }
+  );
 
   var requestOptions = {
     method: 'POST',

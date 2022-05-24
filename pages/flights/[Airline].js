@@ -4,6 +4,7 @@ import Link from "next/link"
 import { useRouter } from 'next/router';
 import Footer from '../../component/Footer';
 import Navbar from "../../component/Navbar"
+import BreadHero from '../../component/BreadHero';
 
 
 export default function Airline(props) {
@@ -74,6 +75,7 @@ export default function Airline(props) {
 
 <div className='blogadda'>
        
+<BreadHero title="Flights" linkhtml={<><ul className='breadcrumb text-white'> <li className="breadcrumb-item" > <Link href="/">Home</Link> </li> <li className='breadcrumb-item active' aria-current="page"> <Link href="/flights"> Flights </Link></li> <li className='breadcrumb-item active' aria-current="page">{props.flight[0].metaTitle}</li> </ul></>} />
 
         <div className='popular-destination blogaddalist details full-w'>
       <Container>

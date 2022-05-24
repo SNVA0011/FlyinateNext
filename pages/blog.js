@@ -9,7 +9,7 @@ import Head from 'next/head'
 import BreadHero from "../component/BreadHero";
 
 // import ScrollAnimation from 'react-animate-on-scroll';
-
+import BreadHero from '../component/BreadHero'
 // import loading from "../Atoms/Image/load.gif"
 
 
@@ -24,13 +24,30 @@ export default function Blog(props) {
 
   return (
     <>
-      <Head>
-        <html lang="en" />
-        <title>Blog - Flyinate</title>
-        <meta name="description" content="" />
-        <meta name="keywords" content="" />
-        <link rel="canonical" href="https://www.flyinate.com/blog" />
-      </Head>
+      <Navbar />
+      {/* {load? */}
+      <div>
+        <div className='blogadda'>
+
+          {/* <Helmet>
+        <title>	Blog - Flyinate</title>
+        <meta name="description" content="text" />
+        <meta name="keywords" content="text" />
+        <link rel="canonical" href={window.location.href}/> 
+      </Helmet>
+
+      <BreadHero title="Blog" linkhtml={<><ul className='breadcrumb text-white'> <li className="breadcrumb-item" > <Linkhref="/">Home</Link> </li> <li className='breadcrumb-item active' aria-current="page">Blog</li> </ul></>} /> */}
+
+<BreadHero title="Blogs" linkhtml={<><ul className='breadcrumb text-white'> <li className="breadcrumb-item" > <Link href="/">Home</Link> </li> <li className='breadcrumb-item active' aria-current="page">Blogs</li> </ul></>} />
+
+          <div className='popular-destination blogaddalist full-w'>
+            <Container>
+              <div className="top-title text-center">
+                <p>Blog lists</p>
+                <h2>
+                  Latest <span>Blog</span>
+                </h2>
+              </div>
 
 
       <Header />
