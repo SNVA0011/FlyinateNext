@@ -6,7 +6,6 @@ import Link from "next/link"
 import Footer from '../../component/Footer';
 import Navbar from "../../component/Navbar" 
 import BreadHero from '../../component/BreadHero';
-import Link from "next/link"
 
 
 export default function BlogDetails(props) {
@@ -89,7 +88,7 @@ export async function getServerSideProps(context) {
     body: raw,
     redirect: 'follow'
   };
-  const res = await fetch("https://cms.travomint.com/news-article/naDataById?authcode=Trav3103s987876", requestOptions)
+  const res = await fetch("https://cms.travomint.com/travoles-content/blogdatabyid?authcode=Trav3103s987876", requestOptions)
   const json = await res.json()
   return {
     props: { singleblog: json.response }
