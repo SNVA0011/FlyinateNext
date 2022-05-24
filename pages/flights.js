@@ -4,7 +4,7 @@ import Container from 'react-bootstrap/Container'
 // import Enginebox from '../Molecules/Home/Enginebox';
 // import BreadHero from '../Atoms/BreadHero';
 import { Button, Col, Row } from 'react-bootstrap';
-import Link from "next/Link"
+import Link from "next/link"
 // import loading from "../Atoms/Image/load.gif"
 // import ScrollAnimation from 'react-animate-on-scroll';
 import Image from "next/image"

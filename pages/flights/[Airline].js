@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Container from 'react-bootstrap/Container';
-import Link from "next/Link"
+import Link from "next/link"
 import { useRouter } from 'next/router';
 
 
