@@ -15,24 +15,16 @@ export default function AboutUs() {
     <div>
 
 
-      {/* <BreadHero
+  {/* <BreadHero
         title="ABOUT US"
         linkhtml={
           <>
             <ul className="breadcrumb text-white">
-              {" "}
-              <li className="breadcrumb-item">
-                {" "}
-                <Link to="/">Home</Link>{" "}
-              </li>{" "}
-              <li className="breadcrumb-item active" aria-current="page">
-                {" "}
-                ABOUT US{" "}
-              </li>{" "}
+              <li className="breadcrumb-item"><Link to="/"><a>Home</a></Link></li>
+              <li className="breadcrumb-item active" aria-current="page">ABOUT US</li>
             </ul>
           </>
-        } */}
-      {/* /> */}
+        }  />  */}
 
 <Navbar/>
       <div className="about-uspage full-w pyblock-80">

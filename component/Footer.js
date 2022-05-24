@@ -18,15 +18,13 @@ export default function Footer() {
                 <h5 className="use-head">Useful Links</h5>
                 <ul className="use-li">
                   <li>
-                    <Link href="/blog" className="ripple-effbtn d-inline-block">
-                      <span>Blog</span>
+                    <Link href="/blog">
+                      <a className="ripple-effbtn d-inline-block"><span>Blog</span></a>
                     </Link>
                   </li>
                   <li>
-                    <Link
-                      href="/flights"
-                      className="ripple-effbtn d-inline-block">
-                      <span>Flights</span>
+                    <Link  href="/flights" >
+                      <a className="ripple-effbtn d-inline-block"><span>Flights</span></a>
                     </Link>
                   </li>
                 </ul>
@@ -36,31 +34,28 @@ export default function Footer() {
               <h5 className="use-head">About Us</h5>
               <ul className="use-li">
                 {/* <li>
-                  <Link
-                    href="/contact-us"
-                    className="ripple-effbtn d-inline-block"
-                  >
-                    <span>Contact Us</span>
+                  <Link href="/contact-us">
+                    <a className="ripple-effbtn d-inline-block"><span>Contact Us</span></a>
                   </Link>
                 </li> */}
                 <li>
-                  <Link href="/about-us" className="ripple-effbtn d-inline-block">
-                    <span>About Us</span>
+                  <Link href="/about-us">
+                    <a className="ripple-effbtn d-inline-block"><span>About Us</span></a>
                   </Link>
                 </li>
                 <li>
-                  <Link href="/privacy" className="ripple-effbtn d-inline-block">
-                    <span>Privacy Policy</span>
+                  <Link href="/privacy">
+                    <a className="ripple-effbtn d-inline-block"><span>Privacy Policy</span></a>
                   </Link>
                 </li>
                 <li>
-                  <Link href="/terms" className="ripple-effbtn d-inline-block">
-                    <span>Terms &amp; Conditions</span>
+                  <Link href="/terms">
+                    <a className="ripple-effbtn d-inline-block"><span>Terms &amp; Conditions</span></a>
                   </Link>
                 </li>
                 {/* <li>
-                  <Link href="/site-map" className="ripple-effbtn d-inline-block">
-                    <span>Site Map</span>
+                  <Link href="/site-map">
+                    <a className="ripple-effbtn d-inline-block"><span>Site Map</span></a>
                   </Link>
                 </li> */}
               </ul>
@@ -124,13 +119,13 @@ export default function Footer() {
               <div className="subscribe">
                 <h3 className="use-head">Subscribe</h3>
                 <form className="subscribe-form" id="myForm">
-                  <InputGroup>
+                  <InputGroup className="flex-column">
                     <FormControl
                       type="email"
-                      className="subscribe"
+                      className="subscribe w-100"
                       placeholder="Your Email Address"
                     />
-                    <Button className="btn btn-site btn-block ripple-effbtn">
+                    <Button className="btn btn-site btn-block ripple-effbtn  w-100">
                       <span>Subscribe</span>
                     </Button>
                   </InputGroup>

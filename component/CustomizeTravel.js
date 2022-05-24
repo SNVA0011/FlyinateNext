@@ -34,8 +34,8 @@ export default function CustomizeTravel() {
 
                     <Row>
                         <Col xs={12} md={6} lg={4}>
-                            <Link href="/customize/business-travel" className='image_area_partition'>
-                            <a>
+                            <Link href="/customize/business-travel">
+                            <a  className='image_area_partition'>
                                 <Image src="/images/business_travel.jpg" width="500" height="300" alt='business_travel' className='object-cover'></Image>
                                 <div className='wrapper'>
                                     <span>Business Travel</span>
@@ -44,8 +44,8 @@ export default function CustomizeTravel() {
                             </Link>
                         </Col>
                         <Col xs={12} md={6} lg={4}>
-                            <Link href="/" className='image_area_partition'>
-                            <a>
+                            <Link href="/">
+                            <a  className='image_area_partition'>
                                 <Image src="/images/corporate_travel.jpg"width="500" height="300" alt='corporate_travel' className='object-cover'></Image>
                                 <div className='wrapper'>
                                     <span>Corporate Travel</span>
@@ -54,8 +54,8 @@ export default function CustomizeTravel() {
                             </Link>
                         </Col>
                         <Col xs={12} lg={4}>
-                            <Link href="/customize/group-travel" className='image_area_partition'>
-                            <a>
+                            <Link href="/customize/group-travel">
+                            <a  className='image_area_partition'>
                                 <Image src="/images/group_travel.jpg"width="500" height="300" alt='group_travel' className='object-cover'></Image>
                                 <div className='wrapper'>
                                     <span>Group Travel</span>

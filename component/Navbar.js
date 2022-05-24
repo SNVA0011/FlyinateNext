@@ -20,8 +20,8 @@ export default function Header() {
                 <div className='clearfix'></div>
 
                 <Container className='navtop_2'>
-                    <Link href="/" activeclassname="active" className='navbar-brand' onClick={() => window.innerWidth < 1200 ? setExpanded(false) : ''}>
-                      <a>  <img src='/images/logo.png' alt='Flowers' width={`100%`} height={`100%`}></img></a>
+                    <Link href="/" activeclassname="active" onClick={() => window.innerWidth < 1200 ? setExpanded(false) : ''}>
+                      <a className='navbar-brand'> <img src='/images/logo.png' alt='Flowers' width={`100%`} height={`100%`}></img></a>
                     </Link>
  
 

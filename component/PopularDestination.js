@@ -23,8 +23,8 @@ export default function PopularDestinations() {
                         <Col xs={12} md={6} lg={4}>
                             
                                 
-                                <Link href="/about" className='image_area_partition'>
-                                <a>
+                                <Link href="/about">
+                                <a className='image_area_partition'>
                                 <Image src='/images/macchu.jpg' width="500" height="300" alt='Machu Picchu' className='object-cover'></Image>
                                 <div className='wrapper'>
                                     <span>Machu Picchu</span>
@@ -33,8 +33,8 @@ export default function PopularDestinations() {
                             </Link>
                         </Col>
                         <Col xs={12} md={6} lg={4}>
-                            <Link href="/galapagos-islands-flyinate"  >
-                            <a>
+                            <Link href="/galapagos-islands-flyinate">
+                            <a className='image_area_partition'> 
                                 <Image src='/images/island.jpg'  width="500" height="300" alt='Galapagos Islands' className='object-cover'></Image>
                                 <div className='wrapper'>
                                     <span>Galapagos Islands</span>
@@ -43,8 +43,8 @@ export default function PopularDestinations() {
                             </Link>
                         </Col>
                         <Col xs={12} md={6} lg={4}>
-                            <Link href="/cusco-flyinate"  >
-                            <a>
+                            <Link href="/cusco-flyinate">
+                            <a className='image_area_partition'> 
                                 <Image src='/images/Cusco.jpg' width="500" height="300" alt='Cusco' className='object-cover'></Image>
                                 <div className='wrapper'>
                                     <span>Cusco</span>
@@ -54,8 +54,8 @@ export default function PopularDestinations() {
                         </Col>
                         <Col xs={12} md={6} lg={4}>
                         
-                            <Link href="/easter-island-flyinate"  >
-                            <a>
+                            <Link href="/easter-island-flyinate">
+                            <a className='image_area_partition'> 
                                 <Image src='/images/easter.jpg'width="500" height="300" alt='Easter Island' className='object-cover'></Image>
                                 <div className='wrapper'>
                                     <span>Easter Island</span>
@@ -64,8 +64,8 @@ export default function PopularDestinations() {
                             </Link>
                         </Col>
                         <Col xs={12} md={6} lg={4}>
-                            <Link href="/buenos-aires-flyinat"  >
-                            <a>
+                            <Link href="/buenos-aires-flyinat">
+                            <a className='image_area_partition'> 
                                 <Image src='/images/Buenos.jpg'width="500" height="300" alt='Buenos Aires' className='object-cover'></Image>
                                 <div className='wrapper'>
                                     <span>Buenos Aires</span>
@@ -74,8 +74,8 @@ export default function PopularDestinations() {
                             </Link>
                         </Col>
                         <Col xs={12} md={6} lg={4}>
-                            <Link href="/lima-flyinate"  >
-                            <a>
+                            <Link href="/lima-flyinate">
+                            <a className='image_area_partition'> 
                                 <Image src='/images/Lima.jpg'width="500" height="300" alt='turkey' className='object-cover'></Image>
                                 <div className='wrapper'>
                                     <span>Lima</span>

@@ -15,7 +15,6 @@ import Navbar from "../component/Navbar"
 export async function getServerSideProps() { 
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
-
   var raw = JSON.stringify({
     "id": "",
     "title": "",
@@ -46,22 +45,25 @@ export async function getServerSideProps() {
     redirect: 'follow'
   };
   const res = await fetch("https://cms.travomint.com/travoles-content/showblogdata?authcode=Trav3103s987876", requestOptions)
-  const json = await res.json()
+  const json = await res.json()  
   return {
-    props: { allblog: json.response }
+    props: {allblog: json.response}
   }
 }
 
 
 
 
-export default function Blog(props) { 
+export default function Blog(props) {
+
+  console.log('props-'+JSON.stringify(props)) 
+
 
   useEffect(() => {
-    window.scrollTo(0, 0) 
+    window.scrollTo(0, 0)
   }, [])
 
-  
+
   return (
     <>
       <Navbar />
@@ -86,36 +88,38 @@ export default function Blog(props) {
                   Latest <span>Blog</span>
                 </h2>
               </div>
-              {console.log('props-',props)}
 
-              { props.allblog.length > 0 ?
+
+              {
+                props.allblog?.length > 0 ?
                   <Row>
                     {props.allblog.map((items, i) => (
-                       <Col xs={12} md={6}>
-                       <div className='blogaddalist-round'>
-                         <div className='image_area_partition'> 
-                           <div className='wrapper'>
-                             <span>{items.posttime}</span>
-                           </div>
-                         </div>
-                         <div className='blogaddalist-inner'>
-                         <div className='h4 title'>
-                           {items.title}
-                             </div>
-                           <p>{items.description}</p> 
-                           <hr className="mx-row-hr" />
-                           <Link href={`/blog/${items.titleUrl}`}>
-                             <a className='btn btn-site ripple-effbtn btn-40'>
-                             <span>Read More</span>
-                             </a>
-                           </Link>
-                         </div>
-                       </div>
-                     </Col>
+                      <Col xs={12} md={6}>
+                        <div className='blogaddalist-round'>
+                          <div className='image_area_partition'>
+                            <div className='wrapper'>
+                              <span>{items.posttime}</span>
+                            </div>
+                          </div>
+                          <div className='blogaddalist-inner'>
+                            <div className='h4 title'>
+                              {items.title}
+                            </div>
+                            <p>{items.description}</p>
+                            <hr className="mx-row-hr" />
+                            <Link href={`/blog/${items.titleUrl}`}>
+                              <a className='btn btn-site ripple-effbtn btn-40'>
+                                <span>Read More</span>
+                              </a>
+                            </Link>
+                          </div>
+                        </div>
+                      </Col>
                     ))}
 
                   </Row>
-                  : 'no data'}
+                  : 'No items found !'
+              }
 
 
 
