@@ -45,12 +45,12 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link href="/">
-                    <a className="ripple-effbtn d-inline-block"><span>Privacy Policy</span></a>
+                    <a className="ripple-effbtn d-inline-block"><span></span></a>
                   </Link>
                 </li>
                 <li>
                   <Link href="/terms">
-                    <a className="ripple-effbtn d-inline-block"><span>Terms &amp; Conditions</span></a>
+                    <a className="ripple-effbtn d-inline-block"><span></span></a>
                   </Link>
                 </li>
                 {/* <li>
