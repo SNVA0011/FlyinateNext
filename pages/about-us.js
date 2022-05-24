@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Link from "next/Link"
+import Link from "next/link"
 import Image from "next/image"
 import Navbar from "../component/Navbar"
 import Footer from "../component/Footer"
