@@ -9,7 +9,7 @@ import { useRouter } from 'next/router';
 
 export default function Home() { 
   return (
-    <>
+  <>
       <Head>
       <html lang="en"/>
         <title>Flyinate | Book Low Fares Flights Tickets & Rental Cars</title>
@@ -23,7 +23,7 @@ export default function Home() {
       <PopularDestinations />
       <CustomizeTravel />
       <Footer />
-
-    </>
+      </>
+    
   )
 }

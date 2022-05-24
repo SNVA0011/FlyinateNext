@@ -37,7 +37,7 @@ export default function sobrenosotras() {
               {" "}
               <li className="breadcrumb-item">
                 {" "}
-                <Link href="/es">Home</Link>{" "}
+                <Link href="/es">Casa</Link>{" "}
               </li>{" "}
               <li className="breadcrumb-item active" aria-current="page">
                 {" "}
