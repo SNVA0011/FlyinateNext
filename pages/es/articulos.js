@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react' 
+import { useEffect, useState } from 'react'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
@@ -12,9 +12,9 @@ import Footer from '../../component/es/Footer'
 import Head from 'next/head'
 
 
- 
+
 export default function articulos(props) {
- 
+
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
@@ -22,11 +22,11 @@ export default function articulos(props) {
 
   return (
     <>
-    <Head>
-    <html lang="es" />
+      <Head>
+        <html lang="es" />
         <title>Articulos - Flyinate</title>
         <meta name="description" content="" />
-    </Head>
+      </Head>
       <Header />
       {/* {load? */}
       <div>
@@ -41,14 +41,14 @@ export default function articulos(props) {
 
       <BreadHero title="Blog" linkhtml={<><ul className='breadcrumb text-white'> <li className="breadcrumb-item" > <Linkhref="/">Home</Link> </li> <li className='breadcrumb-item active' aria-current="page">Blog</li> </ul></>} /> */}
 
-<BreadHero title="articulos" linkhtml={<><ul className='breadcrumb text-white'> <li className="breadcrumb-item" > <Link href="/">Casa</Link> </li> <li className='breadcrumb-item active' aria-current="page">articulos</li> </ul></>} />
+          <BreadHero title="articulos" linkhtml={<><ul className='breadcrumb text-white'> <li className="breadcrumb-item" > <Link href="/">Casa</Link> </li> <li className='breadcrumb-item active' aria-current="page">articulos</li> </ul></>} />
 
           <div className='popular-destination blogaddalist full-w'>
             <Container>
               <div className="top-title text-center">
-              
+
                 <h2>
-                Articulos 
+                  Articulos
                 </h2>
               </div>
 
@@ -83,11 +83,11 @@ export default function articulos(props) {
                   </Row>
                   : 'No items found !'
               }
- 
+
             </Container>
           </div>
         </div>
-      </div> 
+      </div>
 
       <Footer />
     </>
@@ -95,28 +95,28 @@ export default function articulos(props) {
 }
 
 
-export async function getServerSideProps() { 
+export async function getServerSideProps() {
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
   var raw = JSON.stringify({
-    "id":"",
-      "title":"",
-      "titleUrl":"",
-      "content":"",
-      "description":"",
-      "keywords":"",
-      "posttime":"",
-      "status":"",
-      "heading":"",
-      "categoryName":"",
-      "siteId":"139",
-      "pageType":"Articulo",
-      "extraTag":"",
-      "tfnHeader":"",
-      "tfnFooter1":"",
-      "tfnFooter2":"",
-      "tfnFooter3":"",
-      "tfnPopup":""
+    "id": "",
+    "title": "",
+    "titleUrl": "",
+    "content": "",
+    "description": "",
+    "keywords": "",
+    "posttime": "",
+    "status": "",
+    "heading": "",
+    "categoryName": "",
+    "siteId": "139",
+    "pageType": "Articulo",
+    "extraTag": "",
+    "tfnHeader": "",
+    "tfnFooter1": "",
+    "tfnFooter2": "",
+    "tfnFooter3": "",
+    "tfnPopup": ""
   });
 
   var requestOptions = {
@@ -126,8 +126,8 @@ export async function getServerSideProps() {
     redirect: 'follow'
   };
   const res = await fetch("https://cms.travomint.com/news-article/showNAdata?authcode=Trav3103s987876", requestOptions)
-  const json = await res.json()  
+  const json = await res.json()
   return {
-    props: {allblog: json.response}
+    props: { allblog: json.response }
   }
 }

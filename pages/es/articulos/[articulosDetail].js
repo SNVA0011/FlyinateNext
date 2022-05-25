@@ -12,26 +12,26 @@ import Footer from '../../../component/es/Footer';
 
 
 export default function BlogDetails(props) {
-   
+
   useEffect(() => {
-    window.scrollTo(0, 0) 
+    window.scrollTo(0, 0)
   }, [])
 
   return (
     <>
       <Head>
-    <html lang="es" />
+        <html lang="es" />
         <title>{props.singleblog[0].title}</title>
         <meta name="description" content={props.singleblog[0].description} />
         <meta name="keywords" content={props.singleblog[0].keywords} />
         <link rel="canonical" href={`https://www.flyinate.com/es/articulos${props.singleblog[0].titleUrl}`} />
         <link rel="alternate" href={`https://www.flyinate.com/es/articulos${props.singleblog[0].titleUrl}`} />
 
-    </Head>
+      </Head>
       <Header />
 
       <div className='blogadda'>
-      <BreadHero title="articulos" linkhtml={<><ul className='breadcrumb text-white'> <li className="breadcrumb-item" > <Link href="/es">Home</Link> </li> <li className='breadcrumb-item active' aria-current="page"> <Link href="/es/articulos"> articulos </Link></li> <li className='breadcrumb-item active' aria-current="page">{props.singleblog[0].title}</li> </ul></>} />
+        <BreadHero title="articulos" linkhtml={<><ul className='breadcrumb text-white'> <li className="breadcrumb-item" > <Link href="/es">Home</Link> </li> <li className='breadcrumb-item active' aria-current="page"> <Link href="/es/articulos"> articulos </Link></li> <li className='breadcrumb-item active' aria-current="page">{props.singleblog[0].title}</li> </ul></>} />
 
 
         <div className='popular-destination blogaddalist details full-w'>

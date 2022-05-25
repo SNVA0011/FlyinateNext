@@ -18,7 +18,7 @@ export default function Home() {
         <html lang="es" />
         <title>Flyinate | Reserve boletos de vuelos con tarifas bajas y autos de alquiler</title>
         <meta name="description" content="" />
-        <meta name="keywords" content="" /> 
+        <meta name="keywords" content="" />
         <link rel="canonical" href={canonicalURL} />
         <link rel="alternate" href={canonicalURL} />
       </Head>
