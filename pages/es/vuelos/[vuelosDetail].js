@@ -20,7 +20,8 @@ export default function Airline(props) {
       <Head>
     <html lang="es" />
         <title>{props.flight[0].metaTitle}</title>
-        <meta name="description" content="" />
+        <meta name="description" content={props.flight[0].metaDesc} />
+        <meta name="keywords" content={props.flight[0].metaKeyword} />
         <link rel="canonical" href={`https://www.flyinate.com/es/vuelos/${props.flight[0].url}-${props.flight[0].pageValue}`} />
         <link rel="alternate" href={`https://www.flyinate.com/es/vuelos/${props.flight[0].url}-${props.flight[0].pageValue}`} />
     </Head>

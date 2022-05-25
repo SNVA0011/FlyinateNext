@@ -1357,8 +1357,13 @@ img.object-cover {
 .blogaddalist-round.overflow-visible {
     overflow: visible;
 }
- 
 
+
+.blog-inner-box2 ol li p ,
+.blog-inner-box2 ul li p {
+    margin: 0;
+}
+ 
 /* responsive */
 
 @media (min-width:576px) {

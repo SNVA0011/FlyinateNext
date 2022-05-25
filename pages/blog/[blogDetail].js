@@ -4,30 +4,30 @@ import Container from 'react-bootstrap/Container';
 import Image from "next/image"
 import Link from "next/link"
 import Footer from '../../component/Footer';
-import Navbar from "../../component/Navbar" 
+import Navbar from "../../component/Navbar"
 import BreadHero from '../../component/BreadHero';
 import Head from 'next/head'
 
 export default function BlogDetails(props) {
-console.log('kkkkk',props.singleblog)
+  console.log('kkkkk', props.singleblog)
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
 
   return (
     <>
-    <Head>
-    <title>	{props.singleblog[0].title}</title>
-    <html lang="en"/>
-            <meta name="description" content="" />
-            <meta name="keywords" content="" />
-            <link rel="canonical" href={`https://www.flyinate.com/blog/${props.singleblog[0].titleUrl}`} />
+      <Head>
+        <title>{props.singleblog[0].title}</title>
+        <html lang="en" />
+        <meta name="description" content={props.singleblog[0].description} />
+        <meta name="keywords" content={props.singleblog[0].keywords} />
+        <link rel="canonical" href={`https://www.flyinate.com/blog/${props.singleblog[0].titleUrl}`} />
         <link rel="alternate" href={`https://www.flyinate.com/blog/${props.singleblog[0].titleUrl}`} />
-    </Head>
+      </Head>
       <Navbar />
 
       <div className='blogadda'>
-      <BreadHero title="Blogs" linkhtml={<><ul className='breadcrumb text-white'> <li className="breadcrumb-item" > <Link href="/">Home</Link> </li> <li className='breadcrumb-item active' aria-current="page"> <Link href="/blog"> Blog </Link></li> <li className='breadcrumb-item active' aria-current="page">{props.singleblog[0].title}</li> </ul></>} />
+        <BreadHero title="Blogs" linkhtml={<><ul className='breadcrumb text-white'> <li className="breadcrumb-item" > <Link href="/">Home</Link> </li> <li className='breadcrumb-item active' aria-current="page"> <Link href="/blog"> Blog </Link></li> <li className='breadcrumb-item active' aria-current="page">{props.singleblog[0].title}</li> </ul></>} />
 
 
         <div className='popular-destination blogaddalist details full-w'>
