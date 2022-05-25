@@ -101,13 +101,13 @@ img {
 }
 
 @media(min-width:1330px) {
-    .container {
+    body .container {
         max-width: 1300px
     }
 }
 
 @media(min-width:1430px) {
-    .container {
+    body .container {
         max-width: 1400px
     }
 }
