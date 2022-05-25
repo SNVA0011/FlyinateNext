@@ -235,7 +235,7 @@ img {
 }
 
 .enginebanner_sctn {
-    background-image: url('../public/images/bgtravel-home.jpg');
+    background-image: url('../public/bgtravel-home.jpg');
     background-size: cover;
     background-position: top center;
     position: relative;
