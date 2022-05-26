@@ -145,7 +145,7 @@ export default function Footer() {
             <Row>
               <Col xs={12} className='text-center'>
                 <p className="footer_logos">
-                  <img alt="logos" src={process.env.PUBLIC_URL + "/images/card-logos-footer.png"} width="780" />
+                  <img alt="logos" src={"/images/card-logos-footer.png"} width="780" />
                 </p>
                 <p className="footer_disclaimer">
                   © 2022 flyinate.com, teniendo su domicilio social en el estado de EE.UU.
