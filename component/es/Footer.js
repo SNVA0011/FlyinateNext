@@ -150,7 +150,7 @@ export default function Footer() {
                 <p className="footer_disclaimer">
                   © 2022 flyinate.com, teniendo su domicilio social en el estado de EE.UU.
                   ubicado en W Ray Rd en la ciudad de Chandler con Código Postal 85226. Todos los derechos
-                  reservado
+                  reservado.
                 </p>
               </Col>
             </Row>
