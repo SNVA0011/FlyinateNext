@@ -20,7 +20,7 @@ export default function Header() {
                 <div className='clearfix'></div>
 
                 <Container className='navtop_2'>
-                    <Link href="/es" activeclassname="active" onClick={() => window.innerWidth < 1200 ? setExpanded(false) : ''}>
+                    <Link href="/es"  locale="es" activeclassname="active" onClick={() => window.innerWidth < 1200 ? setExpanded(false) : ''}>
                       <a className='navbar-brand'> <img src='/images/logo.png' alt='Flowers' width={`211`}></img></a>
                     </Link>
  
@@ -34,10 +34,10 @@ export default function Header() {
                     </div>  
                     <Navbar.Collapse id="responsive-navbar-nav" className='order-4 order-xl-1'>
                         <Nav className="ml-auto text-capitalize">
-                            <Link href="/es" onClick={() => window.innerWidth < 1200 ? setExpanded(expanded ? false : "expanded") : ''} activeclassname="active"><a className='border-first'>Casa</a></Link>
-                            <Link href="/es/sobre-nosotras" onClick={() => window.innerWidth < 1200 ? setExpanded(expanded ? false : "expanded") : ''} activeclassname="active">Sobre Nosotras</Link>
-                            <Link href="/es/vuelos" onClick={() => window.innerWidth < 1200 ? setExpanded(expanded ? false : "expanded") : ''} activeclassname="active">Vuelos</Link>
-                            <Link href="/es/articulos" onClick={() => window.innerWidth < 1200 ? setExpanded(expanded ? false : "expanded") : ''} activeclassname="active">Articulos</Link>
+                            <Link href="/es/" onClick={() => window.innerWidth < 1200 ? setExpanded(expanded ? false : "expanded") : ''} activeclassname="active"  locale="es"><a className='border-first'>Casa</a></Link>
+                            <Link href="/es/sobre-nosotras" onClick={() => window.innerWidth < 1200 ? setExpanded(expanded ? false : "expanded") : ''} activeclassname="active"  locale="es">Sobre Nosotras</Link>
+                            <Link href="/es/vuelos" onClick={() => window.innerWidth < 1200 ? setExpanded(expanded ? false : "expanded") : ''} activeclassname="active"  locale="es">Vuelos</Link>
+                            <Link href="/es/articulos" onClick={() => window.innerWidth < 1200 ? setExpanded(expanded ? false : "expanded") : ''} activeclassname="active"  locale="es">Articulos</Link>
                             <div className='d-xl-none' onClick={() => window.innerWidth < 1200 ? setExpanded(expanded ? false : "expanded") : ''}>
                                 <Subheader />
                             </div>

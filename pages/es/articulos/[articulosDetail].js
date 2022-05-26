@@ -31,7 +31,7 @@ export default function BlogDetails(props) {
       <Header />
 
       <div className='blogadda'>
-        <BreadHero title="articulos" linkhtml={<><ul className='breadcrumb text-white'> <li className="breadcrumb-item" > <Link href="/es">Home</Link> </li> <li className='breadcrumb-item active' aria-current="page"> <Link href="/es/articulos"> articulos </Link></li> <li className='breadcrumb-item active' aria-current="page">{props.singleblog[0].title}</li> </ul></>} />
+        <BreadHero title="articulos" linkhtml={<><ul className='breadcrumb text-white'> <li className="breadcrumb-item" > <Link href="/es" locale="es">Home</Link> </li> <li className='breadcrumb-item active' aria-current="page"> <Link href="/es/articulos" locale="es"> articulos </Link></li> <li className='breadcrumb-item active' aria-current="page">{props.singleblog[0].title}</li> </ul></>} />
 
 
         <div className='popular-destination blogaddalist details full-w'>

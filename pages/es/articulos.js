@@ -39,9 +39,9 @@ export default function articulos(props) {
         <link rel="canonical" href={window.location.href}/> 
       </Helmet>
 
-      <BreadHero title="Blog" linkhtml={<><ul className='breadcrumb text-white'> <li className="breadcrumb-item" > <Linkhref="/">Home</Link> </li> <li className='breadcrumb-item active' aria-current="page">Blog</li> </ul></>} /> */}
+      <BreadHero title="Blog" linkhtml={<><ul className='breadcrumb text-white'> <li className="breadcrumb-item" > <Linkhref="/es/"  locale="es">Home</Link> </li> <li className='breadcrumb-item active' aria-current="page">Blog</li> </ul></>} /> */}
 
-          <BreadHero title="articulos" linkhtml={<><ul className='breadcrumb text-white'> <li className="breadcrumb-item" > <Link href="/">Casa</Link> </li> <li className='breadcrumb-item active' aria-current="page">articulos</li> </ul></>} />
+          <BreadHero title="articulos" linkhtml={<><ul className='breadcrumb text-white'> <li className="breadcrumb-item" > <Link href="/es/"  locale="es">Casa</Link> </li> <li className='breadcrumb-item active' aria-current="page">articulos</li> </ul></>} />
 
           <div className='popular-destination blogaddalist full-w'>
             <Container>
@@ -70,7 +70,7 @@ export default function articulos(props) {
                             </div>
                             <p>{items.description}</p>
                             <hr className="mx-row-hr" />
-                            <Link href={`/es/articulos/${items.titleUrl}`}>
+                            <Link href={`/es/articulos/${items.titleUrl}`} locale="es">
                               <a className='btn btn-site ripple-effbtn btn-40'>
                                 <span>Read More</span>
                               </a>

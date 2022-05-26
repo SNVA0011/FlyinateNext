@@ -25,7 +25,7 @@ export default function ChangeCountryMenu() {
                 <h5 className='mb-3 text-center'>Select Language</h5>
                 <Row>
                     <Col xs="6">
-                        <Dropdown.Item onClick={(e) => { setLang('EN') }} href={'/'} className={'btn btn-site ripple-effbtn btn-40 btn-block text-center ' + (lang === 'EN' ? 'active' : '')}><span>English</span></Dropdown.Item>
+                        <Dropdown.Item  locale="es" onClick={(e) => { setLang('EN') }} href={'/'} className={'btn btn-site ripple-effbtn btn-40 btn-block text-center ' + (lang === 'EN' ? 'active' : '')}><span>English</span></Dropdown.Item>
                     </Col>
                     <Col xs="6">
                         <Dropdown.Item onClick={(e) => { setLang('ES') }} href={'/es/'} className={'btn btn-site ripple-effbtn btn-40 btn-block text-center ' + (lang === 'ES' ? 'active' : '')}><span>Spanish</span></Dropdown.Item>

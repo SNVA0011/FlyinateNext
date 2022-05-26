@@ -31,7 +31,9 @@ export default function Airline(props) {
 
       <div className='blogadda'>
 
-        <BreadHero title={props.flight[0].metaTitle} linkhtml={<><ul className='breadcrumb text-white'> <li className="breadcrumb-item" > <Link href="/">Casa</Link> </li> <li className='breadcrumb-item active' aria-current="page"> <Link href="/vuelos"> vuelos </Link></li> <li className='breadcrumb-item active' aria-current="page">{props.flight[0].metaTitle}</li> </ul></>} />
+        <BreadHero title={props.flight[0].metaTitle} linkhtml={<><ul className='breadcrumb text-white'>
+           <li className="breadcrumb-item" > <Link href="/es/" locale="es">Casa</Link> </li> 
+           <li className='breadcrumb-item active' aria-current="page"> <Link href="/es/vuelos" locale="es"> vuelos </Link></li> <li className='breadcrumb-item active' aria-current="page">{props.flight[0].metaTitle}</li> </ul></>} />
 
         <div className='popular-destination blogaddalist details full-w'>
           <Container>
