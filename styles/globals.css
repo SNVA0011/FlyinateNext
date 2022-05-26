@@ -124,7 +124,8 @@ img {
 /* new_header_area */ 
 .new_header_area {
     box-shadow: 0 5px 10px 0 rgb(0 0 0 / 5%);
-    padding: 0;  
+    padding: 0; 
+    text-shadow: 0 0 10px transparent;
 }
 
 .navtop_callto {
