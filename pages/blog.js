@@ -26,7 +26,7 @@ export default function Blog(props) {
     <>
     <Head>
     <title>	Blog - Flyinate</title>
-    <html lang="en"/>
+    
             <meta name="description" content="" />
             <meta name="keywords" content="" />
         <link rel="canonical" href="https://www.flyinate.com/blog" />

@@ -23,7 +23,7 @@ export default function articulos(props) {
   return (
     <>
       <Head>
-        <html lang="es" />
+        
         <title>Articulos - Flyinate</title>
         <meta name="description" content="" />
       </Head>

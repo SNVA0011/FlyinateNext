@@ -15,7 +15,7 @@ export default function CheapFlights() {
   return (
     <div className="cheapflight-lar">
       <Head>
-        <html lang="en" />
+        
         <title>Galapagos-islands-flyinate</title>
         <meta name="description" content="" />
         <meta name="keywords" content="" />

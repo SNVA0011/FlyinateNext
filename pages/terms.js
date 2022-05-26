@@ -16,14 +16,14 @@ export default function Terms() {
     return (
         <>
             <Head>
-                <html lang="en" />
+                
                 <title>Terms & Conditions - Flyinate</title>
                 <meta name="description" content="" />
                 <meta name="keywords" content="" />
                 <link rel="canonical" href="https://www.flyinate.com/terms" />
             </Head>
             <Head>
-                <html lang="en" />
+                
                 <title>Terms & Conditions - Flyinate</title>
                 <meta name="description" content="" />
                 <meta name="keywords" content="" />

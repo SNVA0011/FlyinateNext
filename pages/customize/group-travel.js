@@ -18,7 +18,7 @@ export default function CustomizeTravelPage() {
   return (
     <div>
       <Head>
-        <html lang="en" />
+        
         <title>Flyinate : Group Travel</title>
         <meta name="description" content="" />
         <meta name="keywords" content="" />

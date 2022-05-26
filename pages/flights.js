@@ -28,7 +28,7 @@ export default function Flights(props, pageValue, pageType) {
     <div>
       <Head>
       <Head>
-      <html lang="en"/>
+      
     <title>	Blog - Flyinate</title>
             <meta name="description" content="" />
             <meta name="keywords" content="" />

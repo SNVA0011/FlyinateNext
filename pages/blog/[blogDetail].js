@@ -18,7 +18,7 @@ export default function BlogDetails(props) {
     <>
       <Head>
         <title>{props.singleblog[0].title}</title>
-        <html lang="en" />
+        
         <meta name="description" content={props.singleblog[0].description} />
         <meta name="keywords" content={props.singleblog[0].keywords} />
         <link rel="canonical" href={`https://www.flyinate.com/blog/${props.singleblog[0].titleUrl}`} />

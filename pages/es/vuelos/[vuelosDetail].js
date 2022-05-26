@@ -18,7 +18,7 @@ export default function Airline(props) {
   return (
     <>
       <Head>
-        <html lang="es" />
+        
         <title>{props.flight[0].metaTitle}</title>
         <meta name="description" content={props.flight[0].metaDesc} />
         <meta name="keywords" content={props.flight[0].metaKeyword} />

@@ -16,7 +16,7 @@ export default function Terms() {
         <>
         
             <Head>
-                <html lang="en" />
+                
                 <title>Privacy Policy - Flyinate</title>
                 <meta name="description" content="" />
                 <meta name="keywords" content="" />

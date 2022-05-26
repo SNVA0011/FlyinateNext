@@ -8,7 +8,7 @@ export default function Pageerror() {
     return (
         <div className="pageerror-wrap d-flex flex-row align-items-center full-w py-5">
             {/* <Helmet>
-                <html lang="en" />
+                
                 <title>404 Page Not Found</title>
                 <meta name="description" content="" />
                 <meta name="keywords" content="" />

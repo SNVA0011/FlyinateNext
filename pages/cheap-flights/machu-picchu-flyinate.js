@@ -15,7 +15,7 @@ export default function CheapFlights() {
   return (
     <div className="cheapflight-lar"> 
       <Head>
-      <html lang="en" />
+      
         <title>Machu-picchu-flyinate</title>
         <meta name="description" content="" />
         <meta name="keywords" content="" />

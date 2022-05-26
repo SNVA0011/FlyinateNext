@@ -20,7 +20,7 @@ export default function BlogDetails(props) {
   return (
     <>
       <Head>
-        <html lang="es" />
+        
         <title>{props.singleblog[0].title}</title>
         <meta name="description" content={props.singleblog[0].description} />
         <meta name="keywords" content={props.singleblog[0].keywords} />

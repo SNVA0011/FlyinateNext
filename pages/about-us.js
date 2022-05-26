@@ -20,7 +20,7 @@ export default function AboutUs() {
   return (
     <>
       <Head>
-        <html lang="en" />
+        
         <title>About us - Flyinate</title>
         <meta name="description" content="" />
         <meta name="keywords" content="" />
