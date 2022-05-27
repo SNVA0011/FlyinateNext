@@ -62,7 +62,7 @@ export default function vuelos(props, pageValue, pageType) {
                             <span className='h4 title'>{items.pageName}-{items.pageValue}</span>
                             <hr className="mx-row-hr" />
                             <Link onClick={() => SendingPageType(items)} href={`/es/vuelos/${items.url}-${items.pageValue}`} locale="es">
-                              <a className='btn btn-site ripple-effbtn btn-40'> <span>Read More</span></a>
+                              <a className='btn btn-site ripple-effbtn btn-40'> <span>Lee mas</span></a>
                             </Link>
 
                           </div>

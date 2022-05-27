@@ -72,7 +72,7 @@ export default function articulos(props) {
                             <hr className="mx-row-hr" />
                             <Link href={`/es/articulos/${items.titleUrl}`} locale="es">
                               <a className='btn btn-site ripple-effbtn btn-40'>
-                                <span>Read More</span>
+                                <span>Lee mas</span>
                               </a>
                             </Link>
                           </div>
