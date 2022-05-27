@@ -41,7 +41,7 @@ body .navtop_callto .callmail a .bi,
 body .navtop_callto .callmail a:hover,
 body .navtop_callto ul.social-urls a:hover{color:#ffc60b}
 body .navtop_callto .callmail a{color:#9d9d9d;font-weight:500}
-body .enginebanner_sctn{background-image:url('../public/bgtravel-home.jpg');background-size:cover;background-position:top center;position:relative;overflow:hidden;background-attachment:fixed}
+body .enginebanner_sctn{background-image:url('/static/images/bgtravel-home.jpg');background-size:cover;background-position:top center;position:relative;overflow:hidden;background-attachment:fixed}
 body .enginebanner_sctn .container{position:relative;z-index:2}
 body .enginebanner_sctn::after{content:'';position:absolute;left:0;top:0;width:100%;height:100%;background:-moz-linear-gradient(top,rgba(0,0,0,0) 0,rgba(0,0,0,.75) 100%);background:-webkit-linear-gradient(top,rgba(0,0,0,0) 0,rgba(0,0,0,.75) 100%);background:linear-gradient(to bottom,rgba(0,0,0,0) 0,rgba(0,0,0,.75) 100%)}
 body .enginebanner_sctn .minh.align-items-center.row{min-height:635px}
