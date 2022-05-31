@@ -55,7 +55,9 @@ body .enginebanner_sctn .form-control{height:50px;font-size:17px;box-shadow:none
 body .form-control:focus{border-color:#f4bc03}
 body .ripple-effbtn{position:relative;overflow:hidden}
 body img.object-cover{object-fit:cover}
-body .image_area_partition span{position:static!important}
+body .image_area_partition span{position: static!important;
+    width: 100%;
+    float: left;}
 body .image_area_partition .wrapper,
 body .image_area_partition img,
 body .ripple-effbtn::after{transition:all .6s cubic-bezier(.5, 0, 0, 1.25);-webkit-transition:all .6s cubic-bezier(.5, 0, 0, 1.25);-ms-transition:all .6s cubic-bezier(.5, 0, 0, 1.25);-moz-transition:all .6s cubic-bezier(.5, 0, 0, 1.25);-o-transition:all .6s cubic-bezier(.5, 0, 0, 1.25)}
