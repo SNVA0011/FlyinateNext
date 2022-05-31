@@ -23,7 +23,7 @@ export default function PopularDestinations() {
                         <Col xs={12} md={6} lg={4}> 
                                 <Link href="/es" locale="es">
                                 <a className='image_area_partition'>
-                                <Image src='/static/images/macchu.jpg' width="500" height="300" alt='Machu Picchu' className='object-cover'></Image>
+                                <img src='/images/macchu.jpg' width="500" height="300" alt='Machu Picchu' className='object-cover'></img>
                                 <div className='wrapper'>
                                     <span>Machu Picchu</span>
                                 </div>
