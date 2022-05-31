@@ -25,7 +25,7 @@ export default function PopularDestinations() {
                                 
                                 <Link href="/cheap-flights/machu-picchu-flyinate">
                                 <a className='image_area_partition'>
-                                <Image src='/images/macchu.jpg' width="500" height="300" alt='Machu Picchu' className='object-cover'></Image>
+                                <Image src='/static/images/macchu.jpg' width="500" height="300" alt='Machu Picchu' className='object-cover'></Image>
                                 <div className='wrapper'>
                                     <span>Machu Picchu</span>
                                 </div>
