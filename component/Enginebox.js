@@ -2,6 +2,8 @@ import React from 'react'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import Image from "next/image"
+
 
 export default function Enginebox(props) {
   return (
@@ -94,8 +96,8 @@ export default function Enginebox(props) {
           </svg>
         </div>
         : ''}
+<img src='/images/banner-shape-14.png' alt='banner-shape-14' className='banner-shape-14 w-100'></img>
 
-      <img src='/images/banner-shape-14.png' alt='banner-shape-14' className='banner-shape-14 w-100'></img>
-    </div>
+     </div>
   )
 }

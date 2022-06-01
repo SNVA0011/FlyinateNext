@@ -25,8 +25,9 @@ export default function PopularDestinations() {
                                 
                                 <Link href="/cheap-flights/machu-picchu-flyinate">
                                 <a className='image_area_partition'>
-                                <img src='/images/macchu.jpg' width="500" height="300" alt='Machu Picchu' className='object-cover'></img>
-                                <div className='wrapper'>
+                                <Image src='/images/macchu.jpg' width={500} height={300}  alt='macchu' className='object-cover'></Image>
+
+                                 <div className='wrapper'>
                                     <span>Machu Picchu</span>
                                 </div>
                                 </a>
@@ -35,7 +36,7 @@ export default function PopularDestinations() {
                         <Col xs={12} md={6} lg={4}>
                             <Link href="/cheap-flights/galapagos-islands-flyinate">
                             <a className='image_area_partition'> 
-                                <Image src='/images/island.jpg'  width="500" height="300" alt='Galapagos Islands' className='object-cover'></Image>
+                                <Image src='/images/island.jpg'  width={500} height={300}  alt='Galapagos Islands' className='object-cover'></Image>
                                 <div className='wrapper'>
                                     <span>Galapagos Islands</span>
                                 </div>
@@ -45,7 +46,7 @@ export default function PopularDestinations() {
                         <Col xs={12} md={6} lg={4}>
                             <Link href="/cheap-flights/cusco-flyinate">
                             <a className='image_area_partition'> 
-                                <Image src='/images/Cusco.jpg' width="500" height="300" alt='Cusco' className='object-cover'></Image>
+                                <Image src='/images/Cusco.jpg' width={500} height={300}  alt='Cusco' className='object-cover'></Image>
                                 <div className='wrapper'>
                                     <span>Cusco</span>
                                 </div>
@@ -56,7 +57,7 @@ export default function PopularDestinations() {
                         
                             <Link href="/cheap-flights/easter-island-flyinate">
                             <a className='image_area_partition'> 
-                                <Image src='/images/easter.jpg'width="500" height="300" alt='Easter Island' className='object-cover'></Image>
+                                <Image src='/images/easter.jpg'width={500} height={300}  alt='Easter Island' className='object-cover'></Image>
                                 <div className='wrapper'>
                                     <span>Easter Island</span>
                                 </div>
@@ -66,7 +67,7 @@ export default function PopularDestinations() {
                         <Col xs={12} md={6} lg={4}>
                             <Link href="/cheap-flights/buenos-aires-flyinat">
                             <a className='image_area_partition'> 
-                                <Image src='/images/Buenos.jpg'width="500" height="300" alt='Buenos Aires' className='object-cover'></Image>
+                                <Image src='/images/Buenos.jpg'width="500" height="300"   alt='Buenos Aires' className='object-cover'></Image>
                                 <div className='wrapper'>
                                     <span>Buenos Aires</span>
                                 </div>
@@ -76,7 +77,7 @@ export default function PopularDestinations() {
                         <Col xs={12} md={6} lg={4}>
                             <Link href="/cheap-flights/lima-flyinate">
                             <a className='image_area_partition'> 
-                                <Image src='/images/Lima.jpg'width="500" height="300" alt='turkey' className='object-cover'></Image>
+                                <Image src='/images/Lima.jpg'width="500" height="300"   alt='turkey' className='object-cover'></Image>
                                 <div className='wrapper'>
                                     <span>Lima</span>
                                 </div>

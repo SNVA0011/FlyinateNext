@@ -3,6 +3,7 @@ import Navbar from 'react-bootstrap/Navbar'
 import Container from 'react-bootstrap/Container'
 import Nav from 'react-bootstrap/Nav'
 import Link from 'next/link';
+ 
 
 import Subheader from '../Subheader';
 import ChangeCountryMenu from './ChangeCountryMenu';
@@ -21,7 +22,9 @@ export default function Header() {
 
                 <Container className='navtop_2'>
                     <Link href="/es"  locale="es" activeclassname="active" onClick={() => window.innerWidth < 1200 ? setExpanded(false) : ''}>
-                      <a className='navbar-brand'> <img src='/images/logo.png' alt='Flowers' width={`211`}></img></a>
+                      <a className='navbar-brand'> 
+                      <img src='/images/logo.png' alt='logo' width={211}></img> 
+                      </a>
                     </Link>
  
 

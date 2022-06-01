@@ -6,6 +6,8 @@ import InputGroup from "react-bootstrap/InputGroup";
 import FormControl from "react-bootstrap/FormControl";
 import Button from "react-bootstrap/Button";
 import Link from "next/link"
+import Image from "next/image"
+
 
 export default function Footer() {
   return (
@@ -161,8 +163,8 @@ export default function Footer() {
           <Container className='inner_container_2'>
             <Row>
               <Col xs={12} className='text-center'>
-                <p className="footer_logos">
-                  <img alt="logos" src={"/images/card-logos-footer.png"} width="780" />
+                <p className="footer_logos"> 
+                  <Image alt="logo" src={"/images/card-logos-footer.png"} width={780}  height={58} ></Image>  
                 </p>
                 <p className="footer_disclaimer">
                   © 2022 flyinate.com, teniendo su domicilio social en el estado de EE.UU.

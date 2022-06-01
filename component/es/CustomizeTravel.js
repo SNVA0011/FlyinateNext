@@ -36,7 +36,7 @@ export default function CustomizeTravel() {
                         <Col xs={12} md={6} lg={4}>
                             <Link href="/es" locale="es">
                             <a  className='image_area_partition'>
-                                <Image src="/images/business_travel.jpg" width="500" height="300" alt='business_travel' className='object-cover'></Image>
+                                <Image src="/images/business_travel.jpg" width={500} height={300}   alt='business_travel' className='object-cover'></Image>
                                 <div className='wrapper'>
                                     <span>Viajes de negocios</span>
                                 </div>
@@ -46,7 +46,7 @@ export default function CustomizeTravel() {
                         <Col xs={12} md={6} lg={4}>
                             <Link href="/es" locale="es">
                             <a  className='image_area_partition'>
-                                <Image src="/images/corporate_travel.jpg"width="500" height="300" alt='corporate_travel' className='object-cover'></Image>
+                                <Image src="/images/corporate_travel.jpg"width={500} height={300}   alt='corporate_travel' className='object-cover'></Image>
                                 <div className='wrapper'>
                                     <span>Viajes corporativos</span>
                                 </div>
@@ -56,7 +56,7 @@ export default function CustomizeTravel() {
                         <Col xs={12} lg={4}>
                             <Link href="/es" locale="es">
                             <a  className='image_area_partition'>
-                                <Image src="/images/group_travel.jpg"width="500" height="300" alt='group_travel' className='object-cover'></Image>
+                                <Image src="/images/group_travel.jpg"width={500} height={300}   alt='group_travel' className='object-cover'></Image>
                                 <div className='wrapper'>
                                     <span>Viajes en grupo</span>
                                 </div>

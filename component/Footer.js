@@ -6,6 +6,8 @@ import InputGroup from "react-bootstrap/InputGroup";
 import FormControl from "react-bootstrap/FormControl";
 import Button from "react-bootstrap/Button";
 import Link from "next/link"
+import Image from "next/image"
+
 
 export default function Footer() {
   return (
@@ -156,12 +158,8 @@ export default function Footer() {
             <Row>
               <Col xs={12} className="text-center">
                 <p className="footer_logos">
-                  <img
-                    alt="logos"
-                    src="/images/card-logos-footer.png"
-                    width={`780`}
-                    height={`100%`}
-                  />
+
+                <Image alt="logos" src="/images/card-logos-footer.png"   width={780} height={58}></Image> 
                 </p>
                 <p className="footer_disclaimer">
                   © 2022 flyinate.com, having its registered office in the state

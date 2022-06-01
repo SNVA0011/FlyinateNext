@@ -6,7 +6,8 @@ import Link from 'next/link';
 import Image from "next/image"
 
 
-export default function PopularDestinations() {
+export default function PopularDestinations() { 
+      
   return (
    <>
     {/* PopularDestinations */}
@@ -23,7 +24,7 @@ export default function PopularDestinations() {
                         <Col xs={12} md={6} lg={4}> 
                                 <Link href="/es" locale="es">
                                 <a className='image_area_partition'>
-                                <img src='/images/macchu.jpg' width="500" height="300" alt='Machu Picchu' className='object-cover'></img>
+                                <Image src='/images/macchu.jpg' width={500} height={300}   alt='macchu' className='object-cover'></Image>
                                 <div className='wrapper'>
                                     <span>Machu Picchu</span>
                                 </div>
@@ -43,7 +44,7 @@ export default function PopularDestinations() {
                         <Col xs={12} md={6} lg={4}>
                             <Link href="/es" locale="es">
                             <a className='image_area_partition'> 
-                                <Image src='/images/Cusco.jpg' width="500" height="300" alt='Cusco' className='object-cover'></Image>
+                                <Image src='/images/Cusco.jpg' width={500} height={300}   alt='Cusco' className='object-cover'></Image>
                                 <div className='wrapper'>
                                     <span>Cusco</span>
                                 </div>
@@ -54,7 +55,7 @@ export default function PopularDestinations() {
                         
                             <Link href="/es" locale="es">
                             <a className='image_area_partition'> 
-                                <Image src='/images/easter.jpg'width="500" height="300" alt='Easter Island' className='object-cover'></Image>
+                                <Image src='/images/easter.jpg'width={500} height={300}   alt='Easter Island' className='object-cover'></Image>
                                 <div className='wrapper'>
                                     <span>Easter Island</span>
                                 </div>
@@ -64,7 +65,7 @@ export default function PopularDestinations() {
                         <Col xs={12} md={6} lg={4}>
                             <Link href="/es" locale="es">
                             <a className='image_area_partition'> 
-                                <Image src='/images/Buenos.jpg'width="500" height="300" alt='Buenos Aires' className='object-cover'></Image>
+                                <Image src='/images/Buenos.jpg'width={500} height={300}   alt='Buenos Aires' className='object-cover'></Image>
                                 <div className='wrapper'>
                                     <span>Buenos Aires</span>
                                 </div>
@@ -74,7 +75,7 @@ export default function PopularDestinations() {
                         <Col xs={12} md={6} lg={4}>
                             <Link href="/es" locale="es">
                             <a className='image_area_partition'> 
-                                <Image src='/images/Lima.jpg'width="500" height="300" alt='turkey' className='object-cover'></Image>
+                                <Image src='/images/Lima.jpg'width={500} height={300}   alt='turkey' className='object-cover'></Image>
                                 <div className='wrapper'>
                                     <span>Lima</span>
                                 </div>
