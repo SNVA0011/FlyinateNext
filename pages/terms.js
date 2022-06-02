@@ -16,14 +16,6 @@ export default function Terms() {
     return (
         <>
             <Head>
-                
-                <title>Terms & Conditions - Flyinate</title>
-                <meta name="description" content="" />
-                <meta name="keywords" content="" />
-                <link rel="canonical" href="https://www.flyinate.com/terms" />
-            </Head>
-            <Head>
-                
                 <title>Terms & Conditions - Flyinate</title>
                 <meta name="description" content="" />
                 <meta name="keywords" content="" />
@@ -33,8 +25,8 @@ export default function Terms() {
             <Header />
 
             <BreadHero title="Terms & Conditions" linkhtml={<><ul className='breadcrumb text-white'>
-                 <li className="breadcrumb-item" > <Link href="/">Home</Link> </li>
-                  <li className='breadcrumb-item active' aria-current="page"> Terms & Conditions</li> </ul></>} />
+                <li className="breadcrumb-item" > <Link href="/">Home</Link> </li>
+                <li className='breadcrumb-item active' aria-current="page"> Terms & Conditions</li> </ul></>} />
 
             <div className='about-uspage full-w pyblock-80'>
                 <Container>

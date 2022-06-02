@@ -27,9 +27,8 @@ export default function vuelos(props, pageValue, pageType) {
 
   return (
     <div>
-      <Head>
-        
-        <title>	Vuelos - Flyinate</title>
+      <Head> 
+        <title>Vuelos - Flyinate</title>
         <meta name="description" content="" />
         <meta name="keywords" content="" />
       </Head>
