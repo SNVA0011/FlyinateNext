@@ -11,7 +11,7 @@ import PopularDestinations from '../../component/es/PopularDestination';
 
 export default function Home() {
   const useroute = useRouter();
-  const canonicalURL = 'https://www.flyinate.com/' + useroute.pathname;
+  const canonicalURL = 'https://www.flyinate.com' + useroute.pathname;
   return (
     <div>
       <Head>
