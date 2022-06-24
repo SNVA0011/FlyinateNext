@@ -46,6 +46,11 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
+                  <Link href="/contact">
+                    <a className="ripple-effbtn d-inline-block"><span>Contact</span></a>
+                  </Link>
+                </li>
+                <li>
                   <Link href="/privacy">
                     <a className="ripple-effbtn d-inline-block"><span>Privacy Policy</span></a>
                   </Link>

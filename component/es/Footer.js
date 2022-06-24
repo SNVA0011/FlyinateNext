@@ -55,6 +55,13 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
+                  <Link href="/es/contacto"  locale="es">
+                    <a className='ripple-effbtn d-inline-block'>
+                      <span>Contacto</span>
+                    </a>
+                  </Link>
+                </li>
+                <li>
                   <Link href="/es/politica"  locale="es">
                     <a className='ripple-effbtn d-inline-block'>
                       <span>Política de privacidad</span>

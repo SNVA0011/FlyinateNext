@@ -5,9 +5,13 @@ import Nav from 'react-bootstrap/Nav'
 import Link from 'next/link';
 import ChangeCountryMenu from './ChangeCountryMenu';
 import Subheader from './Subheader';
+import { useRouter } from 'next/router';
+
  
 
 export default function Header() {
+    const location = useRouter();
+
     const [expanded, setExpanded] = useState(false);
 
     return (
@@ -36,10 +40,28 @@ export default function Header() {
                     </div>
                     <Navbar.Collapse id="responsive-navbar-nav" className='order-4 order-xl-1'>
                         <Nav className="ml-auto text-capitalize">
-                            <Link href="/" onClick={() => window.innerWidth < 1200 ? setExpanded(expanded ? false : "expanded") : ''} activeclassname="active"><a className='border-first'>Home</a></Link>
-                            <Link href="/about-us" onClick={() => window.innerWidth < 1200 ? setExpanded(expanded ? false : "expanded") : ''} activeclassname="active">About Us</Link>
-                            <Link href="/flights" onClick={() => window.innerWidth < 1200 ? setExpanded(expanded ? false : "expanded") : ''} activeclassname="active">Flights</Link>
-                            <Link href="/blog" onClick={() => window.innerWidth < 1200 ? setExpanded(expanded ? false : "expanded") : ''} activeclassname="active">Blog</Link>
+                            <Link href="/" onClick={() => window.innerWidth < 1200 ? setExpanded(expanded ? false : "expanded") : ''}>
+                                <a className={'border-first nav-link ' + (location.pathname === "/" ? 'active' : '')}>Home</a></Link>
+                            <Link href="/about-us" onClick={() => window.innerWidth < 1200 ? setExpanded(expanded ? false : "expanded") : ''}>
+                                <a className={'nav-link ' + (location.pathname === "/about-us" ? 'active' : '')}>
+                                About Us
+                                </a>
+                                </Link>
+                            <Link href="/flights" onClick={() => window.innerWidth < 1200 ? setExpanded(expanded ? false : "expanded") : ''}>
+                                <a className={'nav-link ' + (location.pathname === "/flights" || location.pathname === "/flights/[Airline]" ? 'active' : '')}>
+                                Flights
+                                </a>
+                                </Link>
+                            <Link href="/blog" onClick={() => window.innerWidth < 1200 ? setExpanded(expanded ? false : "expanded") : ''}>
+                                <a className={'nav-link ' + (location.pathname === "/blog" || location.pathname === "/blog/[blogDetail]" ? 'active' : '')}>
+                                Blog
+                                </a>
+                                </Link>
+                            <Link href="/contact" onClick={() => window.innerWidth < 1200 ? setExpanded(expanded ? false : "expanded") : ''}>
+                                <a className={'nav-link ' + (location.pathname === "/contact" ? 'active' : '')}>
+                                Contact
+                                </a>
+                                </Link>
                             <div className='d-xl-none' onClick={() => window.innerWidth < 1200 ? setExpanded(expanded ? false : "expanded") : ''}>
                                 <Subheader />
                             </div>
