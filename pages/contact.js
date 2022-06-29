@@ -50,7 +50,7 @@ export default function ContactUs() {
 									<h2>Our Offices</h2>
 									<div className="contact-box">
 										<h3>USA</h3>
-										<p>48437, HC 4 AGUADILLA PR 00603-9710 USA</p>  
+										<p>W Ray Rd, Chandler, AZ 85226, USA</p> 
 										<a href="#" title="Get Direction">Get Direction</a>
 									</div>
 									<div className="contact-box">
