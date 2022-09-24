@@ -18,15 +18,14 @@ function RecentBlogs({ language, data, title }) {
                     </div>
                     <div className="row blogscroll-y">
                         {data.map((items, i) => (
-                            <div className='item col-sm-6 col-xl-12' key={i}>
+                            <div className='item col-sm-6 col-lg-4 col-xl-12' key={i}>
                                 <Link href={items.titleUrl}>
-                                    <a className={"card h-100 " + 
+                                    <a className={"card h-100" + 
                                      (location.asPath === lang + ('/'+parenturl +'/')  + items.titleUrl ? ' active' : '')}>
                                         <div className="card-body">
                                             <span className='badge badge-secondary'><i class="bi bi-calendar2-week mr-2"></i>
                                                 <Moment date={items.posttime} format="DD MMM, YYYY" /></span>
-                                            <h5 className="card-title mb-0">{items.title}</h5>
-                                            <p className='mb-0 text-truncate'>{items.description}</p>
+                                            <h5 className="card-title mb-0">{items.title}</h5> 
                                         </div>
                                     </a>
                                 </Link>
