@@ -655,7 +655,7 @@ body .popular-destination.blogaddalist.details .blog-inner-box2 h3{font-size:120
 }
 .recent-destinations .card-body{
     padding-top: 20px;
-    padding-bottom: 19px;
+    padding-bottom: 14px;
 }
 }
 @media (max-width:575px){
