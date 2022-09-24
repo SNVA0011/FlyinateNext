@@ -1,14 +1,13 @@
-import React, { useContext, useEffect, useState } from 'react'
-
-import Container from 'react-bootstrap/Container';
-import Image from "next/image"
-import { useRouter } from 'next/router';
-import Head from 'next/head'
-
-import Link from "next/link"
+import React, { useEffect } from 'react';
+import Container from 'react-bootstrap/Container'; 
+import Head from 'next/head';
+import Link from "next/link";
 import BreadHero from '../../../component/BreadHero';
 import Header from '../../../component/es/Navbar';
 import Footer from '../../../component/es/Footer';
+import RecentBlogs from "../../../component/RecentBlogs"
+
+
 
 
 export default function BlogDetails(props) {
@@ -20,7 +19,7 @@ export default function BlogDetails(props) {
   return (
     <>
       <Head>
-        
+
         <title>{props.singleblog[0].title}</title>
         <meta name="description" content={props.singleblog[0].description} />
         <meta name="keywords" content={props.singleblog[0].keywords} />
@@ -31,28 +30,33 @@ export default function BlogDetails(props) {
       <Header />
 
       <div className='blogadda'>
-        <BreadHero title="articulos" linkhtml={<><ul className='breadcrumb text-white'> <li className="breadcrumb-item" > <Link href="/es" locale="es">Home</Link> </li> <li className='breadcrumb-item active' aria-current="page"> <Link href="/es/articulos" locale="es"> articulos </Link></li> <li className='breadcrumb-item active' aria-current="page">{props.singleblog[0].title}</li> </ul></>} />
+        <BreadHero title="Articulos" linkhtml={<><ul className='breadcrumb text-white'> <li className="breadcrumb-item" > <Link href="/es" locale="es">Home</Link> </li> <li className='breadcrumb-item active' aria-current="page"> <Link href="/es/articulos" locale="es"> articulos </Link></li> <li className='breadcrumb-item active' aria-current="page">{props.singleblog[0].title}</li> </ul></>} />
 
 
         <div className='popular-destination blogaddalist details full-w'>
           <Container>
-            {
-              props.singleblog?.length > 0 ?
-                <>
-                  {props.singleblog.map((items, i) => (
-                    <div className='blogaddalist-round'>
-                      <div className='blogaddalist-inner'>
-                        <div className="blog-inner-box2">
-                          <p dangerouslySetInnerHTML={{ __html: items.content }} />
+          <div className='row'>
+              <div className="col-xl-8">
+                {
+                  props.singleblog?.length > 0 ?
+                    <>
+                      {props.singleblog.map((items, i) => (
+                        <div className='blogaddalist-round'>
+                          <div className='blogaddalist-inner'>
+                            <div className="blog-inner-box2" dangerouslySetInnerHTML={{ __html: items.content }} />  
+                          </div>
                         </div>
-                      </div>
-                    </div>
-                  ))}
-                </>
-                : 'No items found !'
-            }
+                      ))}
+                    </>
+                    : 'No se encontraron artículos !'
+                }
+              </div>
 
-
+              <div className="mt-5 mt-xl-0 col-xl-4">
+                <RecentBlogs title="Artículos Recientes" data={ props.recentposts.slice(0, 5) } 
+                  language="es"/>
+              </div>
+            </div>
           </Container>
         </div>
       </div>
@@ -71,6 +75,38 @@ export async function getServerSideProps(context) {
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
 
+  // recent blog
+  var recentraw = JSON.stringify({
+    "id": "",
+    "title": "",
+    "titleUrl": "",
+    "content": "",
+    "description": "",
+    "keywords": "",
+    "posttime": "",
+    "status": "",
+    "heading": "",
+    "categoryName": "",
+    "siteId": "139",
+    "pageType": "Articulo",
+    "extraTag": "",
+    "tfnHeader": "",
+    "tfnFooter1": "",
+    "tfnFooter2": "",
+    "tfnFooter3": "",
+    "tfnPopup": ""
+  });
+
+  var requestForRecent = {
+    method: 'POST',
+    headers: myHeaders,
+    body: recentraw,
+    redirect: 'follow'
+  };
+  const recentfetch = await fetch("https://cms.travomint.com/news-article/showNAdata?authcode=Trav3103s987876", requestForRecent)
+  const rcpjson = await recentfetch.json()
+
+  // single blog
   var raw = JSON.stringify({
     "id": "",
     "title": "",
@@ -102,7 +138,10 @@ export async function getServerSideProps(context) {
   const res = await fetch("https://cms.travomint.com/news-article/naDataById?authcode=Trav3103s987876", requestOptions)
   const json = await res.json()
   return {
-    props: { singleblog: json.response }
+    props: { 
+      singleblog: json.response,
+      recentposts: rcpjson.response,
+     }
   }
 
 

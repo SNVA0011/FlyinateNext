@@ -2,11 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Dancing+Script:wght@400;500;700&display=swap"); 
 
 html{scroll-behavior:smooth}
-html body{font-family:'DM Sans',sans-serif;word-break:break-word;font-display:swap;scrollbar-face-color:#484441;scrollbar-track-color:#f5f5f5}
-::-webkit-scrollbar{width:14px;height:10px}
-::-webkit-scrollbar-thumb{background:#484441;border-radius:80px;border:solid 3px #f5f5f5;min-height:150px}
-::-webkit-scrollbar-thumb:hover{background:#777}
-::-webkit-scrollbar-track{background-color:#f5f5f5}
+html body{font-family:'DM Sans',sans-serif;word-break:break-word;font-display:swap;}
 *,img{image-rendering:crisp-edges;image-rendering:-o-crisp-edges;image-rendering:-webkit-optimize-contrast}
 .btn,body .btn:focus,body a,body a:focus,body button,body button:focus,body input,body input:focus,body select,body select:focus,body textarea,body textarea:focus{outline:0}
 body select{cursor:pointer}
@@ -183,13 +179,14 @@ body .popular-destination.blogaddalist.details .blog-inner-box2 ul{padding-left:
 body .popular-destination.blogaddalist.details .blog-inner-box2 ol li{padding-left:10px}
 body .popular-destination.blogaddalist.details .blog-inner-box2 ul li{margin-bottom:8px}
 body .popular-destination.blogaddalist.details .blog-inner-box2 ol li{margin-bottom:8px}
-body .popular-destination.blogaddalist.details .blogaddalist-round{margin-bottom:0}
-body .popular-destination.blogaddalist.details .blog-inner-box2 h1{font-size:220%;font-weight:700;margin-bottom:16px}
-body .popular-destination.blogaddalist.details .blog-inner-box2 h2{font-size:180%;margin-top:40px}
-body .popular-destination.blogaddalist.details .blog-inner-box2 h3{font-size:140%;margin-top:40px;margin-bottom:1.2rem}
-body .popular-destination.blogaddalist.details .blog-inner-box2 h4{font-size:120%}
-body .popular-destination.blogaddalist.details .blog-inner-box2 h5{font-size:115%}
-body .popular-destination.blogaddalist.details .blog-inner-box2 h6{font-size:110%}
+body .popular-destination.blogaddalist.details .blogaddalist-round{margin-bottom:0; box-shadow: none;}
+body .popular-destination.blogaddalist.details .blog-inner-box2 h1{font-size:200%;font-weight:700;margin-bottom:16px}
+body .popular-destination.blogaddalist.details .blog-inner-box2 h2{font-size:160%;}
+body .popular-destination.blogaddalist.details .blog-inner-box2 h2 ~ h2{margin-top:40px}
+body .popular-destination.blogaddalist.details .blog-inner-box2 h3{font-size:120%;margin-top:40px;margin-bottom:1.2rem}
+body .popular-destination.blogaddalist.details .blog-inner-box2 h4{font-size:115%}
+body .popular-destination.blogaddalist.details .blog-inner-box2 h5{font-size:110%}
+body .popular-destination.blogaddalist.details .blog-inner-box2 h6{font-size:105%}
 body .popular-destination.blogaddalist .blogaddalist-round .btn.btn-site.ripple-effbtn.btn-40{padding-top:13px;padding-bottom:13px;min-width:170px}
 body .headerusd-dropdown{margin-left:45px;position:relative}
 body .headerusd-dropdown .dropdown-menu{left:auto;right:0;-webkit-animation-name:fadeInUpheaderusd;animation-name:fadeInUpheaderusd;-webkit-animation-duration:.3s;animation-duration:.3s;-webkit-animation-timing-function:cubic-bezier(0.5,0,0,1.25);animation-timing-function:cubic-bezier(0.5,0,0,1.25);-webkit-animation-fill-mode:both;animation-fill-mode:both;margin-top:26px;width:310px;background-position:center;border:none;box-shadow:0 6px 30px rgb(0 0 0 / 20%);-webkit-box-shadow:0 6px 30px rgb(0 0 0 / 20%);border-radius:8px;background-image:url('/static/images/dots-circle-half.png');background-repeat:no-repeat;background-position:left top;background-size:cover}
@@ -200,7 +197,9 @@ body .headerusd-dropdown .dropdown-menu::after{content:'';width:17px;height:17px
 @keyframes fadeInUpheaderusd{0%{opacity:0;-webkit-transform:translate3d(0,10%,0);transform:translate3d(0,10%,0)}
 100%{opacity:1;-webkit-transform:none;transform:none}
 }
-
+body .popular-destination.blogaddalist.details {
+    padding: 40px 0;
+}
 body .headerusd-dropdown button.dropdown-toggle::after{display:none}
 body .headerusd-dropdown button.dropdown-toggle span i{margin-left:4px;font-size:80%}
 body .headerusd-dropdown .btn-outline-secondary{background-color:rgb(243 187 2 / 10%);border-color:rgb(243 187 2 / 40%);color:#957200;font-weight:600}
@@ -280,17 +279,257 @@ body .field-submit {
     margin-top: 30px;
 }
 
+.sidebar .widget .widget-title:before {
+    content: '';
+    width: 15px;
+    height: 15px;
+    background: #2a9d8f;
+    border-radius: 50%;
+    left: 6px;
+    position: absolute;
+    bottom: 4px;
+}
+.sidebar .widget .widget-title:after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background: #e9c46a;
+    border-radius: 50%;
+    left: 3px;
+    position: absolute;
+    top: 6px;
+}
 
+
+
+.recent-destinations img.card-img-top,
+.recent-destinations .card,
+.destination-list .img-topwrap::after,
+.destination-list .owl-theme .owl-nav .owl-prev,
+.destination-list .owl-theme .owl-nav .owl-next,
+.destination-list .card-text,
+.destination-list .card .card-title,
+.destination-list .card,
+.destination-list .img-topwrap {
+	transition: all 150ms cubic-bezier(0.5, 0, 0, 1.25);
+	-moz-transition: all 150ms cubic-bezier(0.5, 0, 0, 1.25);
+	-o-transition: all 150ms cubic-bezier(0.5, 0, 0, 1.25);
+	-webkit-transition: all 150ms cubic-bezier(0.5, 0, 0, 1.25);
+	-ms-transition: all 150ms cubic-bezier(0.5, 0, 0, 1.25);
+}
+.recent-destinations p.card-text,
+.destination-list .card .card-text {
+	font-size: 14px;
+	font-weight: 600;
+	color: #000000;
+	position: absolute;
+	bottom: 12px;
+	left: 12px;
+	z-index: 5;
+	padding: 7px 13px;
+	background: #fff;
+	border-radius: 20px;
+	min-width: 110px;
+	text-transform: capitalize;
+}
+
+.recent-destinations p.card-text,
+.destination-list .card .card-text {
+	color: #ffffff;
+	background: rgb(243, 115, 50);
+	background: -moz-linear-gradient(-45deg, rgba(243, 115, 50, 1) 0%, rgba(216, 72, 0, 1) 100%);
+	background: -webkit-linear-gradient(-45deg, rgba(243, 115, 50, 1) 0%, rgba(216, 72, 0, 1) 100%);
+	background: linear-gradient(135deg, rgba(243, 115, 50, 1) 0%, rgba(216, 72, 0, 1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f37332', endColorstr='#d84800', GradientType=1);
+}
+.recent-destinations .title-dlist {
+	padding: 0;
+}
+
+.recent-destinations .title-dlist h3 {
+    position: relative;
+    font-size: 21px;
+    margin-top: 0;
+    margin-bottom: 27px;
+    padding-left: 34px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+ 
+
+.recent-destinations .title-dlist h3:before {
+    content: '';
+    width: 18px;
+    height: 18px;
+    background: #085099;
+    border-radius: 50%;
+    left: 3px;
+    position: absolute;
+    top: 2px;
+}
+.recent-destinations .title-dlist h3:after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background: #ffc60b;
+    border-radius: 50%;
+    left: 0;
+    position: absolute;
+    top: 7px;
+}
+
+.recent-destinations img.card-img-top {
+	width: 100%;
+	border-radius: 8px;
+}
+.recent-destinations .img-hideradius {
+	width: 80px;
+	min-width: 80px;
+	border-radius: 8px;
+}
+
+
+.recent-destinations .card-body.flex-grow-1 {
+	padding: 5px 15px;
+}
+
+.recent-destinations p.card-text {
+	position: static;
+	display: inline-block;
+	padding: 3px 9px;
+	min-width: auto;
+	font-size: 11px;
+	margin-top: 8px;
+	line-height: normal;
+}
+
+.recent-destinations .card.active i.bi.rpost-right {
+	background: rgb(243, 115, 50);
+	background: linear-gradient(135deg, rgba(243, 115, 50, 1) 0%, rgba(216, 72, 0, 1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f37332', endColorstr='#d84800', GradientType=1);
+}
+
+.recent-destinations p.card-text .bi.bi-geo-alt {
+	position: relative;
+	top: 1px;
+	font-size: 114%;
+	margin-right: 2px;
+}
+
+.recent-destinations h5.card-title.mb-0 {
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 4px !important;
+}
+
+.recent-destinations .item{ 
+    margin-bottom: 25px;
+} 
+.recent-destinations .item:last-child{ 
+    margin-bottom: 0;
+}
+
+.recent-destinations .card {
+    padding: 8px;
+    border-radius: 8px;
+    background: #f8f8f8;
+    box-shadow: none;
+    color: #000000;
+    border: none;
+}
+.recent-destinations {
+    padding: 25px 17px;
+    border-radius: 8px;
+    border: none; 
+    background: white;
+    box-shadow: 0 1rem 1.75rem 0 rgb(45 55 75 / 10%);
+}
+.recent-destinations .card:hover h5.card-title.mb-0 {
+	color: #23395d;
+}
+
+.recent-destinations .card:hover {
+	background: #fff;
+	box-shadow: 0 0 25px rgb(0 0 0 / 5%);
+}
+
+.owl-row.ls {
+	margin-top: -26px;
+}
+ 
+.recent-destinations .badge-secondary {
+    background: #ffffff;
+    color: #000;
+    position: absolute;
+    top: -11px;
+    left: 17px;
+    padding: 6px 10px;
+    border-radius: 40px;
+    font-weight: 400;
+    font-size: 12px;
+    box-shadow: 0 -5px 25px rgb(0 0 0 / 5%);
+}
+.recent-destinations .card-body {
+    padding: 16px 12px 12px;
+}
+.recent-destinations .card.active .badge-secondary{
+    background: #f3bb02;
+    background: -moz-linear-gradient(45deg, #f3bb02 0%, #fdcc2b 100%);
+    background: -webkit-linear-gradient(45deg, #f3bb02 0%,#fdcc2b 100%);
+    background: linear-gradient(45deg, #f3bb02 0%,#fdcc2b 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3bb02', endColorstr='#fdcc2b',GradientType=1 );
+    color: #745900;
+    box-shadow: none
+}
+
+.recent-destinations .card.active {
+    background: #085099;
+    background: -moz-linear-gradient(45deg,  #085099 0%, #053768 100%);
+    background: -webkit-linear-gradient(45deg,  #085099 0%,#053768 100%);
+    background: linear-gradient(45deg,  #085099 0%,#053768 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#085099', endColorstr='#053768',GradientType=1 );    
+}
+
+.airplane-iconbx h3.cities__capital:first-letter,
+.bradcum li:first-letter,
+.recent-destinations .card.active h5.card-title.mb-0:first-letter {
+	text-transform: capitalize;
+}
+
+
+.recent-destinations .card.active ul.font-medium,
+.recent-destinations .card.active p,
+.recent-destinations .card.active h5.card-title.mb-0 {
+	color: #fff;
+}
+.recent-destinations .card.active ul.font-medium li {
+  border-color: #fff !important;
+  color: #23395d;
+}
+.blogdeatils-wrapper .recent-destinations img {
+  border-radius: 8px;
+}
+.recent-destinations .card ul.font-medium li{
+background: #fff;
+}
+.recent-destinations .card p {
+    font-size: 14px;
+    letter-spacing: 0.4px;
+    color: #6a6a6a;
+}
+
+/*--------- responsive ---------*/
 @media (min-width:576px){
     body .about-font-18,
-    body .about-font-18 p,
-    body .blogaddalist-inner p{font-size:18px}
+    body .about-font-18 p {font-size:18px}
 }
 @media (min-width:992px){.breadcrumb_area{padding:90px 0}
 body .about-font-18 .sub-title{font-size:18px}
 body .about-font-18 p{margin-bottom:20px}
 body .about-font-18 p:last-child{margin-bottom:0}
 body .popular-destination.blogaddalist.details .top-title.text-center h2{font-size:36px}
+
 }
 @media (min-width:1200px){
 body .headerusd-dropdown::after{content:" ";width:1px;color:transparent;border-left-width:1px;border-left-style:solid;vertical-align:middle;margin:0 29px 0 0;line-height:0;border-color:#e9e9e9;position:absolute;left:-33px;float:left;top:-22px;height:82px;-webkit-transform:rotate(15deg);-moz-transform:rotate(15deg);-o-transform:rotate(15deg);-ms-transform:rotate(15deg);transform:rotate(15deg)}
@@ -301,6 +540,14 @@ body .navbar-light .navbar-nav .nav-link{
     text-align: center;
     padding-left: 18px;
     padding-right: 18px;
+}
+.recent-destinations {
+    position: -o-sticky;
+    position: -moz-sticky;
+    position: -ms-sticky;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 134px;
 }
 }
 @media (min-width:1300px){
@@ -341,6 +588,16 @@ body .new_header_area a.border-first{border-top:solid 1px #e9e9e9;margin-top:9px
 body .footer-area .inner_container_1.container .row{margin-bottom:-40px}
 body .footer-area .inner_container_1.container .col-12{margin-bottom:40px}
 body .breadcrumb_area.large-pgbn{min-height:500px}
+body .popular-destination.blogaddalist.details .blog-inner-box2 h1{font-size:160%}
+body .popular-destination.blogaddalist.details .blog-inner-box2 h2{font-size:150%}
+body .popular-destination.blogaddalist.details .blog-inner-box2 h3{font-size:140%}
+.recent-destinations .item{
+    margin-bottom: 34px;
+}
+.recent-destinations .title-dlist {
+	padding: 0 5px
+}
+
 }
 @media (max-width:991px){
 body .enginebanner_sctn .banner-shape-14.w-100,
@@ -351,11 +608,16 @@ body .popular-destination,
 body .pyblock-80{padding:70px 0}
 body .image_area_partition .wrapper{padding:15px 20px 15px;font-size:24px}
 body .footer-area{background-size:auto;background-repeat:repeat}
-body .breadcrumb_area{background-size:260%}
-body .popular-destination.blogaddalist.details .blog-inner-box2 h1{font-size:160%}
-body .popular-destination.blogaddalist.details .blog-inner-box2 h2{font-size:150%}
-body .popular-destination.blogaddalist.details .blog-inner-box2 h3{font-size:140%}
+body .breadcrumb_area{background-size:260%} 
 body .breadcrumb_area.large-pgbn{min-height:450px}
+.blogaddalist.details .container {
+    padding: 0 5px;
+}
+body .blogaddalist-inner{padding-left:15px;padding-right:15px;}
+body .popular-destination.blogaddalist.details .blog-inner-box2 h1{font-size:150%}
+body .popular-destination.blogaddalist.details .blog-inner-box2 h2{font-size:140%}
+body .popular-destination.blogaddalist.details .blog-inner-box2 h3{font-size:130%}
+
 }
 @media (max-width:767px){
 body .blogaddalist-round{margin-bottom:40px}
@@ -363,6 +625,34 @@ body .headerusd-dropdown .dropdown-menu{right:-45px;width:300px}
 body .headerusd-dropdown .dropdown-menu::after{right:48px}
 body .enginebanner_sctn.full-w.smallbannercheap .minh.align-items-center.row{min-height:auto;padding-top:90px;padding-bottom:60px}
 body .about-font-18 h2{font-size:1.6rem}
+body .popular-destination.blogaddalist.details .blog-inner-box2 h1{font-size:140%}
+body .popular-destination.blogaddalist.details .blog-inner-box2 h2{font-size:130%}
+body .popular-destination.blogaddalist.details .blog-inner-box2 h3{font-size:120%}
+.recent-destinations {
+    padding: 25px 5px 10px;
+}
+.recent-destinations .title-dlist {
+    padding: 0 10px;
+}
+.recent-destinations .card {
+    padding: 0;
+}
+.recent-destinations .title-dlist h3 {
+    font-size: 18px;
+}
+.recent-destinations h5.card-title.mb-0 {
+    font-size: 16px;
+}
+ 
+.recent-destinations .badge-secondary {
+    font-size: 11px;
+    padding: 5px 10px;
+    left: 9px;
+}
+.recent-destinations .card-body{
+    padding-top: 17px;
+    padding-bottom: 16px;
+}
 }
 @media (max-width:575px){
 body ul.callmail li{display:block!important;margin-left:0!important;margin-right:0!important}
@@ -398,7 +688,7 @@ body .breadcrumb_area h1,
 body .breadcrumb_area h3{font-size:30px}
 body .about-mailtoleft-box .bi.bi-envelope-open-fill{height:50px;width:50px;min-width:50px;line-height:50px;font-size:20px}
 body .about-mailtoleft-box p a{font-size:17px}
-body .blogaddalist-inner{padding-left:15px;padding-right:15px}
+
 body .headerusd-dropdown .dropdown-menu hr.my-3.dropdown-divider{margin-top:10px!important;margin-bottom:10px!important}
 body .curr-block{padding:10px 15px}
 body .headerusd-dropdown{margin-right:3px}
