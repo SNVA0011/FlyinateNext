@@ -532,6 +532,13 @@ body .popular-destination.blogaddalist .row.blogscroll-y {
 .popular-destination.blogaddalist.details .blogaddalist-inner {
     border: none;
 }
+body .footer-area .subscribe-form .btn {
+    background:#ffc60b;background:-moz-linear-gradient(top,#ffc60b 0,#f0b800 100%);background:-webkit-linear-gradient(top,#ffc60b 0,#f0b800 100%);background:linear-gradient(to bottom,#ffc60b 0,#f0b800 100%);
+    color: #303030;
+}
+body .footer-area .subscribe-form .btn:hover{
+    color: #fff;
+}
 
 /*--------- responsive ---------*/
 @media (min-width:576px){
