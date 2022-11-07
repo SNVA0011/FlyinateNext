@@ -1,20 +1,28 @@
 import React, { useEffect } from 'react';
-import Container from 'react-bootstrap/Container'; 
+import Container from 'react-bootstrap/Container';
 import Head from 'next/head';
 import Link from "next/link";
 import BreadHero from '../../../component/BreadHero';
 import Header from '../../../component/es/Navbar';
 import Footer from '../../../component/es/Footer';
 import RecentBlogs from "../../../component/RecentBlogs"
-
-
+import { useRouter } from 'next/router';
 
 
 export default function BlogDetails(props) {
+  const router = useRouter()
 
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
+
+  if (router.isFallback) {
+    return <div className='py-5 text-center float-left w-100'>
+      <div class="spinner-border text-secondary" role="status">
+        <span class="d-none">Loading...</span>
+      </div>
+    </div>
+  }
 
   return (
     <>
@@ -35,7 +43,7 @@ export default function BlogDetails(props) {
 
         <div className='popular-destination blogaddalist details full-w'>
           <Container>
-          <div className='row'>
+            <div className='row'>
               <div className="col-xl-8">
                 {
                   props.singleblog?.length > 0 ?
@@ -43,7 +51,7 @@ export default function BlogDetails(props) {
                       {props.singleblog.map((items, i) => (
                         <div className='blogaddalist-round'>
                           <div className='blogaddalist-inner'>
-                            <div className="blog-inner-box2" dangerouslySetInnerHTML={{ __html: items.content }} />  
+                            <div className="blog-inner-box2" dangerouslySetInnerHTML={{ __html: items.content }} />
                           </div>
                         </div>
                       ))}
@@ -53,8 +61,8 @@ export default function BlogDetails(props) {
               </div>
 
               <div className="mt-5 mt-xl-0 col-xl-4">
-                <RecentBlogs title="Artículos Recientes" data={ props.recentposts.slice(0, 5) } 
-                  language="es"/>
+                <RecentBlogs title="Artículos Recientes" data={props.recentposts.slice(0, 5)}
+                  language="es" />
               </div>
             </div>
           </Container>
@@ -70,7 +78,52 @@ export default function BlogDetails(props) {
 // const param = useRouter();
 // const url = param.query.blogDetail;
 
-export async function getServerSideProps(context) {
+
+
+// This function gets called at build time
+export async function getStaticPaths() {
+  // Get the paths we want to pre-render based on posts
+  var myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+  var raw = JSON.stringify({
+    "id": "",
+    "title": "",
+    "titleUrl": "",
+    "content": "",
+    "description": "",
+    "keywords": "",
+    "posttime": "",
+    "status": "",
+    "heading": "",
+    "categoryName": "",
+    "siteId": "139",
+    "pageType": "Articulo",
+    "extraTag": "",
+    "tfnHeader": "",
+    "tfnFooter1": "",
+    "tfnFooter2": "",
+    "tfnFooter3": "",
+    "tfnPopup": ""
+  });
+
+  var requestOptions = {
+    method: 'POST',
+    headers: myHeaders,
+    body: raw,
+    redirect: 'follow'
+  };
+  const res = await fetch("https://cms.travomint.com/news-article/showNAdata?authcode=Trav3103s987876", requestOptions)
+  const jsondata = await res.json()
+  const data = jsondata.response
+  const paths = data.map(post => ({ params: { articulosDetail: post.titleUrl } }));
+
+  // We'll pre-render only these paths at build time.
+  // { fallback: false } means other routes should 404.
+  return { paths, fallback: true }
+
+}
+
+export async function getStaticProps(context) {
   const { params } = context
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
@@ -138,10 +191,10 @@ export async function getServerSideProps(context) {
   const res = await fetch("https://cms.travomint.com/news-article/naDataById?authcode=Trav3103s987876", requestOptions)
   const json = await res.json()
   return {
-    props: { 
+    props: {
       singleblog: json.response,
-      recentposts: rcpjson.response,
-     }
+      recentposts: rcpjson.response
+    }
   }
 
 

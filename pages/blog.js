@@ -21,6 +21,7 @@ export default function Blog(props) {
     window.scrollTo(0, 0)
   }, [])
 
+  console.log("props.allblog",props.allblog)
 
   return (
     <>
@@ -90,7 +91,7 @@ export default function Blog(props) {
 }
 
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
   var raw = JSON.stringify({

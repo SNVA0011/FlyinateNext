@@ -7,18 +7,26 @@ import Header from '../../../component/es/Navbar';
 import Footer from '../../../component/es/Footer';
 import Head from 'next/head'
 
+
 export default function Airline(props) {
+  const router = useRouter()
 
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
 
-
+  if (router.isFallback) {
+    return <div className='py-5 text-center float-left w-100'>
+      <div class="spinner-border text-secondary" role="status">
+        <span class="d-none">Loading...</span>
+      </div>
+    </div>
+  }
 
   return (
     <>
       <Head>
-        
+
         <title>{props.flight[0].metaTitle}</title>
         <meta name="description" content={props.flight[0].metaDesc} />
         <meta name="keywords" content={props.flight[0].metaKeyword} />
@@ -32,8 +40,8 @@ export default function Airline(props) {
       <div className='blogadda'>
 
         <BreadHero title={props.flight[0].metaTitle} linkhtml={<><ul className='breadcrumb text-white'>
-           <li className="breadcrumb-item" > <Link href="/es/" locale="es">Casa</Link> </li> 
-           <li className='breadcrumb-item active' aria-current="page"> <Link href="/es/vuelos" locale="es"> vuelos </Link></li> <li className='breadcrumb-item active' aria-current="page">{props.flight[0].metaTitle}</li> </ul></>} />
+          <li className="breadcrumb-item" > <Link href="/es/" locale="es">Casa</Link> </li>
+          <li className='breadcrumb-item active' aria-current="page"> <Link href="/es/vuelos" locale="es"> vuelos </Link></li> <li className='breadcrumb-item active' aria-current="page">{props.flight[0].metaTitle}</li> </ul></>} />
 
         <div className='popular-destination blogaddalist details full-w'>
           <Container>
@@ -63,8 +71,53 @@ export default function Airline(props) {
 
 
 
+// This function gets called at build time
+export async function getStaticPaths() {
+  // Get the paths we want to pre-render based on posts
+  var myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
 
-export async function getServerSideProps(context) {
+  var raw = JSON.stringify({
+    "contentId": "",
+    "pageType": "",
+    "pageValue": "",
+    "pageName": "",
+    "metaTitle": "",
+    "metaKeyword": "",
+    "metaDesc": "",
+    "otherMeta": "",
+    "dealCode": "",
+    "dealTitle": "",
+    "contentTitle": "",
+    "contentData": "",
+    "contentImage": "",
+    "siteId": "139",
+    "status": "",
+    "count": "",
+    "url": "",
+    "modifyBy": "",
+    "modifyDate": ""
+  });
+
+  var requestOptions = {
+    method: 'POST',
+    headers: myHeaders,
+    body: raw,
+    redirect: 'follow'
+  };
+
+  const res = await fetch("https://cms.travomint.com/travoles-content/site-map?authcode=Trav3103s987876", requestOptions)
+  const jsondata = await res.json()
+  const data = jsondata.response
+  const paths = data.map(post => ({ params: { vuelosDetail: post.url + "-" + post.pageValue } }));
+
+  // We'll pre-render only these paths at build time.
+  // { fallback: false } means other routes should 404.
+  return { paths, fallback: true }
+
+}
+
+export async function getStaticProps(context) {
 
   const { params } = context;
   var cityname = params.vuelosDetail.split("-")[2]
