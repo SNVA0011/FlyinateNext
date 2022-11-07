@@ -35,8 +35,7 @@ export default function BlogDetails(props) {
             <BreadHero title="Blog Details" linkhtml={<><ul className='breadcrumb text-white'> <li className="breadcrumb-item" > <Link href="/">Home</Link> </li> <li className='breadcrumb-item active' aria-current="page"> <Link href="/blog"> Blog </Link></li> <li className='breadcrumb-item active' aria-current="page">{props.singleblog[0].title}</li> </ul></>} />
 
             <div className='popular-destination blogaddalist details full-w'>
-              <Container>
-                {props.singleblog.length}
+              <Container> 
                 <div className='row'>
                   <div className="col-xl-8">
                     {
