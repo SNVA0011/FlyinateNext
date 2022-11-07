@@ -11,15 +11,13 @@ import Footer from '../../component/es/Footer'
 // import loading from "../Atoms/Image/load.gif"
 import Head from 'next/head'
 
-
-
 export default function articulos(props) {
-
+ 
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
 
-
+ 
   return (
     <>
       <Head>
@@ -128,6 +126,7 @@ export async function getStaticProps() {
   const res = await fetch("https://cms.travomint.com/news-article/showNAdata?authcode=Trav3103s987876", requestOptions)
   const json = await res.json()
   return {
-    props: { allblog: json.response }
+    props: { allblog: json.response },  
+    revalidate: 10, //  In seconds - re-generate the page At most once every 10 seconds
   }
 }

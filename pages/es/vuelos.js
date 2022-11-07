@@ -10,9 +10,11 @@ import Link from "next/link"
 import Image from "next/image"
 import Header from '../../component/es/Navbar';
 import Footer from '../../component/es/Footer';
-import Head from 'next/head'
+import Head from 'next/head' 
 
 export default function vuelos(props, pageValue, pageType) {
+ 
+
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
@@ -23,11 +25,10 @@ export default function vuelos(props, pageValue, pageType) {
       payload: data
     })
   }
-
-
+ 
   return (
     <div>
-      <Head> 
+      <Head>
         <title>Vuelos - Flyinate</title>
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -37,8 +38,8 @@ export default function vuelos(props, pageValue, pageType) {
       <div>
         <div className='blogadda'>
 
-          <BreadHero title="vuelos" linkhtml={<><ul className='breadcrumb text-white'> 
-          <li className="breadcrumb-item" > <Link href="/es/" locale="es">Casa</Link> </li> <li className='breadcrumb-item active' aria-current="page">vuelos</li> </ul></>} />
+          <BreadHero title="vuelos" linkhtml={<><ul className='breadcrumb text-white'>
+            <li className="breadcrumb-item" > <Link href="/es/" locale="es">Casa</Link> </li> <li className='breadcrumb-item active' aria-current="page">vuelos</li> </ul></>} />
 
           <div className='popular-destination blogaddalist full-w'>
             <Container>
@@ -123,6 +124,7 @@ export async function getStaticProps() {
   const res = await fetch("https://cms.travomint.com/travoles-content/site-map?authcode=Trav3103s987876", requestOptions)
   const json = await res.json()
   return {
-    props: { allflights: json.response }
+    props: { allflights: json.response },
+    revalidate: 10, //  In seconds - re-generate the page At most once every 10 seconds
   }
 }

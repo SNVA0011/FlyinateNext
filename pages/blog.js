@@ -5,23 +5,18 @@ import Col from 'react-bootstrap/Col'
 import Link from "next/link"
 import Footer from '../component/Footer';
 import Header from "../component/Navbar";
-import Head from 'next/head'
-
-
+import Head from 'next/head' 
 // import ScrollAnimation from 'react-animate-on-scroll';
 import BreadHero from '../component/BreadHero'
-// import loading from "../Atoms/Image/load.gif"
-
-
-
+// import loading from "../Atoms/Image/load.gif" 
 
 export default function Blog(props) {
-
+  
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
 
-
+   
   return (
     <>
       <Head>
@@ -124,6 +119,7 @@ export async function getStaticProps() {
   const res = await fetch("https://cms.travomint.com/travoles-content/showblogdata?authcode=Trav3103s987876", requestOptions)
   const json = await res.json()
   return {
-    props: { allblog: json.response }
+    props: { allblog: json.response },
+    revalidate: 10, //  In seconds - re-generate the page At most once every 10 seconds
   }
 }

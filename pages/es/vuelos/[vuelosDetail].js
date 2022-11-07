@@ -6,13 +6,30 @@ import Header from '../../../component/es/Navbar';
 import Footer from '../../../component/es/Footer';
 import Head from 'next/head'
 import NotFound from '../NotFound';
+import { useRouter } from 'next/router'
+
 
 
 export default function Airline(props) {
+    const router = useRouter()
+
 
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
+
+  
+  if (router.isFallback) {
+    return <>
+      <Header /> 
+      <div className='text-center about-uspage full-w pyblock-80'>
+        <div class="spinner-border text-secondary" role="status">
+         </div>
+      </div> 
+      <Footer />
+    </>
+  }
+
 
   return (
     <>
@@ -105,7 +122,7 @@ export async function getStaticPaths() {
 
   // We'll pre-render only these paths at build time.
   // { fallback: false } means other routes should 404.
-  return { paths, fallback: false }
+  return { paths, fallback: true }
 
 }
 
@@ -148,6 +165,7 @@ export async function getStaticProps(context) {
   const res = await fetch("http://cms.travomint.com/travoles-content/showcontent?authcode=Trav3103s987876", requestOptions)
   const json = await res.json()
   return {
-    props: { flight: json.response }
+    props: { flight: json.response },
+    revalidate: 10, //  In seconds - re-generate the page At most once every 10 seconds
   }
 }

@@ -9,9 +9,11 @@ import Link from "next/link"
 // import loading from "../Atoms/Image/load.gif"
 // import ScrollAnimation from 'react-animate-on-scroll';
 import Image from "next/image"
-import Head from 'next/head'
+import Head from 'next/head' 
 
 export default function Flights(props, pageValue, pageType) {
+ 
+
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
@@ -23,6 +25,7 @@ export default function Flights(props, pageValue, pageType) {
     })
   }
 
+  
 
   return (
     <div>
@@ -123,6 +126,7 @@ export async function getStaticProps() {
   const res = await fetch("https://cms.travomint.com/travoles-content/site-map?authcode=Trav3103s987876", requestOptions)
   const json = await res.json()
   return {
-    props: { allflights: json.response }
+    props: { allflights: json.response },
+    revalidate: 10, //  In seconds - re-generate the page At most once every 10 seconds
   }
 }

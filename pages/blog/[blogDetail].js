@@ -7,14 +7,31 @@ import RecentBlogs from "../../component/RecentBlogs"
 import BreadHero from '../../component/BreadHero';
 import Head from 'next/head'
 import NotFound from '../NotFound';
+import { useRouter } from 'next/router'
 
 
 export default function BlogDetails(props) {
+  const router = useRouter()
+
 
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
- 
+
+
+  if (router.isFallback) {
+    return <>
+      <Navbar /> 
+      
+      <div className='text-center about-uspage full-w pyblock-80'>
+        <div class="spinner-border text-secondary" role="status">
+         </div>
+      </div> 
+      
+      <Footer />
+    </>
+  }
+
 
   return (
     <>
@@ -35,7 +52,7 @@ export default function BlogDetails(props) {
             <BreadHero title="Blog Details" linkhtml={<><ul className='breadcrumb text-white'> <li className="breadcrumb-item" > <Link href="/">Home</Link> </li> <li className='breadcrumb-item active' aria-current="page"> <Link href="/blog"> Blog </Link></li> <li className='breadcrumb-item active' aria-current="page">{props.singleblog[0].title}</li> </ul></>} />
 
             <div className='popular-destination blogaddalist details full-w'>
-              <Container> 
+              <Container>
                 <div className='row'>
                   <div className="col-xl-8">
                     {
@@ -116,7 +133,7 @@ export async function getStaticPaths() {
 
   // We'll pre-render only these paths at build time.
   // { fallback: false } means other routes should 404.
-  return { paths, fallback: false }
+  return { paths, fallback: true }
 
 }
 
@@ -195,7 +212,8 @@ export async function getStaticProps(context) {
     props: {
       singleblog: json.response,
       recentposts: rcpjson.response
-    }
+    },
+    revalidate: 10, //  In seconds - re-generate the page At most once every 10 seconds
   }
 
 
