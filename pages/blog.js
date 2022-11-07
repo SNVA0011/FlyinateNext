@@ -21,18 +21,16 @@ export default function Blog(props) {
     window.scrollTo(0, 0)
   }, [])
 
-  console.log("props.allblog",props.allblog)
 
   return (
     <>
-    <Head>
-    <title>	Blog - Flyinate</title>
-    
-            <meta name="description" content="" />
-            <meta name="keywords" content="" />
+      <Head>
+        <title>	Blog - Flyinate</title> 
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
         <link rel="canonical" href="https://www.flyinate.com/blog" />
         <link rel="alternate" href="https://www.flyinate.com/blog" />
-    </Head>
+      </Head>
       <Header />
 
       <div className='blogadda'>

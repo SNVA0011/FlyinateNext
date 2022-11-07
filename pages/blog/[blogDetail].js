@@ -6,66 +6,66 @@ import Navbar from "../../component/Navbar"
 import RecentBlogs from "../../component/RecentBlogs"
 import BreadHero from '../../component/BreadHero';
 import Head from 'next/head'
-import { useRouter } from 'next/router'
+import NotFound from '../NotFound';
 
 
 export default function BlogDetails(props) {
-  const router = useRouter()
 
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
-
-  if (router.isFallback) {
-    return <div className='py-5 text-center float-left w-100'>
-      <div class="spinner-border text-secondary" role="status">
-        <span class="d-none">Loading...</span>
-      </div>
-    </div>
-  }
+ 
 
   return (
     <>
-      <Head>
-        <title>{props.singleblog[0].title}</title>
-
-        <meta name="description" content={props.singleblog[0].description} />
-        <meta name="keywords" content={props.singleblog[0].keywords} />
-        <link rel="canonical" href={`https://www.flyinate.com/blog/${props.singleblog[0].titleUrl}`} />
-        <link rel="alternate" href={`https://www.flyinate.com/blog/${props.singleblog[0].titleUrl}`} />
-      </Head>
       <Navbar />
 
-      <div className='blogadda'>
-        <BreadHero title="Blog Details" linkhtml={<><ul className='breadcrumb text-white'> <li className="breadcrumb-item" > <Link href="/">Home</Link> </li> <li className='breadcrumb-item active' aria-current="page"> <Link href="/blog"> Blog </Link></li> <li className='breadcrumb-item active' aria-current="page">{props.singleblog[0].title}</li> </ul></>} />
 
+      {props.singleblog.length > 0 ?
+        <>
+          <Head>
+            <title>{props.singleblog[0].title}</title>
+            <meta name="description" content={props.singleblog[0].description} />
+            <meta name="keywords" content={props.singleblog[0].keywords} />
+            <link rel="canonical" href={`https://www.flyinate.com/blog/${props.singleblog[0].titleUrl}`} />
+            <link rel="alternate" href={`https://www.flyinate.com/blog/${props.singleblog[0].titleUrl}`} />
+          </Head>
 
-        <div className='popular-destination blogaddalist details full-w'>
-          <Container>
-            <div className='row'>
-              <div className="col-xl-8">
-                {
-                  props.singleblog?.length > 0 ?
-                    <>
-                      {props.singleblog.map((items, i) => (
-                        <div className='blogaddalist-round'>
-                          <div className='blogaddalist-inner'>
-                            <div className="blog-inner-box2" dangerouslySetInnerHTML={{ __html: items.content }} />
-                          </div>
-                        </div>
-                      ))}
-                    </>
-                    : 'No items found !'
-                }
-              </div>
+          <div className='blogadda'>
+            <BreadHero title="Blog Details" linkhtml={<><ul className='breadcrumb text-white'> <li className="breadcrumb-item" > <Link href="/">Home</Link> </li> <li className='breadcrumb-item active' aria-current="page"> <Link href="/blog"> Blog </Link></li> <li className='breadcrumb-item active' aria-current="page">{props.singleblog[0].title}</li> </ul></>} />
 
-              <div className="mt-5 mt-xl-0 col-xl-4">
-                <RecentBlogs title="Recent Posts" data={props.recentposts.slice(0, 5)} />
-              </div>
+            <div className='popular-destination blogaddalist details full-w'>
+              <Container>
+                {props.singleblog.length}
+                <div className='row'>
+                  <div className="col-xl-8">
+                    {
+                      props.singleblog?.length > 0 ?
+                        <>
+                          {props.singleblog.map((items, i) => (
+                            <div className='blogaddalist-round'>
+                              <div className='blogaddalist-inner'>
+                                <div className="blog-inner-box2" dangerouslySetInnerHTML={{ __html: items.content }} />
+                              </div>
+                            </div>
+                          ))}
+                        </>
+                        : 'No items found !'
+                    }
+                  </div>
+                  <div className="mt-5 mt-xl-0 col-xl-4">
+                    <RecentBlogs title="Recent Posts" data={props.recentposts.slice(0, 5)} />
+                  </div>
+                </div>
+              </Container>
             </div>
-          </Container>
-        </div>
-      </div>
+          </div>
+        </>
+        :
+        <NotFound />
+      }
+
+
       <Footer />
     </>
   )
@@ -117,7 +117,7 @@ export async function getStaticPaths() {
 
   // We'll pre-render only these paths at build time.
   // { fallback: false } means other routes should 404.
-  return { paths, fallback: true }
+  return { paths, fallback: false }
 
 }
 

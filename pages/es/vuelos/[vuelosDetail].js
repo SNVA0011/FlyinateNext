@@ -1,67 +1,59 @@
 import React, { useEffect, useState } from 'react'
 import Container from 'react-bootstrap/Container';
 import Link from "next/link"
-import { useRouter } from 'next/router';
 import BreadHero from '../../../component/BreadHero';
 import Header from '../../../component/es/Navbar';
 import Footer from '../../../component/es/Footer';
 import Head from 'next/head'
+import NotFound from '../NotFound';
 
 
 export default function Airline(props) {
-  const router = useRouter()
 
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
 
-  if (router.isFallback) {
-    return <div className='py-5 text-center float-left w-100'>
-      <div class="spinner-border text-secondary" role="status">
-        <span class="d-none">Loading...</span>
-      </div>
-    </div>
-  }
-
   return (
     <>
-      <Head>
-
-        <title>{props.flight[0].metaTitle}</title>
-        <meta name="description" content={props.flight[0].metaDesc} />
-        <meta name="keywords" content={props.flight[0].metaKeyword} />
-        <link rel="canonical" href={`https://www.flyinate.com/es/vuelos/${props.flight[0].url}-${props.flight[0].pageValue}`} />
-        <link rel="alternate" href={`https://www.flyinate.com/es/vuelos/${props.flight[0].url}-${props.flight[0].pageValue}`} />
-      </Head>
-
       <Header />
-      {console.log("hjhj", props.flight)}
+      {props.flight.length > 0 ?
+        <>
+          <Head>
+            <title>{props.flight[0].metaTitle}</title>
+            <meta name="description" content={props.flight[0].metaDesc} />
+            <meta name="keywords" content={props.flight[0].metaKeyword} />
+            <link rel="canonical" href={`https://www.flyinate.com/es/vuelos/${props.flight[0].url}-${props.flight[0].pageValue}`} />
+            <link rel="alternate" href={`https://www.flyinate.com/es/vuelos/${props.flight[0].url}-${props.flight[0].pageValue}`} />
+          </Head>
 
-      <div className='blogadda'>
+          <div className='blogadda'>
+            <BreadHero title={props.flight[0].metaTitle} linkhtml={<><ul className='breadcrumb text-white'>
+              <li className="breadcrumb-item" > <Link href="/es/" locale="es">Casa</Link> </li>
+              <li className='breadcrumb-item active' aria-current="page"> <Link href="/es/vuelos" locale="es"> vuelos </Link></li> <li className='breadcrumb-item active' aria-current="page">{props.flight[0].metaTitle}</li> </ul></>} />
 
-        <BreadHero title={props.flight[0].metaTitle} linkhtml={<><ul className='breadcrumb text-white'>
-          <li className="breadcrumb-item" > <Link href="/es/" locale="es">Casa</Link> </li>
-          <li className='breadcrumb-item active' aria-current="page"> <Link href="/es/vuelos" locale="es"> vuelos </Link></li> <li className='breadcrumb-item active' aria-current="page">{props.flight[0].metaTitle}</li> </ul></>} />
+            <div className='popular-destination blogaddalist details full-w'>
+              <Container>
+                {props.flight.map((items, i) => (
+                  <div className='blogaddalist-round'>
+                    <div className='blogaddalist-inner'>
 
-        <div className='popular-destination blogaddalist details full-w'>
-          <Container>
-            {props.flight.map((items, i) => (
-              <div className='blogaddalist-round'>
-                <div className='blogaddalist-inner'>
+                      <div className="blog-inner-box2">
+                        <p dangerouslySetInnerHTML={{ __html: items.contentData }} />
+                      </div>
 
-                  <div className="blog-inner-box2">
-                    <p dangerouslySetInnerHTML={{ __html: items.contentData }} />
+                    </div>
                   </div>
+                ))}
+              </Container>
+            </div>
+          </div>
 
-                </div>
-              </div>
-            ))}
+        </>
+        :
+        <NotFound />
+      }
 
-
-
-          </Container>
-        </div>
-      </div>
 
 
       <Footer />
@@ -113,7 +105,7 @@ export async function getStaticPaths() {
 
   // We'll pre-render only these paths at build time.
   // { fallback: false } means other routes should 404.
-  return { paths, fallback: true }
+  return { paths, fallback: false }
 
 }
 

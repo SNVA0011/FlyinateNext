@@ -1,65 +1,59 @@
 import React, { useEffect, useState } from 'react'
 import Container from 'react-bootstrap/Container';
 import Link from "next/link"
-import { useRouter } from 'next/router';
 import Footer from '../../component/Footer';
 import Navbar from "../../component/Navbar"
 import BreadHero from '../../component/BreadHero';
 import Head from 'next/head'
+import NotFound from '../NotFound';
 
 export default function Airline(props) {
-  const router = useRouter()
 
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
-
-  if (router.isFallback) {
-    return <div className='py-5 text-center float-left w-100'>
-      <div class="spinner-border text-secondary" role="status">
-        <span class="d-none">Loading...</span>
-      </div>
-    </div>
-  }
+ 
 
   return (
     <>
-      <Head>
-
-        <title>{props.flight[0].metaTitle}</title>
-        <meta name="description" content={props.flight[0].metaDesc} />
-        <meta name="keywords" content={props.flight[0].metaKeyword} />
-        <link rel="canonical" href={`https://www.flyinate.com/flights/${props.flight[0].url}-${props.flight[0].pageValue}`} />
-        <link rel="alternate" href={`https://www.flyinate.com/flights/${props.flight[0].url}-${props.flight[0].pageValue}`} />
-      </Head>
       <Navbar />
-      {console.log("hjhj", props.flight)}
 
-      <div className='blogadda'>
 
-        <BreadHero title="Flights" linkhtml={<><ul className='breadcrumb text-white'> <li className="breadcrumb-item" > <Link href="/">Home</Link> </li> <li className='breadcrumb-item active' aria-current="page"> <Link href="/flights"> Flights </Link></li> <li className='breadcrumb-item active' aria-current="page">{props.flight[0].metaTitle}</li> </ul></>} />
+      {props.flight.length > 0 ?
+        <>
+          <Head>
+            <title>{props.flight[0].metaTitle}</title>
+            <meta name="description" content={props.flight[0].metaDesc} />
+            <meta name="keywords" content={props.flight[0].metaKeyword} />
+            <link rel="canonical" href={`https://www.flyinate.com/flights/${props.flight[0].url}-${props.flight[0].pageValue}`} />
+            <link rel="alternate" href={`https://www.flyinate.com/flights/${props.flight[0].url}-${props.flight[0].pageValue}`} />
+          </Head>
+          <div className='blogadda'>
 
-        <div className='popular-destination blogaddalist details full-w'>
+            <BreadHero title="Flights" linkhtml={<><ul className='breadcrumb text-white'> <li className="breadcrumb-item" > <Link href="/">Home</Link> </li> <li className='breadcrumb-item active' aria-current="page"> <Link href="/flights"> Flights </Link></li> <li className='breadcrumb-item active' aria-current="page">{props.flight[0].metaTitle}</li> </ul></>} />
 
-          <Container>
-            {props.flight.map((items, i) => (
-              <div className='blogaddalist-round'>
-                <div className='blogaddalist-inner'>
+            <div className='popular-destination blogaddalist details full-w'>
 
-                  <div className="blog-inner-box2">
-                    <p dangerouslySetInnerHTML={{ __html: items.contentData }} />
+              <Container>
+                {props.flight.map((items, i) => (
+                  <div className='blogaddalist-round'>
+                    <div className='blogaddalist-inner'>
+
+                      <div className="blog-inner-box2">
+                        <p dangerouslySetInnerHTML={{ __html: items.contentData }} />
+                      </div>
+
+                    </div>
                   </div>
+                ))}
 
-                </div>
-              </div>
-            ))}
-
-
-
-          </Container>
-        </div>
-      </div>
-
+              </Container>
+            </div>
+          </div>
+        </>
+        :
+        <NotFound />
+      }
 
       <Footer />
     </>
@@ -110,7 +104,7 @@ export async function getStaticPaths() {
 
   // We'll pre-render only these paths at build time.
   // { fallback: false } means other routes should 404.
-  return { paths, fallback: true }
+  return { paths, fallback: false }
 
 }
 
