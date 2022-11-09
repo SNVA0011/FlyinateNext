@@ -117,9 +117,9 @@ export async function getStaticPaths() {
   const res = await fetch("https://cms.travomint.com/travoles-content/site-map?authcode=Trav3103s987876", requestOptions)
   const jsondata = await res.json()
   const data = jsondata.response
-  
+
   // dynemic paths 
-  const paths = [];
+  let paths = [];
   data.forEach((post) => {
     paths.push({
       params: { Airline: post.url + "-" + post.pageValue }

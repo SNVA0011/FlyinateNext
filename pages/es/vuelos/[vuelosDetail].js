@@ -120,7 +120,7 @@ export async function getStaticPaths() {
   const data = jsondata.response
 
   // dynemic paths 
-  const paths = [];
+  let paths = [];
   data.forEach((post) => {
     paths.push({
       params: { vuelosDetail: post.url + "-" + post.pageValue }
