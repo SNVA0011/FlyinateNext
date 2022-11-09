@@ -21,13 +21,13 @@ export default function BlogDetails(props) {
 
   if (router.isFallback) {
     return <>
-      <Navbar /> 
-      
+      <Navbar />
+
       <div className='text-center about-uspage full-w pyblock-80'>
         <div class="spinner-border text-secondary" role="status">
-         </div>
-      </div> 
-      
+        </div>
+      </div>
+
       <Footer />
     </>
   }
@@ -129,11 +129,21 @@ export async function getStaticPaths() {
   const res = await fetch("https://cms.travomint.com/travoles-content/showblogdata?authcode=Trav3103s987876", requestOptions)
   const jsondata = await res.json()
   const data = jsondata.response
-  const paths = data.map(post => ({ params: { blogDetail: post.titleUrl } }));
+
+  // dynemic paths 
+  const paths = [];
+  data.forEach((post) => {
+    paths.push({
+      params: { blogDetail: post.titleUrl }
+    })
+  })
 
   // We'll pre-render only these paths at build time.
   // { fallback: false } means other routes should 404.
-  return { paths, fallback: true }
+  return {
+    paths,
+    fallback: true
+  }
 
 }
 

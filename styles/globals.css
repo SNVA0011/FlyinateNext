@@ -21,15 +21,21 @@ body img{max-width:100%;height:auto}
 body .full-w{width:100%;float:left}
 body .new_header_area{box-shadow:0 5px 10px 0 rgb(0 0 0 / 5%);padding:0;text-shadow:0 0 15px transparent}
 body .navtop_callto{background:#252431;background:-moz-linear-gradient(top,#252431 0,#0f0e14 100%);background:-webkit-linear-gradient(top,#252431 0,#0f0e14 100%);background:linear-gradient(to bottom,#252431 0,#0f0e14 100%);padding:10px 0}
-body .new_header_area .navtop_2{padding-top:18px;padding-bottom:18px;padding-left:15px;padding-right:15px}
+body .new_header_area .navtop_2{ padding-left:15px;padding-right:15px}
 body .new_header_area_empty{min-height:126.67px}
-body .new_header_area .navbar-nav a{margin-left:7px;text-decoration:none;font-size:16px;font-weight:500;color:#757783;position:relative;padding:5px 20px}
+body .new_header_area .navbar-nav a{margin-left:7px;text-decoration:none;font-size:16px;font-weight:500;color:#757783;position:relative;padding:27.75px 20px}
 body .new_header_area .navbar-nav a:hover{color:#313041}
 body .new_header_area .navbar-nav a.active{color:#000;text-shadow:-1px 1px 0 rgb(255 223 118),0 0 .65px #333,0 0 .65px #333}
 body .new_header_area .social-urls.text-right{position:relative;top:2px}
 body .new_header_area li{vertical-align:middle}
 body .navtop_callto .callmail a{margin:0}
-body .new_header_area .navbar-nav a:after{content:"";width:0;height:92px;position:absolute;background-repeat:no-repeat;left:0;z-index:-1;background-position:center;top:-35px;background-size:cover;background:#ffc60b;background:-moz-linear-gradient(top,#ffc60b 0,#f0b800 100%);background:-webkit-linear-gradient(top,#ffc60b 0,#f0b800 100%);background:linear-gradient(to bottom,#ffc60b 0,#f0b800 100%);opacity:0;transform:skewX(-15deg);-webkit-transform:skewX(-15deg);-ms-transform:skewX(-15deg);-moz-transform:skewX(-15deg);-o-transform:skewX(-15deg);transition:all .2s cubic-bezier(.5, 0, 0, 1.25);-webkit-transition:all .2s cubic-bezier(.5, 0, 0, 1.25);-ms-transition:all .2s cubic-bezier(.5, 0, 0, 1.25);-moz-transition:all .2s cubic-bezier(.5, 0, 0, 1.25);-o-transition:all .2s cubic-bezier(.5, 0, 0, 1.25);box-shadow:0 -7px 26px rgb(0 0 0 / 15%)}
+body .new_header_area .navbar-nav a:after{content:"";width:0;       height: 80%;
+    position: absolute;
+    background-repeat: no-repeat;
+    left: 0;
+    z-index: -1;
+    background-position: center;
+    top: 10%; border-radius: 6px;background-size:cover;background:#ffc60b;background:-moz-linear-gradient(top,#ffc60b 0,#f0b800 100%);background:-webkit-linear-gradient(top,#ffc60b 0,#f0b800 100%);background:linear-gradient(to bottom,#ffc60b 0,#f0b800 100%);opacity:0;transform:skewX(-15deg);-webkit-transform:skewX(-15deg);-ms-transform:skewX(-15deg);-moz-transform:skewX(-15deg);-o-transform:skewX(-15deg);transition:all .2s cubic-bezier(.5, 0, 0, 1.25);-webkit-transition:all .2s cubic-bezier(.5, 0, 0, 1.25);-ms-transition:all .2s cubic-bezier(.5, 0, 0, 1.25);-moz-transition:all .2s cubic-bezier(.5, 0, 0, 1.25);-o-transition:all .2s cubic-bezier(.5, 0, 0, 1.25);box-shadow:0 -7px 26px rgb(0 0 0 / 15%)}
 body .new_header_area .navbar-nav a.active:after{opacity:1;width:100%}
 body .navtop_callto ul.social-urls a{color:#fff;font-size:18px;font-weight:500}
 body .navtop_callto .callmail a .bi,
@@ -597,18 +603,17 @@ body .about-font-18{margin-bottom:45px}
 body .popular-destination.blogaddalist .row{margin:0 -10px}
 body .popular-destination.blogaddalist .row .col-12{padding:0 10px}
 body .blogaddalist-round{margin-bottom:30px}
-body .new_header_area .navtop_2{padding-top:13px;padding-bottom:13px}
-body .headerusd-dropdown{margin-left:auto;margin-right:7px}
+ body .headerusd-dropdown{margin-left:auto;margin-right:7px}
 body .new_header_area_empty{min-height:69.67px}
 body .new_header_area .navbar-toggler{padding:0;border:none;box-shadow:none}
-body .new_header_area .navbar-nav a{margin-left:0;margin-right:0;padding-left:0;padding-right:0}
+body .new_header_area .navbar-nav a{margin-left:0;margin-right:0;padding:8px 0;}
 body .new_header_area .navbar-nav a:after{display:none}
 body .new_header_area .navbar-nav a.active{text-shadow:none;font-weight:600}
-body .navtop_callto{margin-top:10px;border-radius:10px;text-align:left;-webkit-box-shadow:-6px 6px 15px 0 rgb(0 0 0 / 15%);-moz-box-shadow:-6px 6px 15px 0 rgb(0 0 0 / 15%);box-shadow:-6px 6px 15px 0 rgb(0 0 0 / 15%)}
+body .navtop_callto{margin-top:11px;border-radius:10px;text-align:left;-webkit-box-shadow:-6px 6px 15px 0 rgb(0 0 0 / 15%);-moz-box-shadow:-6px 6px 15px 0 rgb(0 0 0 / 15%);box-shadow:-6px 6px 15px 0 rgb(0 0 0 / 15%)}
 body .new_header_area .social-urls.text-right{text-align:left!important;margin-top:10px;padding-top:10px;border-top:dashed 1px #484752;top:0}
-body .new_header_area li{vertical-align:middle;margin-left:25px!important}
+body .new_header_area li{vertical-align:middle;margin-left:48px!important}
 body .new_header_area li:first-child{margin-left:0!important}
-body .new_header_area a.border-first{border-top:solid 1px #e9e9e9;margin-top:9px;padding-top:10px}
+body .new_header_area a.border-first{border-top:solid 1px #e9e9e9;margin-top:9px;padding-top:16px}
 body .footer-area .inner_container_1.container .row{margin-bottom:-40px}
 body .footer-area .inner_container_1.container .col-12{margin-bottom:40px}
 body .breadcrumb_area.large-pgbn{min-height:500px}
@@ -620,6 +625,9 @@ body .popular-destination.blogaddalist.details .blog-inner-box2 h3{font-size:140
 }
 body .popular-destination.blogaddalist .row.blogscroll-y{
     margin-bottom: -34px;
+}
+body .new_header_area {
+    padding: 13.2px 0;
 }
 .recent-destinations .title-dlist {
 	padding: 0 5px
