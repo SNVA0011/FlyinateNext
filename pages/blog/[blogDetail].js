@@ -92,61 +92,6 @@ export default function BlogDetails(props) {
 // const param = useRouter();
 // const url = param.query.blogDetail;
 
-// This function gets called at build time
-export async function getStaticPaths() {
-  // Get the paths we want to pre-render based on posts
-  var myHeaders = new Headers();
-  myHeaders.append("Content-Type", "application/json");
-  var raw = JSON.stringify({
-    "id": "",
-    "title": "",
-    "titleUrl": "",
-    "content": "",
-    "description": "",
-    "keywords": "",
-    "posttime": "",
-    "status": "",
-    "heading": "",
-    "img_url": "",
-    "siteId": "139",
-    "categoryName": "",
-    "blogdes2": "",
-    "blogTagsName2": "",
-    "extarTag": "",
-    "tfnHeader": "",
-    "tfnFooter1": "",
-    "tfnFooter2": "",
-    "tfnFooter3": "",
-    "tfnPopup": ""
-  });
-
-  var requestOptions = {
-    method: 'POST',
-    headers: myHeaders,
-    body: raw,
-    redirect: 'follow'
-  };
-  const res = await fetch("https://cms.travomint.com/travoles-content/showblogdata?authcode=Trav3103s987876", requestOptions)
-  const jsondata = await res.json()
-  const data = jsondata.response
-
-  // dynemic paths 
-  let paths = [];
-  data.forEach((post) => {
-    paths.push({
-      params: { blogDetail: post.titleUrl }
-    })
-  })
-
-  // We'll pre-render only these paths at build time.
-  // { fallback: false } means other routes should 404.
-  return {
-    paths,
-    fallback: true
-  }
-
-}
-
 export async function getStaticProps(context) {
   const { params } = context
   var myHeaders = new Headers();
@@ -223,8 +168,62 @@ export async function getStaticProps(context) {
       singleblog: json.response,
       recentposts: rcpjson.response
     },
-    revalidate: 10, //  In seconds - re-generate the page At most once every 10 seconds
+		// revalidate: 10,
   }
+}
 
+
+// This function gets called at build time
+export const getStaticPaths = async() => {
+  // Get the paths we want to pre-render based on posts
+  var myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+  var raw = JSON.stringify({
+    "id": "",
+    "title": "",
+    "titleUrl": "",
+    "content": "",
+    "description": "",
+    "keywords": "",
+    "posttime": "",
+    "status": "",
+    "heading": "",
+    "img_url": "",
+    "siteId": "139",
+    "categoryName": "",
+    "blogdes2": "",
+    "blogTagsName2": "",
+    "extarTag": "",
+    "tfnHeader": "",
+    "tfnFooter1": "",
+    "tfnFooter2": "",
+    "tfnFooter3": "",
+    "tfnPopup": ""
+  });
+
+  var requestOptions = {
+    method: 'POST',
+    headers: myHeaders,
+    body: raw,
+    redirect: 'follow'
+  };
+  const res = await fetch("https://cms.travomint.com/travoles-content/showblogdata?authcode=Trav3103s987876", requestOptions)
+  const jsondata = await res.json()
+  const data = jsondata.response
+
+  // dynemic paths 
+  let paths = [];
+  data.forEach((post) => {
+    paths.push({
+      params: { blogDetail: post.titleUrl }
+    })
+  })
+
+  // We'll pre-render only these paths at build time.
+  // { fallback: false } means other routes should 404.
+  return {
+    paths,
+    fallback: true
+  }
 
 }

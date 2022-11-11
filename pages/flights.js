@@ -90,7 +90,7 @@ export default function Flights(props, pageValue, pageType) {
 
 
 
-export async function getStaticProps() {
+export async function getStaticProps(context) {
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
 
@@ -127,6 +127,6 @@ export async function getStaticProps() {
   const json = await res.json()
   return {
     props: { allflights: json.response },
-    revalidate: 10, //  In seconds - re-generate the page At most once every 10 seconds
+		// revalidate: 10,
   }
 }

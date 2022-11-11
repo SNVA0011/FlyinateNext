@@ -78,9 +78,53 @@ export default function Airline(props) {
 }
 
 
+export async function getStaticProps(context) {
+  const { params } = context;
+  var cityname = params.Airline.split("-")[2]
+  let actualURLParts = params.Airline.split("-")
+
+  var myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+  var raw = JSON.stringify({
+    "contentId": "",
+    "pageType": "Airline",
+    "pageValue": cityname,
+    "pageName": "",
+    "metaTitle": "",
+    "metaKeyword": "",
+    "metaDesc": "",
+    "otherMeta": "",
+    "dealCode": "",
+    "dealTitle": "",
+    "contentTitle": "",
+    "contentData": "",
+    "contentImage": "",
+    "siteId": "139",
+    "status": "",
+    "count": "",
+    "url": actualURLParts[0] + '-' + actualURLParts[1],
+    "modifyBy": "",
+    "modifyDate": ""
+  });
+
+  var requestOptions = {
+    method: 'POST',
+    headers: myHeaders,
+    body: raw,
+    redirect: 'follow'
+  };
+  const res = await fetch("https://cms.travomint.com/travoles-content/showcontent?authcode=Trav3103s987876", requestOptions)
+  const json = await res.json()
+  return {
+    props: { flight: json.response },
+		// revalidate: 10,
+  }
+}
+
+
 
 // This function gets called at build time
-export async function getStaticPaths() {
+export const getStaticPaths = async() => {
   // Get the paths we want to pre-render based on posts
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
@@ -133,48 +177,4 @@ export async function getStaticPaths() {
     fallback: true
   }
 
-}
-
-export async function getStaticProps(context) {
-
-  const { params } = context;
-  var cityname = params.Airline.split("-")[2]
-  let actualURLParts = params.Airline.split("-")
-
-  var myHeaders = new Headers();
-  myHeaders.append("Content-Type", "application/json");
-  var raw = JSON.stringify({
-    "contentId": "",
-    "pageType": "Airline",
-    "pageValue": cityname,
-    "pageName": "",
-    "metaTitle": "",
-    "metaKeyword": "",
-    "metaDesc": "",
-    "otherMeta": "",
-    "dealCode": "",
-    "dealTitle": "",
-    "contentTitle": "",
-    "contentData": "",
-    "contentImage": "",
-    "siteId": "139",
-    "status": "",
-    "count": "",
-    "url": actualURLParts[0] + '-' + actualURLParts[1],
-    "modifyBy": "",
-    "modifyDate": ""
-  });
-
-  var requestOptions = {
-    method: 'POST',
-    headers: myHeaders,
-    body: raw,
-    redirect: 'follow'
-  };
-  const res = await fetch("https://cms.travomint.com/travoles-content/showcontent?authcode=Trav3103s987876", requestOptions)
-  const json = await res.json()
-  return {
-    props: { flight: json.response },
-    revalidate: 10, //  In seconds - re-generate the page At most once every 10 seconds
-  }
 }

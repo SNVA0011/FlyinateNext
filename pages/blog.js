@@ -84,7 +84,7 @@ export default function Blog(props) {
 }
 
 
-export async function getStaticProps() {
+export async function getStaticProps(context) {
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
   var raw = JSON.stringify({
@@ -120,6 +120,6 @@ export async function getStaticProps() {
   const json = await res.json()
   return {
     props: { allblog: json.response },
-    revalidate: 10, //  In seconds - re-generate the page At most once every 10 seconds
+		// revalidate: 10,
   }
 }
