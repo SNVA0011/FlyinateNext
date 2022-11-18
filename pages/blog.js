@@ -9,6 +9,8 @@ import Head from 'next/head'
 // import ScrollAnimation from 'react-animate-on-scroll';
 import BreadHero from '../component/BreadHero'
 // import loading from "../Atoms/Image/load.gif" 
+import Moment from 'react-moment';
+
 
 export default function Blog(props) {
   
@@ -55,6 +57,9 @@ export default function Blog(props) {
                           </div>
                         </div>
                         <div className='blogaddalist-inner'>
+                        <div className='text-sm text-secondary mb-2 fw-medium'>
+                          <i class="bi bi-calendar4 mr-1"></i> <Moment date={items.posttime} format="MMM DD, YYYY" />   
+                          </div>
                           <div className='h4 title'>
                             {items.title}
                           </div>
@@ -120,6 +125,9 @@ export async function getStaticProps(context) {
   const json = await res.json()
   return {
     props: { allblog: json.response },
-		// revalidate: 10,
+    // Next.js will attempt to re-generate the page:
+    // - When a request comes in
+    // - At most once every 10 seconds
+    revalidate: 60, // In seconds
   }
 }

@@ -10,6 +10,8 @@ import Header from '../../component/es/Navbar'
 import Footer from '../../component/es/Footer'
 // import loading from "../Atoms/Image/load.gif"
 import Head from 'next/head'
+import Moment from 'react-moment';
+
 
 export default function articulos(props) {
  
@@ -63,6 +65,9 @@ export default function articulos(props) {
                             </div>
                           </div>
                           <div className='blogaddalist-inner'>
+                          <div className='text-sm text-secondary mb-2 fw-medium'>
+                          <i class="bi bi-calendar4 mr-1"></i> <Moment date={items.posttime} format="MMM DD, YYYY" />   
+                          </div>
                             <div className='h4 title'>
                               {items.title}
                             </div>
@@ -126,7 +131,10 @@ export async function getStaticProps(context) {
   const res = await fetch("https://cms.travomint.com/news-article/showNAdata?authcode=Trav3103s987876", requestOptions)
   const json = await res.json()
   return {
-    props: { allblog: json.response },  
-		// revalidate: 10,
+    props: { allblog: json.response },
+    // Next.js will attempt to re-generate the page:
+    // - When a request comes in
+    // - At most once every 10 seconds
+    revalidate: 60, // In seconds
   }
 }

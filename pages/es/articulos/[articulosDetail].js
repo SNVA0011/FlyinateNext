@@ -8,7 +8,7 @@ import Footer from '../../../component/es/Footer';
 import RecentBlogs from "../../../component/RecentBlogs"
 import NotFound from '../NotFound';
 import { useRouter } from 'next/router'
-
+import Moment from 'react-moment';
 
 
 export default function BlogDetails(props) {
@@ -62,6 +62,10 @@ export default function BlogDetails(props) {
                           {props.singleblog.map((items, i) => (
                             <div className='blogaddalist-round'>
                               <div className='blogaddalist-inner'>
+                              <div className="mb-2 text-secondary">
+                            - <Moment date={props.singleblog[0].posttime} format="MMM DD, YYYY" />
+                            </div>
+                 
                                 <div className="blog-inner-box2" dangerouslySetInnerHTML={{ __html: items.content }} />
                               </div>
                             </div>
@@ -167,7 +171,10 @@ export async function getStaticProps(context) {
       singleblog: json.response,
       recentposts: rcpjson.response
     },
-		// revalidate: 10,
+    // Next.js will attempt to re-generate the page:
+    // - When a request comes in
+    // - At most once every 10 seconds
+    revalidate: 60, // In seconds
   }
 }
 

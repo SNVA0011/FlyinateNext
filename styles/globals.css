@@ -482,7 +482,7 @@ body .popular-destination.blogaddalist .row.blogscroll-y{
     left: 17px;
     padding: 6px 10px;
     border-radius: 40px;
-    font-weight: 400;
+    font-weight: 500;
     font-size: 12px;
     box-shadow: 0 -5px 25px rgb(0 0 0 / 5%);
 }
@@ -547,6 +547,12 @@ body .footer-area .subscribe-form .btn {
 }
 body .footer-area .subscribe-form .btn:hover{
     color: #fff;
+}
+body .text-sm{
+    font-size: 14px;
+}
+.fw-medium{
+    font-weight: 500;
 }
 
 /*--------- responsive ---------*/

@@ -24,7 +24,7 @@ function RecentBlogs({ language, data, title }) {
                                         (location.asPath === lang + ('/' + parenturl + '/') + items.titleUrl ? ' active' : '')}>
                                         <div className="card-body">
                                             <span className='badge badge-secondary'><i class="bi bi-calendar2-week mr-2"></i>
-                                                <Moment date={items.posttime} format="DD MMM, YYYY" /></span>
+                                                <Moment date={items.posttime} format="MMM DD, YYYY" /></span>
                                             <h5 className="card-title mb-0">{items.title}</h5>
                                             <p className='mb-0 text-truncate'>{items.description}</p>
                                         </div>

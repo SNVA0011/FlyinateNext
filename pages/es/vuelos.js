@@ -125,6 +125,9 @@ export async function getStaticProps(context) {
   const json = await res.json()
   return {
     props: { allflights: json.response },
-  		// revalidate: 10,
+    // Next.js will attempt to re-generate the page:
+    // - When a request comes in
+    // - At most once every 10 seconds
+    revalidate: 60, // In seconds
   }
 }

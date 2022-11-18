@@ -8,7 +8,7 @@ import BreadHero from '../../component/BreadHero';
 import Head from 'next/head'
 import NotFound from '../NotFound';
 import { useRouter } from 'next/router'
-
+import Moment from 'react-moment';
 
 export default function BlogDetails(props) {
   const router = useRouter()
@@ -17,6 +17,10 @@ export default function BlogDetails(props) {
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
+
+  
+  console.log('props.singleblog-',props.singleblog)
+
 
 
   if (router.isFallback) {
@@ -61,6 +65,10 @@ export default function BlogDetails(props) {
                           {props.singleblog.map((items, i) => (
                             <div className='blogaddalist-round'>
                               <div className='blogaddalist-inner'>
+                              <div className="mb-2 text-secondary">
+                            - <Moment date={props.singleblog[0].posttime} format="MMM DD, YYYY" />
+                            </div>
+                 
                                 <div className="blog-inner-box2" dangerouslySetInnerHTML={{ __html: items.content }} />
                               </div>
                             </div>
@@ -168,7 +176,10 @@ export async function getStaticProps(context) {
       singleblog: json.response,
       recentposts: rcpjson.response
     },
-		// revalidate: 10,
+    // Next.js will attempt to re-generate the page:
+    // - When a request comes in
+    // - At most once every 10 seconds
+    revalidate: 60, // In seconds
   }
 }
 
@@ -178,7 +189,7 @@ export const getStaticPaths = async() => {
   // Get the paths we want to pre-render based on posts
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
-  var raw = JSON.stringify({
+   var raw = JSON.stringify({
     "id": "",
     "title": "",
     "titleUrl": "",
@@ -200,6 +211,7 @@ export const getStaticPaths = async() => {
     "tfnFooter3": "",
     "tfnPopup": ""
   });
+
 
   var requestOptions = {
     method: 'POST',
