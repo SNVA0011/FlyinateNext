@@ -121,8 +121,10 @@ export async function getStaticProps(context) {
     body: raw,
     redirect: 'follow'
   };
+  
   const res = await fetch("https://cms.travomint.com/travoles-content/showblogdata?authcode=Trav3103s987876", requestOptions)
   const json = await res.json()
+  
   return {
     props: { allblog: json.response },
     // Next.js will attempt to re-generate the page:

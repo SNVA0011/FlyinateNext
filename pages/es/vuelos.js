@@ -14,7 +14,7 @@ import Head from 'next/head'
 
 export default function vuelos(props, pageValue, pageType) {
  
-
+ 
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
