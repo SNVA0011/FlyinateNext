@@ -2,4 +2,5 @@ User-agent: *
 Allow: /
 
 Sitemap: https://www.flyinate.com/sitemap.xml
-Crawl-delay: 10
+
+ 
