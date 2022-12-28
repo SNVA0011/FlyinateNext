@@ -10,7 +10,7 @@ import Head from 'next/head'
 import BreadHero from '../component/BreadHero'
 // import loading from "../Atoms/Image/load.gif" 
 import Moment from 'react-moment';
-
+ 
 
 export default function Blog(props) {
   
