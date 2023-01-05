@@ -92,14 +92,14 @@ export const getServerSideProps = async (ctx) => {
     changefreq: 'daily' 
   }));
   // blog
-  const blogSitemaps = posts && posts.map((item) => ({
+  const blogSitemaps = posts && posts.filter((item) => item.status === "Active").map((item) => ({
     loc: `${baseUrl}/blog/${item.titleUrl.replace('&', '&amp;')}`,
     lastmod: new Date(item.posttime).toISOString().split('T')[0] +'T06:47:34+00:00',
     changefreq: 'daily' 
   }));
 
   // flights
-  const flightsSitemaps = flightsposts && flightsposts.filter((items) => items.pageType === "Airline").map((items) => ({
+  const flightsSitemaps = flightsposts && flightsposts.filter((items) => items.status === "Active").filter((items) => items.pageType === "Airline").map((items) => ({
     loc: `${baseUrl}/flights/${items.url.replace('&', '&amp;')}-${items.pageValue.replace('&', '&amp;')}`,
     lastmod: '2022-11-30T06:47:34+00:00',
     changefreq: 'daily' 
@@ -169,13 +169,13 @@ export const getServerSideProps = async (ctx) => {
     changefreq: 'daily' 
   }));
   // blog
-  const esBlogSitemaps = esposts && esposts.map((item) => ({
+  const esBlogSitemaps = esposts && esposts.filter((item) => item.status === "Active").map((item) => ({
     loc: `${baseUrl}/es/articulos/${item.titleUrl.replace('&', '&amp;')}`,
     lastmod:  new Date(item.posttime).toISOString().split('T')[0] +'T06:47:34+00:00',
     changefreq: 'daily' 
   }));
   // flights
-  const esFlightsSitemaps = esFlightsposts && esFlightsposts.filter((item) => item.pageType === "AirlineE").map((item) => ({
+  const esFlightsSitemaps = esFlightsposts && esFlightsposts.filter((item) => item.status === "Active").filter((item) => item.pageType === "AirlineE").map((item) => ({
     loc: `${baseUrl}/es/vuelos/${item.url.replace('&', '&amp;')}-${item.pageValue.replace('&', '&amp;')}`,
     lastmod: '2022-11-30T06:47:34+00:00',
     changefreq: 'daily' 

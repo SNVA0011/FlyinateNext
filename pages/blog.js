@@ -45,10 +45,11 @@ export default function Blog(props) {
             </div>
 
 
+
             {
               props.allblog?.length > 0 ?
                 <Row>
-                  {props.allblog.map((items, i) => (
+                  {props.allblog.filter((items) => items.status === "Active").map((items, i) => (
                     <Col xs={12} md={6}>
                       <div className='blogaddalist-round'>
                         <div className='image_area_partition'>

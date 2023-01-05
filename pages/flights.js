@@ -53,11 +53,12 @@ export default function Flights(props, pageValue, pageType) {
               </div>
 
 
+        
               {
                 props.allflights.filter((items) => items.pageType === "Airline")?.length > 0 ?
                   <Row>
 
-                    {props.allflights.filter((items) => items.pageType === "Airline").map((items, i) => (
+                    {props.allflights.filter((items) => items.pageType === "Airline").filter((items) => items.status === "Active").map((items, i) => (
                       <Col xs={12} md={6}>
                         <div className='blogaddalist-round'>
                           <div className='blogaddalist-inner'>
