@@ -8,6 +8,7 @@ function RecentBlogs({ language, data, title }) {
     const location = useRouter();
     const parenturl = language ? location.asPath.split('/')[2] : location.asPath.split('/')[1]
     const lang = language ? ('/' + language) : ''
+ 
 
     return (
         <>
@@ -23,7 +24,7 @@ function RecentBlogs({ language, data, title }) {
                                     <a className={"card h-100" +
                                         (location.asPath === lang + ('/' + parenturl + '/') + items.titleUrl ? ' active' : '')}>
                                         <div className="card-body">
-                                            <span className='badge badge-secondary'><i class="bi bi-calendar2-week mr-2"></i>
+                                            <span className='badge badge-secondary'><i className="bi bi-calendar2-week mr-2"></i>
                                                 <Moment date={items.posttime} format="MMM DD, YYYY" /></span>
                                             <h5 className="card-title mb-0">{items.title}</h5>
                                             <p className='mb-0 text-truncate'>{items.description}</p>

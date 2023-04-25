@@ -13,53 +13,22 @@ export default function Footer() {
   return (
     <>
       <footer className="footer-area full-w">
-        <Container className="inner_container_1">
+        <Container className='inner_container_1'>
           <Row>
-            <Col xs={12} md={6} xl={3}>
-              <>
-                <h5 className="use-head">Useful Links</h5>
-                <ul className="use-li">
-                  <li>
-                    <Link href="/blog">
-                      <a className="ripple-effbtn d-inline-block"><span>Blog</span></a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link  href="/flights" >
-                      <a className="ripple-effbtn d-inline-block"><span>Flights</span></a>
-                    </Link>
-                  </li>
-                </ul>
-              </>
-            </Col>
-            <Col xs={12} md={6} xl={3}>
-              <h5 className="use-head">About Us</h5>
+            <Col xs={12} md={6} xl={4}>
+              <h5 className="use-head">Collegamenti utili</h5>
               <ul className="use-li">
-                {/* <li>
-                  <Link href="/contact-us">
-                    <a className="ripple-effbtn d-inline-block"><span>Contact Us</span></a>
-                  </Link>
-                </li> */}
                 <li>
-                  <Link href="/about-us">
-                    <a className="ripple-effbtn d-inline-block"><span>About Us</span></a>
+                  <Link href="/it/articolo" locale="it">
+                    <a className='ripple-effbtn d-inline-block'>
+                      <span>Articolo</span>
+                    </a>
                   </Link>
                 </li>
-                <li>
-                  <Link href="/contact">
-                    <a className="ripple-effbtn d-inline-block"><span>Contact</span></a>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/privacy">
-                    <a className="ripple-effbtn d-inline-block"><span>Privacy Policy</span></a>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/terms">
-                    <a className="ripple-effbtn d-inline-block"><span>Terms &amp; Conditions</span></a>
-                  </Link>
-                </li>
+              </ul>
+
+              <ul className="use-li">
+
                 <li className="d-none">
                   <Link href="/">
                     <a className='ripple-effbtn d-inline-block'>
@@ -69,7 +38,7 @@ export default function Footer() {
                 </li>
 
                 <li className="d-none">
-                  <Link href="/es">
+                  <Link href="/it">
                     <a className='ripple-effbtn d-inline-block'>
                       <span>Casa</span>
                     </a>
@@ -82,36 +51,28 @@ export default function Footer() {
                     </a>
                   </Link>
                 </li>
-                {/* <li>
-                  <Link href="/site-map">
-                    <a className="ripple-effbtn d-inline-block"><span>Site Map</span></a>
-                  </Link>
-                </li> */}
+
               </ul>
-            </Col>
-            <Col xs={12} md={6} xl={3}>
-              <h5 className="use-head">Connect With Us</h5>
+            </Col> 
+            <Col xs={12} md={6} xl={4}>
+              <h5 className="use-head">Connettiti con noi</h5>
               <ul className="use-li address">
                 <li>
                   <p className="footer_address">
-                    <span>Address:</span> W Ray Rd, Chandler, AZ 85226, USA
+                    <span>Indirizzo:</span> W Ray Rd, Chandler, AZ 85226, USA
                   </p>
                 </li>
                 <li>
                   <p className="footer_email">
-                    <span>Email:</span>
-                    <a
-                      href="mailto:support@flyinate.com"
-                      className="d-inline-block"
-                      target="_blank">
+                    <span>Correo electrónico:</span>
+                    <a href="mailto:support@flyinate.com" className='d-inline-block' target="_blank">
                       support@flyinate.com
                     </a>
                   </p>
                 </li>
-
                 <li>
                   <p className="F_social_icon">
-                  <a
+                    <a
                       className="d-inline-flex Ffacebook"
                       href="https://www.facebook.com/flyinate"
                       target="_blank"
@@ -141,21 +102,19 @@ export default function Footer() {
                     </a>
                   </p>
                 </li>
+
               </ul>
+
             </Col>
 
             <Col xs={12} md={6} xl={3}>
               <div className="subscribe">
-                <h3 className="use-head">Subscribe</h3>
+                <h3 className='use-head'>sottoscrivi</h3>
                 <form className="subscribe-form" id="myForm">
-                  <InputGroup className="flex-column">
-                    <FormControl
-                      type="email"
-                      className="subscribe w-100"
-                      placeholder="Your Email Address"
-                    />
-                    <Button className="btn btn-site btn-block ripple-effbtn  w-100">
-                      <span>Subscribe</span>
+                  <InputGroup>
+                    <FormControl type="email" className="subscribe" placeholder="Il tuo indirizzo di posta elettronica" />
+                    <Button className='btn btn-site btn-block ripple-effbtn'>
+                      <span>sottoscrivi</span>
                     </Button>
                   </InputGroup>
                 </form>
@@ -165,18 +124,17 @@ export default function Footer() {
           </Row>
         </Container>
 
-        <div className="footer_logos_bottom">
-          <Container className="inner_container_2">
+        <div className='footer_logos_bottom'>
+          <Container className='inner_container_2'>
             <Row>
-              <Col xs={12} className="text-center">
-                <p className="footer_logos">
-
-                <Image alt="logos" src="/images/card-logos-footer.png"   width={780} height={58}></Image> 
+              <Col xs={12} className='text-center'>
+                <p className="footer_logos"> 
+                  <Image alt="logo" src={"/images/card-logos-footer.png"} width={780}  height={58} ></Image>  
                 </p>
                 <p className="footer_disclaimer">
-                  © 2022 flyinate.com, having its registered office in the state
-                  of USA located at W Ray Rd in the city of Chandler with Zip
-                  Code 85226. All rights reserved.
+                  © 2022 flyinate.com, con sede legale nello stato americano.
+                  situato a W Ray Rd nella città di Chandler con codice postale 85226. Tutti i diritti
+                   riservato.
                 </p>
               </Col>
             </Row>

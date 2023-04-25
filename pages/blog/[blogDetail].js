@@ -12,23 +12,17 @@ import Moment from 'react-moment';
 
 export default function BlogDetails(props) {
   const router = useRouter()
-
-
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
-
-  
-  console.log('props.singleblog-',props.singleblog)
-
-
+ 
 
   if (router.isFallback) {
     return <>
       <Navbar />
 
       <div className='text-center about-uspage full-w pyblock-80'>
-        <div class="spinner-border text-secondary" role="status">
+        <div className="spinner-border text-secondary" role="status">
         </div>
       </div>
 
@@ -63,7 +57,7 @@ export default function BlogDetails(props) {
                       props.singleblog?.length > 0 ?
                         <>
                           {props.singleblog.map((items, i) => (
-                            <div className='blogaddalist-round'>
+                            <div className='blogaddalist-round' key={i}>
                               <div className='blogaddalist-inner'>
                               <div className="mb-2 text-secondary">
                             - <Moment date={props.singleblog[0].posttime} format="MMM DD, YYYY" />
@@ -176,10 +170,7 @@ export async function getStaticProps(context) {
       singleblog: json.response,
       recentposts: rcpjson.response
     },
-    // Next.js will attempt to re-generate the page:
-    // - When a request comes in
-    // - At most once every 10 seconds
-    revalidate: 60, // In seconds
+    revalidate: 60, 
   }
 }
 

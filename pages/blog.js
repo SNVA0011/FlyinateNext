@@ -50,7 +50,7 @@ export default function Blog(props) {
               props.allblog?.length > 0 ?
                 <Row>
                   {props.allblog.filter((items) => items.status === "Active").map((items, i) => (
-                    <Col xs={12} md={6}>
+                    <Col xs={12} md={6} key={i}>
                       <div className='blogaddalist-round'>
                         <div className='image_area_partition'>
                           <div className='wrapper'>
@@ -59,12 +59,12 @@ export default function Blog(props) {
                         </div>
                         <div className='blogaddalist-inner'>
                         <div className='text-sm text-secondary mb-2 fw-medium'>
-                          <i class="bi bi-calendar4 mr-1"></i> <Moment date={items.posttime} format="MMM DD, YYYY" />   
+                          <i className="bi bi-calendar4 mr-1"></i> <Moment date={items.posttime} format="MMM DD, YYYY" />   
                           </div>
                           <div className='h4 title'>
                             {items.title}
-                          </div>
-                          <p>{items.description}</p>
+                          </div> 
+                          <p dangerouslySetInnerHTML={{ __html: items.description }} />
                           <hr className="mx-row-hr" />
                           <Link href={`/blog/${items.titleUrl}`}>
                             <a className='btn btn-site ripple-effbtn btn-40'>
@@ -77,7 +77,7 @@ export default function Blog(props) {
                   ))}
 
                 </Row>
-                : 'No items found !'
+                : <p className='text-center'>No items found !</p>
             }
 
           </Container>
@@ -128,9 +128,6 @@ export async function getStaticProps(context) {
   
   return {
     props: { allblog: json.response },
-    // Next.js will attempt to re-generate the page:
-    // - When a request comes in
-    // - At most once every 10 seconds
-    revalidate: 60, // In seconds
+    revalidate: 60, 
   }
 }

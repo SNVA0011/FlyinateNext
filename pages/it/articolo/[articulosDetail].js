@@ -3,8 +3,8 @@ import Container from 'react-bootstrap/Container';
 import Head from 'next/head';
 import Link from "next/link";
 import BreadHero from '../../../component/BreadHero';
-import Header from '../../../component/es/Navbar';
-import Footer from '../../../component/es/Footer';
+import Header from '../../../component/it/Navbar';
+import Footer from '../../../component/it/Footer';
 import RecentBlogs from "../../../component/RecentBlogs"
 import NotFound from '../NotFound';
 import { useRouter } from 'next/router'
@@ -45,12 +45,12 @@ export default function BlogDetails(props) {
             <title>{props.singleblog[0].title}</title>
             <meta name="description" content={props.singleblog[0].description} />
             <meta name="keywords" content={props.singleblog[0].keywords} />
-            <link rel="canonical" href={`https://www.flyinate.com/es/articulos/${props.singleblog[0].titleUrl}`} />
-            <link rel="alternate" href={`https://www.flyinate.com/es/articulos/${props.singleblog[0].titleUrl}`} />
+            <link rel="canonical" href={`https://www.flyinate.com/it/articolo/${props.singleblog[0].titleUrl}`} />
+            <link rel="alternate" href={`https://www.flyinate.com/it/articolo/${props.singleblog[0].titleUrl}`} />
           </Head>
 
           <div className='blogadda'>
-            <BreadHero title="Articulos" linkhtml={<><ul className='breadcrumb text-white'> <li className="breadcrumb-item" > <Link href="/es" locale="es">Home</Link> </li> <li className='breadcrumb-item active' aria-current="page"> <Link href="/es/articulos" locale="es"> articulos </Link></li> <li className='breadcrumb-item active' aria-current="page">{props.singleblog[0].title}</li> </ul></>} />
+            <BreadHero title="Articolo" linkhtml={<><ul className='breadcrumb text-white'> <li className="breadcrumb-item" > <Link href="/it" locale="it">Casa</Link> </li> <li className='breadcrumb-item active' aria-current="page"> <Link href="/it/articulos" locale="it"> articulos </Link></li> <li className='breadcrumb-item active' aria-current="page">{props.singleblog[0].title}</li> </ul></>} />
 
             <div className='popular-destination blogaddalist details full-w'>
               <Container>
@@ -76,8 +76,8 @@ export default function BlogDetails(props) {
                   </div>
 
                   <div className="mt-5 mt-xl-0 col-xl-4">
-                    <RecentBlogs title="Artículos Recientes" data={props.recentposts.slice(0, 5)}
-                      language="es" />
+                    <RecentBlogs title="Articoli recenti" data={props.recentposts.slice(0, 5)}
+                      language="it" />
                   </div>
                 </div>
               </Container>
@@ -117,7 +117,7 @@ export async function getStaticProps(context) {
     "heading": "",
     "categoryName": "",
     "siteId": "139",
-    "pageType": "Articulo",
+    "pageType": "ArticleIT",
     "extraTag": "",
     "tfnHeader": "",
     "tfnFooter1": "",
@@ -148,7 +148,7 @@ export async function getStaticProps(context) {
     "heading": "",
     "categoryName": "",
     "siteId": "139",
-    "pageType": "Articulo",
+    "pageType": "ArticleIT",
     "extraTag": "",
     "tfnHeader": "",
     "tfnFooter1": "",
@@ -170,8 +170,8 @@ export async function getStaticProps(context) {
     props: {
       singleblog: json.response,
       recentposts: rcpjson.response
-    }, 
-    revalidate: 60,  
+    },
+    revalidate: 60, 
   }
 }
 
@@ -195,7 +195,7 @@ export const getStaticPaths = async() => {
     "heading": "",
     "categoryName": "",
     "siteId": "139",
-    "pageType": "Articulo",
+    "pageType": "ArticleIT",
     "extraTag": "",
     "tfnHeader": "",
     "tfnFooter1": "",

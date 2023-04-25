@@ -92,6 +92,13 @@ export default function Footer() {
                     </a>
                   </Link>
                 </li>
+                <li className="d-none">
+                  <Link href="/it">
+                    <a className='ripple-effbtn d-inline-block'>
+                      <span>Casa</span>
+                    </a>
+                  </Link>
+                </li>
 
               </ul>
 

@@ -5,9 +5,9 @@ import Col from 'react-bootstrap/Col'
 import Link from "next/link"
 
 // import ScrollAnimation from 'react-animate-on-scroll';
-import BreadHero from '../../component/BreadHero'
-import Header from '../../component/es/Navbar'
-import Footer from '../../component/es/Footer'
+import BreadHero from '../../../component/BreadHero'
+import Header from '../../../component/it/Navbar'
+import Footer from '../../../component/it/Footer'
 // import loading from "../Atoms/Image/load.gif"
 import Head from 'next/head'
 import Moment from 'react-moment';
@@ -19,12 +19,14 @@ export default function articulos(props) {
     window.scrollTo(0, 0)
   }, [])
 
+  console.log(' props.allblog-', props.allblog)
+
  
   return (
     <>
       <Head>
         
-        <title>Articulos - Flyinate</title>
+        <title>Articolo - Flyinate</title>
         <meta name="description" content="" />
       </Head>
       <Header />
@@ -39,16 +41,15 @@ export default function articulos(props) {
         <link rel="canonical" href={window.location.href}/> 
       </Helmet>
 
-      <BreadHero title="Blog" linkhtml={<><ul className='breadcrumb text-white'> <li className="breadcrumb-item" > <Linkhref="/es/"  locale="es">Home</Link> </li> <li className='breadcrumb-item active' aria-current="page">Blog</li> </ul></>} /> */}
+      <BreadHero title="Blog" linkhtml={<><ul className='breadcrumb text-white'> <li className="breadcrumb-item" > <Linkhref="/it/"  locale="it">Home</Link> </li> <li className='breadcrumb-item active' aria-current="page">Blog</li> </ul></>} /> */}
 
-          <BreadHero title="articulos" linkhtml={<><ul className='breadcrumb text-white'> <li className="breadcrumb-item" > <Link href="/es/"  locale="es">Casa</Link> </li> <li className='breadcrumb-item active' aria-current="page">articulos</li> </ul></>} />
+          <BreadHero title="articolo" linkhtml={<><ul className='breadcrumb text-white'> <li className="breadcrumb-item" > <Link href="/it/" locale="it">Casa</Link> </li> <li className='breadcrumb-item active' aria-current="page">articolo</li> </ul></>} />
 
           <div className='popular-destination blogaddalist full-w'>
             <Container>
-              <div className="top-title text-center">
-
+              <div className="top-title text-center"> 
                 <h2>
-                  Articulos
+                  Articolo
                 </h2>
               </div>
 
@@ -73,10 +74,11 @@ export default function articulos(props) {
                               {items.title}
                             </div> 
                             <p dangerouslySetInnerHTML={{ __html: items.description }} />
+
                             <hr className="mx-row-hr" />
-                            <Link href={`/es/articulos/${items.titleUrl}`} locale="es">
+                            <Link href={`/it/articolo/${items.titleUrl}`} locale="it">
                               <a className='btn btn-site ripple-effbtn btn-40'>
-                                <span>Lee mas</span>
+                                <span>Lee Mas</span>
                               </a>
                             </Link>
                           </div>
@@ -85,7 +87,7 @@ export default function articulos(props) {
                     ))}
 
                   </Row>
-                  : <p className='text-center'>No items found !</p>
+                  : <p className='text-center'>Nessun articolo trovato !</p>
               }
 
             </Container>
@@ -114,7 +116,7 @@ export async function getStaticProps(context) {
     "heading": "",
     "categoryName": "",
     "siteId": "139",
-    "pageType": "Articulo",
+    "pageType": "ArticleIT",
     "extraTag": "",
     "tfnHeader": "",
     "tfnFooter1": "",

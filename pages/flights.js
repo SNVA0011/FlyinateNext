@@ -59,7 +59,7 @@ export default function Flights(props, pageValue, pageType) {
                   <Row>
 
                     {props.allflights.filter((items) => items.pageType === "Airline").filter((items) => items.status === "Active").map((items, i) => (
-                      <Col xs={12} md={6}>
+                      <Col xs={12} md={6} key={i}>
                         <div className='blogaddalist-round'>
                           <div className='blogaddalist-inner'>
                             <span className='h4 title'>{items.pageName}-{items.pageValue}</span>
@@ -128,9 +128,6 @@ export async function getStaticProps(context) {
   const json = await res.json()
   return {
     props: { allflights: json.response },
-    // Next.js will attempt to re-generate the page:
-    // - When a request comes in
-    // - At most once every 10 seconds
-    revalidate: 60, // In seconds
+    revalidate: 60, 
   }
 }

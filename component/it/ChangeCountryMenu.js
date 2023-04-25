@@ -9,7 +9,7 @@ import { Button } from 'react-bootstrap';
 
 
 export default function ChangeCountryMenu() {
-    const [lang, setLang] = useState("ES");
+    const [lang, setLang] = useState("IT");
     const [curr, setCurr] = useState('INR');
     const [expanded, setExpanded] = useState(false);
 
@@ -21,9 +21,9 @@ export default function ChangeCountryMenu() {
             </span> </>}
             variant="outline-secondary">
             <div className='curr-block py-4'>
-                <h5 className='mb-3 text-center'>Seleccione el idioma</h5>
+                <h5 className='mb-3 text-center'>Seleziona la lingua</h5>
                 <Row>
-                    <Col xs="12" md="12" className='mb-3'>
+                <Col xs="12" md="12" className='mb-3'>
                         <Dropdown.Item as={Link} href="/" onClick={(e) => { setLang('EN') }}>
                             <a className={'btn btn-site ripple-effbtn btn-40 btn-block text-center dropdown-item'}>
                                 <span>English</span>
@@ -31,15 +31,15 @@ export default function ChangeCountryMenu() {
                         </Dropdown.Item>
                     </Col>
                     <Col xs="12" md="12" className='mb-3'>
-                        <Dropdown.Item as={Link} href="/es" locale="es" onClick={(e) => { setLang('ES') }}>
-                            <a className={'btn btn-site ripple-effbtn btn-40 btn-block text-center dropdown-item active'}>
+                        <Dropdown.Item as={Link} href="/es" locale="it" onClick={(e) => { setLang('ES') }}>
+                            <a className={'btn btn-site ripple-effbtn btn-40 btn-block text-center dropdown-item'}>
                                 <span>Spanish</span>
                             </a>
                         </Dropdown.Item>
                     </Col>
                     <Col xs="12" md="12">
                         <Dropdown.Item as={Link} href="/it" locale="it" onClick={(e) => { setLang('IT') }}>
-                            <a className={'btn btn-site ripple-effbtn btn-40 btn-block text-center dropdown-item '}>
+                            <a className={'btn btn-site ripple-effbtn btn-40 btn-block text-center dropdown-item active'}>
                                 <span>Italian</span>
                             </a>
                         </Dropdown.Item>
