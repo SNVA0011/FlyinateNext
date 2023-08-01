@@ -16,7 +16,7 @@ export default function BlogDetails(props) {
     window.scrollTo(0, 0)
   }, [])
 
-  console.log('ss-',props.singleblog)
+ 
 
 
   if (router.isFallback) {

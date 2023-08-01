@@ -18,8 +18,7 @@ export default function Blog(props) {
   useEffect(() => {
     window.scrollTo(0, 0)
   }, []);
-
-  console.log('dsd-',props.allblog)
+ 
    
   return (
     <>

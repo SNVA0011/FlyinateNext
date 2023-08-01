@@ -22,8 +22,6 @@ export default function articulos(props) {
     window.scrollTo(0, 0)
   }, [])
 
-  console.log(' props.allblog-', props.allblog)
-
  
   return (
     <>
