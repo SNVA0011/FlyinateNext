@@ -7,7 +7,7 @@ import Footer from '../../component/Footer';
 import Header from "../../component/Navbar";
 
 export default function CheapFlights() {
-  const location = useRouter();
+  const router = useRouter();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -18,8 +18,9 @@ export default function CheapFlights() {
       
         <title>Cusco flyinate</title>
         <meta name="description" content="" />
-        <meta name="keywords" content="" />
-        <link rel="canonical" href={"https://www.flyinate.com/cheap-flights/cusco-flyinate"} />
+        <meta name="keywords" content="" /> 
+        <link rel="canonical" href={`https://www.flyinate.com${router.asPath}`} />
+				<link rel="alternate" href={`https://www.flyinate.com${router.asPath}`} />
       </Head>
 
       <Header />

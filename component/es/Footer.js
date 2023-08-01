@@ -20,14 +20,14 @@ export default function Footer() {
                 <h5 className="use-head">Enlaces útiles</h5>
                 <ul className="use-li">
                   <li>
-                    <Link href="/es/articulos" locale="es">
+                    <Link href="/es/articulos">
                       <a className='ripple-effbtn d-inline-block'>
                         <span>Artículos</span>
                       </a>
                     </Link>
                   </li>
                   <li>
-                    <Link href="/es/vuelos" locale="es">
+                    <Link href="/es/vuelos">
                       <a className='ripple-effbtn d-inline-block'>
                         <span>Vuelos</span>
                       </a>
@@ -41,35 +41,35 @@ export default function Footer() {
               <h5 className="use-head">Sobre nosotras</h5>
               <ul className="use-li">
                 {/* <li>
-                                    <Link href="/es/contacta-con-nosotras" locale="es">
+                                    <Link href="/es/contacta-con-nosotras">
                                     <a className='ripple-effbtn d-inline-block'>
                                         <span>Contacta con nosotras</span>
                                         </a>
                                         </Link>
                                 </li> */}
                 <li>
-                  <Link href="/es/sobre-nosotras"  locale="es">
+                  <Link href="/es/sobre-nosotras" >
                     <a className='ripple-effbtn d-inline-block'>
                       <span>Sobre nosotras</span>
                     </a>
                   </Link>
                 </li>
                 <li>
-                  <Link href="/es/contacto"  locale="es">
+                  <Link href="/es/contacto" >
                     <a className='ripple-effbtn d-inline-block'>
                       <span>Contacto</span>
                     </a>
                   </Link>
                 </li>
                 <li>
-                  <Link href="/es/politica"  locale="es">
+                  <Link href="/es/politica" >
                     <a className='ripple-effbtn d-inline-block'>
                       <span>Política de privacidad</span>
                     </a>
                   </Link>
                 </li>
                 <li>
-                  <Link href="/es/terminos"  locale="es">
+                  <Link href="/es/terminos" >
                     <a className='ripple-effbtn d-inline-block'>
                       <span>Términos y condiciones</span>
                     </a>

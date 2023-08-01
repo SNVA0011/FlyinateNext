@@ -4,7 +4,7 @@ import Container from 'react-bootstrap/Container'
 export default function BreadHero(props) {
 
     return (
-        <div className={'breadcrumb_area full-w text-uppercase ' + (props.bigbanner ? props.bigbanner : 'none')} style={{ backgroundImage: props.bigbanner ? `url("../images/bann-3.jpg")` : '' }}>
+        <div className={'breadcrumb_area full-w text-capitalize ' + (props.bigbanner ? props.bigbanner : 'none')} style={{ backgroundImage: props.bigbanner ? `url("../images/bann-3.jpg")` : '' }}>
             <Container>
                 <p className='breadcrumb-mtitle mb-1'>{props.title}</p>
                 {props.linkhtml}

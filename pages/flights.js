@@ -10,9 +10,11 @@ import Link from "next/link"
 // import ScrollAnimation from 'react-animate-on-scroll';
 import Image from "next/image"
 import Head from 'next/head' 
+import { useRouter } from 'next/router';
+
 
 export default function Flights(props, pageValue, pageType) {
- 
+const router = useRouter()
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -32,9 +34,9 @@ export default function Flights(props, pageValue, pageType) {
       <Head>
         <title>Flights - Flyinate</title>
         <meta name="description" content="" />
-        <meta name="keywords" content="" />
-        <link rel="canonical" href="https://www.flyinate.com/flights" />
-        <link rel="alternate" href="https://www.flyinate.com/flights" />
+        <meta name="keywords" content="" /> 
+        <link rel="canonical" href={`https://www.flyinate.com${router.asPath}`} />
+				<link rel="alternate" href={`https://www.flyinate.com${router.asPath}`} />
       </Head>
 
       <Navbar />

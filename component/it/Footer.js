@@ -19,7 +19,7 @@ export default function Footer() {
               <h5 className="use-head">Collegamenti utili</h5>
               <ul className="use-li">
                 <li>
-                  <Link href="/it/articolo" locale="it">
+                  <Link href="/it/articolo" >
                     <a className='ripple-effbtn d-inline-block'>
                       <span>Articolo</span>
                     </a>

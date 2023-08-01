@@ -18,7 +18,7 @@ export default function Terms() {
         <>
             <Header />
             <BreadHero title="Términos y condiciones" linkhtml={<><ul className='breadcrumb text-white'>
-                <li className="breadcrumb-item" > <Link href="/es/" locale="es">Casa</Link> </li>
+                <li className="breadcrumb-item" > <Link href="/es/">Casa</Link> </li>
                 <li className='breadcrumb-item active' aria-current="page"> Términos y condiciones</li> </ul></>} />
 
             <div className='about-uspage full-w pyblock-80'>

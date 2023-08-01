@@ -130,9 +130,13 @@ body .breadcrumb_area .breadcrumb-mtitle,
 body .breadcrumb_area h3{font-size:34px;font-weight:600;color:#fff;padding-bottom:5px}
 body .breadcrumb_area h3 span{display:block;font-weight:400;font-size:40%;margin-top:10px;line-height:1.6}
 body .breadcrumb_area ul li{display:inline-block}
-body .breadcrumb_area ul li a{font-weight:700;letter-spacing:.39px;text-transform:uppercase;color:#fff;position:relative;-webkit-transition:all .3s linear 0s;-o-transition:all .3s linear 0s;transition:all .3s linear 0s}
+body .breadcrumb_area ul li a{font-weight:700;letter-spacing:.39px;text-transform:capitalize;color:#fff;position:relative;-webkit-transition:all .3s linear 0s;-o-transition:all .3s linear 0s;transition:all .3s linear 0s}
 body .breadcrumb_area ul li:first-child a:before{display:none}
 body .breadcrumb_area ul li:last-child a{padding-right:0}
+body .breadcrumb_area .breadcrumb-item {
+    font-weight: 500;
+    letter-spacing: 0.4px;
+}
 body .banner_inner_content ul li.active a,
 body .breadcrumb_area ul li:hover a{color:#ffb606}
 body .breadcrumb_area .breadcrumb{padding:0;background:0 0;margin-bottom:0}
@@ -664,7 +668,12 @@ body .blogaddalist-inner{padding-left:15px;padding-right:15px;}
 body .popular-destination.blogaddalist.details .blog-inner-box2 h1{font-size:150%}
 body .popular-destination.blogaddalist.details .blog-inner-box2 h2{font-size:140%}
 body .popular-destination.blogaddalist.details .blog-inner-box2 h3{font-size:130%}
-
+body .breadcrumb_area h1,
+body .breadcrumb_area .breadcrumb-mtitle,
+body .breadcrumb_area h3{font-size:30px}
+body .breadcrumb_area .breadcrumb {
+    font-size: 14px;
+}
 }
 @media (max-width:767px){
 body .blogaddalist-round{margin-bottom:40px}
@@ -698,6 +707,7 @@ body .popular-destination.blogaddalist.details .blog-inner-box2 h3{font-size:120
     padding-top: 20px;
     padding-bottom: 14px;
 }
+
 }
 @media (max-width:575px){
 body ul.callmail li{display:block!important;margin-left:0!important;margin-right:0!important}
@@ -729,9 +739,7 @@ body .popular-destination.travellist .overflow-hidden.ppt-clistaff.mt-shapeneed{
 body .popular-destination,
 body .pyblock-80{padding:60px 0}
 body .popular-destination{background-size:220%,110px;background-position:top -15% left,top 2% right}
-body .breadcrumb_area h1,
-body .breadcrumb_area .breadcrumb-mtitle,
-body .breadcrumb_area h3{font-size:30px}
+
 body .about-mailtoleft-box .bi.bi-envelope-open-fill{height:50px;width:50px;min-width:50px;line-height:50px;font-size:20px}
 body .about-mailtoleft-box p a{font-size:17px}
 
@@ -764,7 +772,10 @@ body .popular-destination.travellist .ppt-clistaff.mt-shapeneed svg,
 body .shape-bottom.bigbanner-wgb svg{height:30px}
 body .breadcrumb_area h1,
 body .breadcrumb_area .breadcrumb-mtitle,
-body .breadcrumb_area h3{font-size:26px}
+body .breadcrumb_area h3{font-size:22px}
+body .breadcrumb_area .breadcrumb {
+    font-size: 12px;
+}
 body .top-title.text-center h2{font-size:28px}
 body .blogaddalist-round .btn.btn-site{width:100%}
 body .blogaddalist-round hr.mx-row-hr{margin:20px -30px 20px}

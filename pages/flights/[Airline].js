@@ -42,8 +42,8 @@ export default function Airline(props) {
             <title>{props.flight[0].metaTitle}</title>
             <meta name="description" content={props.flight[0].metaDesc} />
             <meta name="keywords" content={props.flight[0].metaKeyword} />
-            <link rel="canonical" href={`https://www.flyinate.com/flights/${props.flight[0].url}-${props.flight[0].pageValue}`} />
-            <link rel="alternate" href={`https://www.flyinate.com/flights/${props.flight[0].url}-${props.flight[0].pageValue}`} />
+            <link rel="canonical" href={`https://www.flyinate.com${router.asPath}`} />
+            <link rel="alternate" href={`https://www.flyinate.com${router.asPath}`} />
           </Head>
           <div className='blogadda'>
 
@@ -117,14 +117,14 @@ export async function getStaticProps(context) {
   const json = await res.json()
   return {
     props: { flight: json.response },
-    revalidate: 60, 
+    revalidate: 60,
   }
 }
 
 
 
 // This function gets called at build time
-export const getStaticPaths = async() => {
+export const getStaticPaths = async () => {
   // Get the paths we want to pre-render based on posts
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");

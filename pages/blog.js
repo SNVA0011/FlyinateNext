@@ -10,23 +10,25 @@ import Head from 'next/head'
 import BreadHero from '../component/BreadHero'
 // import loading from "../Atoms/Image/load.gif" 
 import Moment from 'react-moment';
+import { useRouter } from 'next/router'
  
-
 export default function Blog(props) {
-  
+  const router = useRouter()
+
   useEffect(() => {
     window.scrollTo(0, 0)
-  }, [])
+  }, []);
 
+  console.log('dsd-',props.allblog)
    
   return (
     <>
       <Head>
         <title>	Blog - Flyinate</title> 
         <meta name="description" content="" />
-        <meta name="keywords" content="" />
-        <link rel="canonical" href="https://www.flyinate.com/blog" />
-        <link rel="alternate" href="https://www.flyinate.com/blog" />
+        <meta name="keywords" content="" /> 
+        <link rel="canonical" href={`https://www.flyinate.com${router.asPath}`} />
+        <link rel="alternate" href={`https://www.flyinate.com${router.asPath}`} />
       </Head>
       <Header />
 

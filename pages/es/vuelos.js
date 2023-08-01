@@ -39,7 +39,7 @@ export default function vuelos(props, pageValue, pageType) {
         <div className='blogadda'>
 
           <BreadHero title="vuelos" linkhtml={<><ul className='breadcrumb text-white'>
-            <li className="breadcrumb-item" > <Link href="/es/" locale="es">Casa</Link> </li> <li className='breadcrumb-item active' aria-current="page">vuelos</li> </ul></>} />
+            <li className="breadcrumb-item" > <Link href="/es/">Casa</Link> </li> <li className='breadcrumb-item active' aria-current="page">vuelos</li> </ul></>} />
 
           <div className='popular-destination blogaddalist full-w'>
             <Container>
@@ -61,7 +61,7 @@ export default function vuelos(props, pageValue, pageType) {
                           <div className='blogaddalist-inner'>
                             <span className='h4 title'>{items.pageName}-{items.pageValue}</span>
                             <hr className="mx-row-hr" />
-                            <Link onClick={() => SendingPageType(items)} href={`/es/vuelos/${items.url}-${items.pageValue}`} locale="es">
+                            <Link onClick={() => SendingPageType(items)} href={`/es/vuelos/${items.url}-${items.pageValue}`}>
                               <a className='btn btn-site ripple-effbtn btn-40'> <span>Lee mas</span></a>
                             </Link>
 

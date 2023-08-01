@@ -1,19 +1,24 @@
+import Head from 'next/head';
+import { useRouter } from 'next/router';
 import React, { useEffect } from 'react' 
 import { Link } from "react-router-dom";
 
 export default function Pageerror() {
+
+    const router = useRouter();
+
     useEffect(() => {
         window.scrollTo(0, 0)
     }, [])
     return (
         <div className="pageerror-wrap d-flex flex-row align-items-center full-w py-5">
-            {/* <Helmet>
-                
+            <Head> 
                 <title>404 Page Not Found</title>
                 <meta name="description" content="" />
                 <meta name="keywords" content="" />
-                <link rel="canonical" href={window.location.href} />
-            </Helmet> */}
+                <link rel="canonical" href={`https://www.flyinate.com${router.asPath}`} />
+				<link rel="alternate" href={`https://www.flyinate.com${router.asPath}`} />
+            </Head>
 
             <div className="container py-5">
                 <div className="row justify-content-center">

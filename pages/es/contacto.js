@@ -4,8 +4,10 @@ import Footer from "../../component/es/Footer"
 import Head from 'next/head';
 import BreadHero from '../../component/BreadHero'
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 export default function ContactUs() {
+	const router = useRouter();
 	useEffect(() => {
 		window.scrollTo(0, 0);
 	}, []);
@@ -14,8 +16,9 @@ export default function ContactUs() {
 			<Head>
 				<title>Contáctenos - Flyinate</title>
 				<meta name="description" content="¡Contacte y visite flyinate para reservar vuelos baratos y confiables ahora!" />
-				<meta name="keywords" content="flyinate, cheap flight booking website, best place to book flight, online flight booking" />
-				<link rel="canonical" href={'https://www.flyinate.com/es/contacto'} />
+				<meta name="keywords" content="flyinate, cheap flight booking website, best place to book flight, online flight booking" /> 
+				<link rel="canonical" href={`https://www.flyinate.com${router.asPath}`} />
+				<link rel="alternate" href={`https://www.flyinate.com${router.asPath}`} />
 			</Head>
 
 			<Header />

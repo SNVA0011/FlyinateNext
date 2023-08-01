@@ -11,10 +11,13 @@ import Footer from '../../../component/it/Footer'
 // import loading from "../Atoms/Image/load.gif"
 import Head from 'next/head'
 import Moment from 'react-moment';
+import { useRouter } from 'next/router'
 
 
 export default function articulos(props) {
- 
+  
+  const router = useRouter();
+  
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
@@ -28,6 +31,8 @@ export default function articulos(props) {
         
         <title>Articolo - Flyinate</title>
         <meta name="description" content="" />
+        <link rel="canonical" href={`https://www.flyinate.com${router.asPath}`} />
+				<link rel="alternate" href={`https://www.flyinate.com${router.asPath}`} />
       </Head>
       <Header />
       {/* {load? */}
@@ -41,9 +46,9 @@ export default function articulos(props) {
         <link rel="canonical" href={window.location.href}/> 
       </Helmet>
 
-      <BreadHero title="Blog" linkhtml={<><ul className='breadcrumb text-white'> <li className="breadcrumb-item" > <Linkhref="/it/"  locale="it">Home</Link> </li> <li className='breadcrumb-item active' aria-current="page">Blog</li> </ul></>} /> */}
+      <BreadHero title="Blog" linkhtml={<><ul className='breadcrumb text-white'> <li className="breadcrumb-item" > <Linkhref="/it/"  >Home</Link> </li> <li className='breadcrumb-item active' aria-current="page">Blog</li> </ul></>} /> */}
 
-          <BreadHero title="articolo" linkhtml={<><ul className='breadcrumb text-white'> <li className="breadcrumb-item" > <Link href="/it/" locale="it">Casa</Link> </li> <li className='breadcrumb-item active' aria-current="page">articolo</li> </ul></>} />
+          <BreadHero title="articolo" linkhtml={<><ul className='breadcrumb text-white'> <li className="breadcrumb-item" > <Link href="/it/" >Casa</Link> </li> <li className='breadcrumb-item active' aria-current="page">articolo</li> </ul></>} />
 
           <div className='popular-destination blogaddalist full-w'>
             <Container>
@@ -76,7 +81,7 @@ export default function articulos(props) {
                             <p dangerouslySetInnerHTML={{ __html: items.description }} />
 
                             <hr className="mx-row-hr" />
-                            <Link href={`/it/articolo/${items.titleUrl}`} locale="it">
+                            <Link href={`/it/articolo/${items.titleUrl}`} >
                               <a className='btn btn-site ripple-effbtn btn-40'>
                                 <span>Lee Mas</span>
                               </a>

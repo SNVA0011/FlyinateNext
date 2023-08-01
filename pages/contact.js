@@ -4,8 +4,11 @@ import Footer from "../component/Footer"
 import Head from 'next/head';
 import BreadHero from "../component/BreadHero";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 export default function ContactUs() {
+	const router = useRouter()
+
 	useEffect(() => {
 		window.scrollTo(0, 0);
 	}, []);
@@ -15,42 +18,43 @@ export default function ContactUs() {
 				<title>Contact Us - Flyinate</title>
 				<meta name="description" content="Contact & Visit flyinate for the cheap and reliable flights booking now! " />
 				<meta name="keywords" content="flyinate, cheap flight booking website, best place to book flight, online flight booking" />
-				<link rel="canonical" href={'https://www.flyinate.com/contact'} />
+				<link rel="canonical" href={`https://www.flyinate.com${router.asPath}`} />
+				<link rel="alternate" href={`https://www.flyinate.com${router.asPath}`} />
 			</Head>
 
 			<Header />
 
 			<BreadHero
-        title="Contact Us"
-        linkhtml={
-          <>
-            <ul className="breadcrumb text-white">
-              {" "}
-              <li className="breadcrumb-item">
-                {" "}
-                <Link href="/">Home</Link>{" "}
-              </li>{" "}
-              <li className="breadcrumb-item active" aria-current="page">
-                {" "}
-                Contact Us{" "}
-              </li>{" "}
-            </ul>
-          </>
-        }
-      />
+				title="Contact Us"
+				linkhtml={
+					<>
+						<ul className="breadcrumb text-white">
+							{" "}
+							<li className="breadcrumb-item">
+								{" "}
+								<Link href="/">Home</Link>{" "}
+							</li>{" "}
+							<li className="breadcrumb-item active" aria-current="page">
+								{" "}
+								Contact Us{" "}
+							</li>{" "}
+						</ul>
+					</>
+				}
+			/>
 
-		 
+
 
 			<div className="about-uspage full-w pyblock-80">
 				<div className="site-content site-contact">
-				<div className="container mb-1">
+					<div className="container mb-1">
 						<div className="form-row">
 							<div className="col-lg-6">
 								<div className="contact-text">
 									<h2>Our Offices</h2>
 									<div className="contact-box">
 										<h3>USA</h3>
-										<p>W Ray Rd, Chandler, AZ 85226, USA</p> 
+										<p>W Ray Rd, Chandler, AZ 85226, USA</p>
 										<a href="#" title="Get Direction">Get Direction</a>
 									</div>
 									<div className="contact-box">

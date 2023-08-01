@@ -44,13 +44,13 @@ export default function BlogDetails(props) {
           <Head>
             <title>{props.singleblog[0].title}</title>
             <meta name="description" content={props.singleblog[0].description} />
-            <meta name="keywords" content={props.singleblog[0].keywords} />
-            <link rel="canonical" href={`https://www.flyinate.com/it/articolo/${props.singleblog[0].titleUrl}`} />
-            <link rel="alternate" href={`https://www.flyinate.com/it/articolo/${props.singleblog[0].titleUrl}`} />
+            <meta name="keywords" content={props.singleblog[0].keywords} /> 
+            <link rel="canonical" href={`https://www.flyinate.com${router.asPath}`} />
+				<link rel="alternate" href={`https://www.flyinate.com${router.asPath}`} />
           </Head>
 
           <div className='blogadda'>
-            <BreadHero title="Articolo" linkhtml={<><ul className='breadcrumb text-white'> <li className="breadcrumb-item" > <Link href="/it" locale="it">Casa</Link> </li> <li className='breadcrumb-item active' aria-current="page"> <Link href="/it/articulos" locale="it"> articulos </Link></li> <li className='breadcrumb-item active' aria-current="page">{props.singleblog[0].title}</li> </ul></>} />
+            <BreadHero title="Articolo" linkhtml={<><ul className='breadcrumb text-white'> <li className="breadcrumb-item" > <Link href="/it" >Casa</Link> </li> <li className='breadcrumb-item active' aria-current="page"> <Link href="/it/articolo" > Articolo </Link></li> <li className='breadcrumb-item active' aria-current="page">{props.singleblog[0].title}</li> </ul></>} />
 
             <div className='popular-destination blogaddalist details full-w'>
               <Container>

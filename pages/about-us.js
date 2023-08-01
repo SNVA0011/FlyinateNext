@@ -9,9 +9,10 @@ import Footer from "../component/Footer"
 import Head from 'next/head'
 import BreadHero from "../component/BreadHero";
 import Header from "../component/Navbar";
+import { useRouter } from "next/router";
 
 export default function AboutUs() {
-
+  const router = useRouter()
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -24,7 +25,8 @@ export default function AboutUs() {
         <title>About us - Flyinate</title>
         <meta name="description" content="" />
         <meta name="keywords" content="" />
-        <link rel="canonical" href="https://www.flyinate.com/about-us" />
+        <link rel="canonical" href={`https://www.flyinate.com${router.asPath}`} />
+        <link rel="alternate" href={`https://www.flyinate.com${router.asPath}`} />
       </Head>
 
       <Header />

@@ -13,11 +13,7 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <>
-      <Head>
-        {/* <title>Flyinate | Book Low Fares Flights Tickets & Rental Cars</title>
-        <meta name="description" content="" />
-        <meta name="keywords" content="" />  */} 
-      </Head>
+      <Head></Head>
       <Component {...pageProps} />
     </>
   )

@@ -10,16 +10,16 @@ import Footer from '../../component/it/Footer';
 import PopularDestinations from '../../component/it/PopularDestination';
 
 export default function Home() {
-  const useroute = useRouter();
-  const canonicalURL = 'https://www.flyinate.com' + useroute.pathname;
+  const router = useRouter(); 
+  
   return (
     <div>
       <Head> 
         <title>Flyinate | Prenota biglietti aerei a basso costo e auto a noleggio</title>
         <meta name="description" content="" />
-        <meta name="keywords" content="" />
-        <link rel="canonical" href={canonicalURL} />
-        <link rel="alternate" href={canonicalURL} />
+        <meta name="keywords" content="" /> 
+        <link rel="canonical" href={`https://www.flyinate.com${router.asPath}`} />
+				<link rel="alternate" href={`https://www.flyinate.com${router.asPath}`} />
       </Head>
       <Header />
       <Enginebox />

@@ -10,7 +10,7 @@ import Link from "next/link"
 import { useRouter } from 'next/router';
 
 export default function CustomizeTravelPage() {
-  const location = useRouter();
+  const router = useRouter();
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -21,8 +21,9 @@ export default function CustomizeTravelPage() {
         
         <title>Flyinate : Group Travel</title>
         <meta name="description" content="" />
-        <meta name="keywords" content="" />
-        <link rel="canonical" href={"https://www.flyinate.com/customize/group-travel"} />
+        <meta name="keywords" content="" /> 
+        <link rel="canonical" href={`https://www.flyinate.com${router.asPath}`} />
+				<link rel="alternate" href={`https://www.flyinate.com${router.asPath}`} />
       </Head>
 
 

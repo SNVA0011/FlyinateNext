@@ -45,12 +45,12 @@ export default function BlogDetails(props) {
             <title>{props.singleblog[0].title}</title>
             <meta name="description" content={props.singleblog[0].description} />
             <meta name="keywords" content={props.singleblog[0].keywords} />
-            <link rel="canonical" href={`https://www.flyinate.com/es/articulos/${props.singleblog[0].titleUrl}`} />
-            <link rel="alternate" href={`https://www.flyinate.com/es/articulos/${props.singleblog[0].titleUrl}`} />
+            <link rel="canonical" href={`https://www.flyinate.com${router.asPath}`} />
+            <link rel="alternate" href={`https://www.flyinate.com${router.asPath}`} />
           </Head>
 
           <div className='blogadda'>
-            <BreadHero title="Articulos" linkhtml={<><ul className='breadcrumb text-white'> <li className="breadcrumb-item" > <Link href="/es" locale="es">Home</Link> </li> <li className='breadcrumb-item active' aria-current="page"> <Link href="/es/articulos" locale="es"> articulos </Link></li> <li className='breadcrumb-item active' aria-current="page">{props.singleblog[0].title}</li> </ul></>} />
+            <BreadHero title="Articulos" linkhtml={<><ul className='breadcrumb text-white'> <li className="breadcrumb-item" > <Link href="/es">Home</Link> </li> <li className='breadcrumb-item active' aria-current="page"> <Link href="/es/articulos"> articulos </Link></li> <li className='breadcrumb-item active' aria-current="page">{props.singleblog[0].title}</li> </ul></>} />
 
             <div className='popular-destination blogaddalist details full-w'>
               <Container>
@@ -62,10 +62,10 @@ export default function BlogDetails(props) {
                           {props.singleblog.map((items, i) => (
                             <div className='blogaddalist-round' key={i}>
                               <div className='blogaddalist-inner'>
-                              <div className="mb-2 text-secondary">
-                            - <Moment date={props.singleblog[0].posttime} format="MMM DD, YYYY" />
-                            </div>
-                 
+                                <div className="mb-2 text-secondary">
+                                  - <Moment date={props.singleblog[0].posttime} format="MMM DD, YYYY" />
+                                </div>
+
                                 <div className="blog-inner-box2" dangerouslySetInnerHTML={{ __html: items.content }} />
                               </div>
                             </div>
@@ -170,8 +170,8 @@ export async function getStaticProps(context) {
     props: {
       singleblog: json.response,
       recentposts: rcpjson.response
-    }, 
-    revalidate: 60,  
+    },
+    revalidate: 60,
   }
 }
 
@@ -179,7 +179,7 @@ export async function getStaticProps(context) {
 
 
 // This function gets called at build time
-export const getStaticPaths = async() => {
+export const getStaticPaths = async () => {
   // Get the paths we want to pre-render based on posts
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");

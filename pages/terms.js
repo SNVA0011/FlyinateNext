@@ -7,9 +7,13 @@ import Col from 'react-bootstrap/Col'
 import Link from "next/link"
 import Footer from '../component/Footer';
 import Header from "../component/Navbar";
+import { useRouter } from 'next/router';
 
 
 export default function Terms() {
+    
+    const router = useRouter()
+    
     useEffect(() => {
         window.scrollTo(0, 0)
     }, [])
@@ -18,8 +22,10 @@ export default function Terms() {
             <Head>
                 <title>Terms & Conditions - Flyinate</title>
                 <meta name="description" content="" />
-                <meta name="keywords" content="" />
-                <link rel="canonical" href="https://www.flyinate.com/terms" />
+                <meta name="keywords" content="" /> 
+				<link rel="canonical" href={`https://www.flyinate.com${router.asPath}`} />
+				<link rel="alternate" href={`https://www.flyinate.com${router.asPath}`} />
+
             </Head>
 
             <Header />

@@ -31,14 +31,14 @@ export default function ChangeCountryMenu() {
                         </Dropdown.Item>
                     </Col>
                     <Col xs="12" md="12" className='mb-3'>
-                        <Dropdown.Item as={Link} href="/es" locale="it" onClick={(e) => { setLang('ES') }}>
+                        <Dropdown.Item as={Link} href="/es"  onClick={(e) => { setLang('ES') }}>
                             <a className={'btn btn-site ripple-effbtn btn-40 btn-block text-center dropdown-item'}>
                                 <span>Spanish</span>
                             </a>
                         </Dropdown.Item>
                     </Col>
                     <Col xs="12" md="12">
-                        <Dropdown.Item as={Link} href="/it" locale="it" onClick={(e) => { setLang('IT') }}>
+                        <Dropdown.Item as={Link} href="/it"  onClick={(e) => { setLang('IT') }}>
                             <a className={'btn btn-site ripple-effbtn btn-40 btn-block text-center dropdown-item active'}>
                                 <span>Italian</span>
                             </a>

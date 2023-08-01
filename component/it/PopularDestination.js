@@ -22,7 +22,7 @@ export default function PopularDestinations() {
 
                     <Row>
                         <Col xs={12} md={6} lg={4}> 
-                                <Link href="/it" locale="it">
+                                <Link href="/it" >
                                 <a className='image_area_partition'>
                                 <Image src='/images/macchu.jpg' width={500} height={300}   alt='macchu' className='object-cover'></Image>
                                 <div className='wrapper'>
@@ -32,7 +32,7 @@ export default function PopularDestinations() {
                             </Link>
                         </Col>
                         <Col xs={12} md={6} lg={4}>
-                            <Link href="/it" locale="it">
+                            <Link href="/it" >
                             <a className='image_area_partition'> 
                                 <Image src='/images/island.jpg'  width="500" height="300" alt='Galapagos Islands' className='object-cover'></Image>
                                 <div className='wrapper'>
@@ -42,7 +42,7 @@ export default function PopularDestinations() {
                             </Link>
                         </Col>
                         <Col xs={12} md={6} lg={4}>
-                            <Link href="/it" locale="it">
+                            <Link href="/it" >
                             <a className='image_area_partition'> 
                                 <Image src='/images/Cusco.jpg' width={500} height={300}   alt='Cusco' className='object-cover'></Image>
                                 <div className='wrapper'>
@@ -53,7 +53,7 @@ export default function PopularDestinations() {
                         </Col>
                         <Col xs={12} md={6} lg={4}>
                         
-                            <Link href="/it" locale="it">
+                            <Link href="/it" >
                             <a className='image_area_partition'> 
                                 <Image src='/images/easter.jpg'width={500} height={300}   alt='Easter Island' className='object-cover'></Image>
                                 <div className='wrapper'>
@@ -63,7 +63,7 @@ export default function PopularDestinations() {
                             </Link>
                         </Col>
                         <Col xs={12} md={6} lg={4}>
-                            <Link href="/it" locale="it">
+                            <Link href="/it" >
                             <a className='image_area_partition'> 
                                 <Image src='/images/Buenos.jpg'width={500} height={300}   alt='Buenos Aires' className='object-cover'></Image>
                                 <div className='wrapper'>
@@ -73,7 +73,7 @@ export default function PopularDestinations() {
                             </Link>
                         </Col>
                         <Col xs={12} md={6} lg={4}>
-                            <Link href="/it" locale="it">
+                            <Link href="/it" >
                             <a className='image_area_partition'> 
                                 <Image src='/images/Lima.jpg'width={500} height={300}   alt='turkey' className='object-cover'></Image>
                                 <div className='wrapper'>

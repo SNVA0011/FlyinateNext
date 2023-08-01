@@ -15,7 +15,9 @@ export default function BlogDetails(props) {
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
- 
+
+  console.log('ss-',props.singleblog)
+
 
   if (router.isFallback) {
     return <>
@@ -42,8 +44,8 @@ export default function BlogDetails(props) {
             <title>{props.singleblog[0].title}</title>
             <meta name="description" content={props.singleblog[0].description} />
             <meta name="keywords" content={props.singleblog[0].keywords} />
-            <link rel="canonical" href={`https://www.flyinate.com/blog/${props.singleblog[0].titleUrl}`} />
-            <link rel="alternate" href={`https://www.flyinate.com/blog/${props.singleblog[0].titleUrl}`} />
+            <link rel="canonical" href={`https://www.flyinate.com${router.asPath}`} />
+            <link rel="alternate" href={`https://www.flyinate.com${router.asPath}`} />
           </Head>
 
           <div className='blogadda'>
@@ -59,10 +61,10 @@ export default function BlogDetails(props) {
                           {props.singleblog.map((items, i) => (
                             <div className='blogaddalist-round' key={i}>
                               <div className='blogaddalist-inner'>
-                              <div className="mb-2 text-secondary">
-                            - <Moment date={props.singleblog[0].posttime} format="MMM DD, YYYY" />
-                            </div>
-                 
+                                <div className="mb-2 text-secondary">
+                                  - <Moment date={props.singleblog[0].posttime} format="MMM DD, YYYY" />
+                                </div>
+
                                 <div className="blog-inner-box2" dangerouslySetInnerHTML={{ __html: items.content }} />
                               </div>
                             </div>
@@ -170,17 +172,17 @@ export async function getStaticProps(context) {
       singleblog: json.response,
       recentposts: rcpjson.response
     },
-    revalidate: 60, 
+    revalidate: 60,
   }
 }
 
 
 // This function gets called at build time
-export const getStaticPaths = async() => {
+export const getStaticPaths = async () => {
   // Get the paths we want to pre-render based on posts
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
-   var raw = JSON.stringify({
+  var raw = JSON.stringify({
     "id": "",
     "title": "",
     "titleUrl": "",
