@@ -376,7 +376,7 @@ body .field-submit {
     margin-top: 0;
     margin-bottom: 27px;
     padding-left: 34px;
-    text-transform: uppercase;
+    text-transform: capitalize;
     font-weight: 700;
 }
  

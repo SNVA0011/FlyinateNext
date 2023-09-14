@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import Moment from 'react-moment';
 
 
-function RecentArticle({ language, data, title }) {
+function RecentAirports({ language, data, title }) {
     const location = useRouter();
     const parenturl = language ? location.asPath.split('/')[2] : location.asPath.split('/')[1]
     const lang = language ? ('/' + language) : ''
@@ -41,4 +41,4 @@ function RecentArticle({ language, data, title }) {
     )
 }
 
-export default RecentArticle
+export default RecentAirports

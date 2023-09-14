@@ -57,6 +57,11 @@ export default function Header() {
                                 Blog
                                 </a>
                                 </Link>
+                                <Link href="/airports" onClick={() => window.innerWidth < 1200 ? setExpanded(expanded ? false : "expanded") : ''}>
+                                <a className={'nav-link ' + (location.pathname === "/airports" || location.pathname === "/airports/[AirportsDetail]" ? 'active' : '')}>
+                                Airports
+                                </a>
+                                </Link>
                             <Link href="/contact" onClick={() => window.innerWidth < 1200 ? setExpanded(expanded ? false : "expanded") : ''}>
                                 <a className={'nav-link ' + (location.pathname === "/contact" ? 'active' : '')}>
                                 Contact

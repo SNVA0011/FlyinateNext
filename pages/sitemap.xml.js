@@ -42,6 +42,11 @@ export const getServerSideProps = async (ctx) => {
     "tfnPopup": ""
   }))
 
+  const airports = await getJsonbyPost("https://cms.travomint.com/news-article/showNAdata?authcode=Trav3103s987876", JSON.stringify({
+    "siteId":"139",
+    "pageType":"airport"
+}))
+
   // flightsposts
   const flightsposts = await getJsonbyPost("https://cms.travomint.com/travoles-content/site-map?authcode=Trav3103s987876", JSON.stringify({
     "contentId": "",
@@ -153,7 +158,8 @@ export const getServerSideProps = async (ctx) => {
     { 'url': "cheap-flights/lima-flyinate", 'time': '2022-11-30T06:47:34+00:00' },
     { 'url': "customize/business-travel", 'time': '2022-11-30T06:47:34+00:00' },
     { 'url': "customize/group-travel", 'time': '2022-11-30T06:47:34+00:00' },
-    { 'url': 'blog', 'time': new Date().toISOString().split('T')[0] + 'T06:47:34+00:00' }
+    { 'url': 'blog', 'time': new Date().toISOString().split('T')[0] + 'T06:47:34+00:00' },
+    { 'url': 'airports', 'time': new Date().toISOString().split('T')[0] + 'T06:47:34+00:00' },
   ]
   const esStaticUrl = [
     { 'url': '', 'time': '2022-11-30T06:47:34+00:00' },
@@ -179,6 +185,14 @@ export const getServerSideProps = async (ctx) => {
     lastmod: new Date(item.posttime).toISOString().split('T')[0] + 'T06:47:34+00:00',
     changefreq: 'daily'
   }));
+
+  const airportsSitemaps = airports && airports?.filter((item) => item.status === "Active").map((item) => ({
+    loc: `${baseUrl}/airports/${item.titleUrl.replace('&', '&amp;')}`,
+    lastmod: new Date(item.posttime).toISOString().split('T')[0] + 'T06:47:34+00:00',
+    changefreq: 'daily'
+  }));
+
+  
 
   // flights
   const flightsSitemaps = flightsposts && flightsposts?.filter((items) => items.status === "Active").filter((items) => items.pageType === "Airline").map((items) => ({
@@ -216,7 +230,7 @@ export const getServerSideProps = async (ctx) => {
 
   //========== Mix (en + es) ==========//
   const fields = [
-    ...staticSitemaps, ...blogSitemaps, ...flightsSitemaps,
+   ...staticSitemaps, ...blogSitemaps, ...flightsSitemaps, ...airportsSitemaps, 
     ...esStaticSitemaps, ...esBlogSitemaps, ...esFlightsSitemaps,
     ...itBlogSitemaps
   ];

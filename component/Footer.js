@@ -25,6 +25,11 @@ export default function Footer() {
                     </Link>
                   </li>
                   <li>
+                    <Link href="/airports">
+                      <a className="ripple-effbtn d-inline-block"><span>Airports </span></a>
+                    </Link>
+                  </li>
+                  <li>
                     <Link  href="/flights" >
                       <a className="ripple-effbtn d-inline-block"><span>Flights</span></a>
                     </Link>
