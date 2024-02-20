@@ -9,6 +9,7 @@ import Head from 'next/head'
 import NotFound from '../NotFound';
 import { useRouter } from 'next/router'
 import Moment from 'react-moment';
+import { siteid } from '../../utils/static';
 
 export default function airportsDetail(props) {
   const router = useRouter()
@@ -101,7 +102,7 @@ export async function getStaticProps(context) {
 
   // recent blog
   var recentraw = JSON.stringify({
-    "siteId":"139",
+    "siteId":siteid,
     "pageType":"airport"
   });
 
@@ -116,7 +117,7 @@ export async function getStaticProps(context) {
 
   // single blog
   var raw = JSON.stringify({
-    "siteId": "139",
+    "siteId": siteid,
     "pageType":"airport",
     "titleUrl": params.airportsDetail
 });
@@ -145,7 +146,7 @@ export const getStaticPaths = async () => {
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
   var raw = JSON.stringify({
-    "siteId":"139",
+    "siteId":siteid,
     "pageType":"airport"
 });
 

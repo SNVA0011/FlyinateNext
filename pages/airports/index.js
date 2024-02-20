@@ -11,6 +11,7 @@ import BreadHero from '../../component/BreadHero'
 // import loading from "../Atoms/Image/load.gif" 
 import Moment from 'react-moment';
 import { useRouter } from 'next/router'
+import { siteid } from '../../utils/static'
  
 export default function airports(props) {
   const router = useRouter()
@@ -95,7 +96,7 @@ export async function getStaticProps(context) {
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
   var raw = JSON.stringify({
-    "siteId":"139",
+    "siteId":siteid,
     "pageType":"airport"
 });
 

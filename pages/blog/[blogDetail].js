@@ -9,6 +9,7 @@ import Head from 'next/head'
 import NotFound from '../NotFound';
 import { useRouter } from 'next/router'
 import Moment from 'react-moment';
+import { siteid } from '../../utils/static';
 
 export default function BlogDetails(props) {
   const router = useRouter()
@@ -113,7 +114,7 @@ export async function getStaticProps(context) {
     "status": "",
     "heading": "",
     "img_url": "",
-    "siteId": "139",
+    "siteId": siteid,
     "categoryName": "",
     "blogdes2": "",
     "blogTagsName2": "",
@@ -146,7 +147,7 @@ export async function getStaticProps(context) {
     "status": "",
     "heading": "",
     "img_url": "",
-    "siteId": "139",
+    "siteId": siteid,
     "categoryName": "",
     "blogdes2": "",
     "blogTagsName2": "",
@@ -193,7 +194,7 @@ export const getStaticPaths = async () => {
     "status": "",
     "heading": "",
     "img_url": "",
-    "siteId": "139",
+    "siteId": siteid,
     "categoryName": "",
     "blogdes2": "",
     "blogTagsName2": "",

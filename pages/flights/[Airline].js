@@ -7,6 +7,7 @@ import BreadHero from '../../component/BreadHero';
 import Head from 'next/head'
 import NotFound from '../NotFound';
 import { useRouter } from 'next/router'
+import { siteid } from '../../utils/static';
 
 
 export default function Airline(props) {
@@ -99,7 +100,7 @@ export async function getStaticProps(context) {
     "contentTitle": "",
     "contentData": "",
     "contentImage": "",
-    "siteId": "139",
+    "siteId": siteid,
     "status": "",
     "count": "",
     "url": actualURLParts[0] + '-' + actualURLParts[1],
@@ -143,7 +144,7 @@ export const getStaticPaths = async () => {
     "contentTitle": "",
     "contentData": "",
     "contentImage": "",
-    "siteId": "139",
+    "siteId": siteid,
     "status": "",
     "count": "",
     "url": "",

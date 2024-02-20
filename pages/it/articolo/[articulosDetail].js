@@ -9,6 +9,7 @@ import RecentBlogs from "../../../component/RecentBlogs"
 import NotFound from '../NotFound';
 import { useRouter } from 'next/router'
 import Moment from 'react-moment';
+import { siteid } from '../../../utils/static';
 
 
 export default function BlogDetails(props) {
@@ -116,7 +117,7 @@ export async function getStaticProps(context) {
     "status": "",
     "heading": "",
     "categoryName": "",
-    "siteId": "139",
+    "siteId": siteid,
     "pageType": "ArticleIT",
     "extraTag": "",
     "tfnHeader": "",
@@ -147,14 +148,14 @@ export async function getStaticProps(context) {
     "status": "",
     "heading": "",
     "categoryName": "",
-    "siteId": "139",
+    "siteId": siteid,
     "pageType": "ArticleIT",
     "extraTag": "",
     "tfnHeader": "",
     "tfnFooter1": "",
     "tfnFooter2": "",
     "tfnFooter3": "",
-    "tfnPopup": "",
+    "tfnPopup": ""
   }
   );
 
@@ -194,7 +195,7 @@ export const getStaticPaths = async() => {
     "status": "",
     "heading": "",
     "categoryName": "",
-    "siteId": "139",
+    "siteId": siteid,
     "pageType": "ArticleIT",
     "extraTag": "",
     "tfnHeader": "",

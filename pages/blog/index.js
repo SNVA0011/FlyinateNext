@@ -3,17 +3,25 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Link from "next/link"
-import Footer from '../component/Footer';
-import Header from "../component/Navbar";
+import Footer from '../../component/Footer';
+import Header from "../../component/Navbar";
+import PaginateBlog from "../../component/PaginateBlog";
 import Head from 'next/head' 
 // import ScrollAnimation from 'react-animate-on-scroll';
-import BreadHero from '../component/BreadHero'
+import BreadHero from '../../component/BreadHero'
 // import loading from "../Atoms/Image/load.gif" 
 import Moment from 'react-moment';
 import { useRouter } from 'next/router'
+import { cms_trav_api, cms_trav_authcode, paginateSize, siteid } from '../../utils/static'
  
-export default function Blog(props) {
+export default function Blog({ blogdata }) {
   const router = useRouter()
+
+  const blogitems = blogdata.data;
+  const totalpage = blogdata.totalPages;
+
+  console.log('blogitems-',blogitems);
+  console.log('totalpage-',totalpage);
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -31,7 +39,10 @@ export default function Blog(props) {
       </Head>
       <Header />
 
-      <div className='blogadda'>
+
+  
+
+     <div className='blogadda'>
         <BreadHero title="Blog" linkhtml={<><ul className='breadcrumb text-white'>
           <li className="breadcrumb-item" > <Link href="/">Home</Link> </li>
           <li className='breadcrumb-item active' aria-current="page">Blog</li> </ul></>} />
@@ -48,9 +59,9 @@ export default function Blog(props) {
 
 
             {
-              props.allblog?.length > 0 ?
+              blogitems?.length > 0 ?
                 <Row>
-                  {props.allblog.filter((items) => items.status === "Active").map((items, i) => (
+                  {blogitems.filter((items) => items.status === "Active").map((items, i) => (
                     <Col xs={12} md={6} key={i}>
                       <div className='blogaddalist-round'>
                         <div className='image_area_partition'>
@@ -81,54 +92,74 @@ export default function Blog(props) {
                 : <p className='text-center'>No items found !</p>
             }
 
+
+            {totalpage > 1 && blogitems?.length > 0 && (
+                  <PaginateBlog
+                    current={true}
+                    page={`/blog`}
+                    type={`/blog/page`}
+                    total={totalpage}
+                  />
+                )}
+
           </Container>
         </div>
-      </div>
+      </div> 
 
       <Footer />
     </>
   )
 }
+ 
 
+export const getStaticProps = async ({ params }) => {
+  try {
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
 
-export async function getStaticProps(context) {
-  var myHeaders = new Headers();
-  myHeaders.append("Content-Type", "application/json");
-  var raw = JSON.stringify({
-    "id": "",
-    "title": "",
-    "titleUrl": "",
-    "content": "",
-    "description": "",
-    "keywords": "",
-    "posttime": "",
-    "status": "",
-    "heading": "",
-    "img_url": "",
-    "siteId": "139",
-    "categoryName": "",
-    "blogdes2": "",
-    "blogTagsName2": "",
-    "extarTag": "",
-    "tfnHeader": "",
-    "tfnFooter1": "",
-    "tfnFooter2": "",
-    "tfnFooter3": "",
-    "tfnPopup": ""
-  });
-
-  var requestOptions = {
-    method: 'POST',
-    headers: myHeaders,
-    body: raw,
-    redirect: 'follow'
-  };
-  
-  const res = await fetch("https://cms.travomint.com/travoles-content/showblogdata?authcode=Trav3103s987876", requestOptions)
-  const json = await res.json()
-  
-  return {
-    props: { allblog: json.response },
-    revalidate: 60, 
+    // All blogs (1st Page)
+    const res = await fetch(
+      `${cms_trav_api}/travoles-content/pagination?authcode=${cms_trav_authcode}&page=1&pageSize=${paginateSize}`,
+      {
+        method: "POST",
+        headers: myHeaders,
+        body: JSON.stringify({
+          siteId: siteid,
+        }),
+        redirect: "follow",
+      }
+    );
+    const json = await res.json(); 
+    return {
+      props: {
+        blogdata: json
+      },
+      revalidate: 60, // In seconds
+    };
+  } catch (error) {
+    return { notFound: true };
   }
-}
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

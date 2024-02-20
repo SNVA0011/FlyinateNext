@@ -11,6 +11,7 @@ import Link from "next/link"
 import Image from "next/image"
 import Head from 'next/head' 
 import { useRouter } from 'next/router';
+import { siteid } from '../utils/static';
 
 
 export default function Flights(props, pageValue, pageType) {
@@ -111,7 +112,7 @@ export async function getStaticProps(context) {
     "contentTitle": "",
     "contentData": "",
     "contentImage": "",
-    "siteId": "139",
+    "siteId": siteid,
     "status": "",
     "count": "",
     "url": "",

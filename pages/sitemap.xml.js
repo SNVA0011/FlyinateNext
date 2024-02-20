@@ -1,5 +1,6 @@
 import { GetServerSideProps } from "next";
 import { getServerSideSitemap, ISitemapField } from "next-sitemap";
+import { siteid } from "../utils/static";
 
 export const getJsonbyPost = async (url, options) => {
   const dynrequest = await fetch(url,
@@ -30,7 +31,7 @@ export const getServerSideProps = async (ctx) => {
     "status": "",
     "heading": "",
     "img_url": "",
-    "siteId": "139",
+    "siteId": siteid,
     "categoryName": "",
     "blogdes2": "",
     "blogTagsName2": "",
@@ -43,7 +44,7 @@ export const getServerSideProps = async (ctx) => {
   }))
 
   const airports = await getJsonbyPost("https://cms.travomint.com/news-article/showNAdata?authcode=Trav3103s987876", JSON.stringify({
-    "siteId":"139",
+    "siteId":siteid,
     "pageType":"airport"
 }))
 
@@ -62,7 +63,7 @@ export const getServerSideProps = async (ctx) => {
     "contentTitle": "",
     "contentData": "",
     "contentImage": "",
-    "siteId": "139",
+    "siteId": siteid,
     "status": "",
     "count": "",
     "url": "",
@@ -83,7 +84,7 @@ export const getServerSideProps = async (ctx) => {
     "status": "",
     "heading": "",
     "categoryName": "",
-    "siteId": "139",
+    "siteId": siteid,
     "pageType": "Articulo",
     "extraTag": "",
     "tfnHeader": "",
@@ -109,7 +110,7 @@ export const getServerSideProps = async (ctx) => {
     "contentTitle": "",
     "contentData": "",
     "contentImage": "",
-    "siteId": "139",
+    "siteId": siteid,
     "status": "",
     "count": "",
     "url": "",
@@ -129,7 +130,7 @@ export const getServerSideProps = async (ctx) => {
     "status": "",
     "heading": "",
     "categoryName": "",
-    "siteId": "139",
+    "siteId": siteid,
     "pageType": "ArticleIT",
     "extraTag": "",
     "tfnHeader": "",

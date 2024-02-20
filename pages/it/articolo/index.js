@@ -12,11 +12,20 @@ import Footer from '../../../component/it/Footer'
 import Head from 'next/head'
 import Moment from 'react-moment';
 import { useRouter } from 'next/router'
+import { cms_trav_api, cms_trav_authcode, paginateSize, siteid } from '../../../utils/static'
+import PaginateBlog from '../../../component/PaginateBlog'
 
 
-export default function articulos(props) {
+export default function articulos({ blogdata }) {
   
   const router = useRouter();
+
+
+  const blogitems = blogdata.data;
+  const totalpage = blogdata.totalPages;
+
+  console.log('blogitems-',blogitems);
+  console.log('totalpage-',totalpage);
   
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -59,9 +68,9 @@ export default function articulos(props) {
 
        
               {
-                props.allblog?.length > 0 ?
+                blogitems?.length > 0 ?
                   <Row>
-                    {props.allblog.filter((items) => items.status === "Active").map((items, i) => (
+                    {blogitems.filter((items) => items.status === "Active").map((items, i) => (
                       <Col xs={12} md={6} key={i}>
                         <div className='blogaddalist-round'>
                           <div className='image_area_partition'>
@@ -93,6 +102,16 @@ export default function articulos(props) {
                   : <p className='text-center'>Nessun articolo trovato !</p>
               }
 
+
+              {totalpage > 1 && blogitems?.length > 0 && (
+                  <PaginateBlog
+                    current={true}
+                    page={`/it/articolo`}
+                    type={`/it/articolo/page`}
+                    total={totalpage}
+                  />
+                )}
+
             </Container>
           </div>
         </div>
@@ -104,40 +123,34 @@ export default function articulos(props) {
 }
 
 
-export async function getStaticProps(context) {
-  var myHeaders = new Headers();
-  myHeaders.append("Content-Type", "application/json");
-  var raw = JSON.stringify({
-    "id": "",
-    "title": "",
-    "titleUrl": "",
-    "content": "",
-    "description": "",
-    "keywords": "",
-    "posttime": "",
-    "status": "",
-    "heading": "",
-    "categoryName": "",
-    "siteId": "139",
-    "pageType": "ArticleIT",
-    "extraTag": "",
-    "tfnHeader": "",
-    "tfnFooter1": "",
-    "tfnFooter2": "",
-    "tfnFooter3": "",
-    "tfnPopup": ""
-  });
+ 
 
-  var requestOptions = {
-    method: 'POST',
-    headers: myHeaders,
-    body: raw,
-    redirect: 'follow'
-  };
-  const res = await fetch("https://cms.travomint.com/news-article/showNAdata?authcode=Trav3103s987876", requestOptions)
-  const json = await res.json()
-  return {
-    props: { allblog: json.response },
-    revalidate: 60, 
+export const getStaticProps = async ({ params }) => {
+  try {
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    // All blogs (1st Page)
+    const res = await fetch(
+      `${cms_trav_api}/news-article/pagination?authcode=${cms_trav_authcode}&page=1&pageSize=${paginateSize}`,
+      {
+        method: "POST",
+        headers: myHeaders,
+        body: JSON.stringify({
+          siteId: siteid,
+          "pageType":"ArticleIT"
+        }),
+        redirect: "follow",
+      }
+    );
+    const json = await res.json(); 
+    return {
+      props: {
+        blogdata: json
+      },
+      revalidate: 60, // In seconds
+    };
+  } catch (error) {
+    return { notFound: true };
   }
-}
+};

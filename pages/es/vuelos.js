@@ -11,6 +11,7 @@ import Image from "next/image"
 import Header from '../../component/es/Navbar';
 import Footer from '../../component/es/Footer';
 import Head from 'next/head' 
+import { siteid } from '../../utils/static';
 
 export default function vuelos(props, pageValue, pageType) {
  
@@ -106,7 +107,7 @@ export async function getStaticProps(context) {
     "contentTitle": "",
     "contentData": "",
     "contentImage": "",
-    "siteId": "139",
+    "siteId": siteid,
     "status": "",
     "count": "",
     "url": "",
