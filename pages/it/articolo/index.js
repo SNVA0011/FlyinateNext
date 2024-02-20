@@ -20,12 +20,10 @@ export default function articulos({ blogdata }) {
   
   const router = useRouter();
 
-
   const blogitems = blogdata.data;
   const totalpage = blogdata.totalPages;
 
-  console.log('blogitems-',blogitems);
-  console.log('totalpage-',totalpage);
+ 
   
   useEffect(() => {
     window.scrollTo(0, 0)

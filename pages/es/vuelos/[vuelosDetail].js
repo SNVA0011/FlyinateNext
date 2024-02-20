@@ -23,7 +23,7 @@ export default function Airline(props) {
   if (router.isFallback) {
     return <>
       <Header />
-      <div className='text-center about-uspage full-w pyblock-80'>
+      <div className='text-center about-uspage full-w pyblock-200'>
         <div className="spinner-border text-secondary" role="status">
         </div>
       </div>

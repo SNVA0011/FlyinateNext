@@ -24,7 +24,7 @@ export default function BlogDetails(props) {
     return <>
       <Navbar />
 
-      <div className='text-center about-uspage full-w pyblock-80'>
+      <div className='text-center about-uspage full-w pyblock-200'>
         <div className="spinner-border text-secondary" role="status">
         </div>
       </div>

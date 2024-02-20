@@ -19,9 +19,7 @@ export default function Blog({ blogdata }) {
 
   const blogitems = blogdata.data;
   const totalpage = blogdata.totalPages;
-
-  console.log('blogitems-',blogitems);
-  console.log('totalpage-',totalpage);
+ 
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -31,7 +29,7 @@ export default function Blog({ blogdata }) {
   return (
     <>
       <Head>
-        <title>	Blog - Flyinate</title> 
+        <title>Blog - Flyinate</title> 
         <meta name="description" content="" />
         <meta name="keywords" content="" /> 
         <link rel="canonical" href={`https://www.flyinate.com${router.asPath}`} />

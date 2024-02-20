@@ -3,14 +3,14 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Link from "next/link"
-import Footer from '../../../component/Footer';
-import Header from "../../../component/Navbar";
-import Navbar from "../../../component/Navbar"
-import PaginateBlog from "../../../component/PaginateBlog";
-import PageHead from "../../../component/PageHead";
-import BreadHero from '../../../component/BreadHero'
+import Footer from '../../../../component/it/Footer';
+import Header from "../../../../component/it/Navbar";
+import Navbar from "../../../../component/it/Navbar"
+import PaginateBlog from "../../../../component/PaginateBlog";
+import PageHead from "../../../../component/PageHead";
+import BreadHero from '../../../../component/BreadHero'
 import Moment from 'react-moment';
-import { cms_trav_api, cms_trav_authcode, paginateSize, siteid } from '../../../utils/static'
+import { cms_trav_api, cms_trav_authcode, paginateSize, siteid } from '../../../../utils/static'
 import { useRouter } from "next/router";
 
 
@@ -29,7 +29,7 @@ export default function Slug({ blogdata, pagenumber }) {
         return (
             <>
                 <PageHead
-                    title={`Blog - Flyinate`}
+                    title={`Articolo - Flyinate`}
                     description=""
                     keywords=""
                 />
@@ -49,7 +49,7 @@ export default function Slug({ blogdata, pagenumber }) {
     return (
         <>
             <PageHead
-                title={`Blog - Page ${pagenumber}`}
+                title={`Articolo - Pagina ${pagenumber}`}
                 description=""
                 keywords=""
             />
@@ -57,16 +57,23 @@ export default function Slug({ blogdata, pagenumber }) {
             <Header />
 
             <div className='blogadda'>
-                <BreadHero title="Blog" linkhtml={<><ul className='breadcrumb text-white'>
-                    <li className="breadcrumb-item" > <Link href="/">Home</Link> </li>
-                    <li className='breadcrumb-item active' aria-current="page">Blog</li> </ul></>} />
+
+                {/* <Helmet>
+<title>	Blog - Flyinate</title>
+<meta name="description" content="text" />
+<meta name="keywords" content="text" />
+<link rel="canonical" href={window.location.href}/> 
+</Helmet>
+
+<BreadHero title="Blog" linkhtml={<><ul className='breadcrumb text-white'> <li className="breadcrumb-item" > <Linkhref="/it/"  >Home</Link> </li> <li className='breadcrumb-item active' aria-current="page">Blog</li> </ul></>} /> */}
+
+                <BreadHero title="articolo" linkhtml={<><ul className='breadcrumb text-white'> <li className="breadcrumb-item" > <Link href="/it/" >Casa</Link> </li> <li className='breadcrumb-item active' aria-current="page">articolo</li> </ul></>} />
 
                 <div className='popular-destination blogaddalist full-w'>
                     <Container>
                         <div className="top-title text-center">
-                            <p>Blog lists</p>
                             <h2>
-                                Latest <span>Blog</span>
+                                Articolo
                             </h2>
                         </div>
 
@@ -91,10 +98,11 @@ export default function Slug({ blogdata, pagenumber }) {
                                                         {items.title}
                                                     </div>
                                                     <p dangerouslySetInnerHTML={{ __html: items.description }} />
+
                                                     <hr className="mx-row-hr" />
-                                                    <Link href={`/blog/${items.titleUrl}`}>
+                                                    <Link href={`/it/articolo/${items.titleUrl}`} >
                                                         <a className='btn btn-site ripple-effbtn btn-40'>
-                                                            <span>Read More</span>
+                                                            <span>Lee Mas</span>
                                                         </a>
                                                     </Link>
                                                 </div>
@@ -103,14 +111,15 @@ export default function Slug({ blogdata, pagenumber }) {
                                     ))}
 
                                 </Row>
-                                : <p className='text-center'>No items found !</p>
+                                : <p className='text-center'>Nessun articolo trovato !</p>
                         }
 
 
                         {totalpage > 1 && blogitems?.length > 0 && (
                             <PaginateBlog
-                                page={`/blog`}
-                                type={`/blog/page`}
+                                current={true}
+                                page={`/it/articolo`}
+                                type={`/it/articolo/page`}
                                 total={totalpage}
                             />
                         )}
@@ -130,12 +139,13 @@ export const getStaticProps = async ({ params }) => {
         myHeaders.append("Content-Type", "application/json");
 
         const res = await fetch(
-            `${cms_trav_api}/travoles-content/pagination?authcode=${cms_trav_authcode}&page=${params.slug}&pageSize=${paginateSize}`,
+            `${cms_trav_api}/news-article/pagination?authcode=${cms_trav_authcode}&page=${params.slug}&pageSize=${paginateSize}`,
             {
                 method: "POST",
                 headers: myHeaders,
                 body: JSON.stringify({
                     siteId: siteid,
+                    "pageType": "ArticleIT"
                 }),
                 redirect: "follow",
             }
@@ -145,7 +155,7 @@ export const getStaticProps = async ({ params }) => {
         return {
             props: {
                 blogdata: json,
-                pagenumber: params.slug
+                pagenumber: params.slug,
             },
             revalidate: 60, // In seconds
         };
@@ -159,14 +169,15 @@ export const getStaticProps = async ({ params }) => {
 export const getStaticPaths = async () => {
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
-    
+
     const res = await fetch(
-        `${cms_trav_api}/travoles-content/pagination?authcode=${cms_trav_authcode}&page=0&pageSize=${paginateSize}`,
+        `${cms_trav_api}/news-article/pagination?authcode=${cms_trav_authcode}&page=1&pageSize=${paginateSize}`,
         {
             method: "POST",
             headers: myHeaders,
             body: JSON.stringify({
                 siteId: siteid,
+                "pageType": "ArticleIT"
             }),
             redirect: "follow",
         }
@@ -178,6 +189,7 @@ export const getStaticPaths = async () => {
     const paths = Array(getpagenum).fill(0).map((item, index) => ({
         params: { slug: index.toString() + 1 },
     }));
+
     return {
         paths,
         fallback: true,

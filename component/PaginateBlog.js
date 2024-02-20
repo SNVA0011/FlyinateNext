@@ -17,21 +17,18 @@ const PaginateBlog = ({ type, page, total, current }) => {
     const numleft = currentpage < 6 ? 0 : Number(currentpage) - 4;
     const numright = currentpage < 6 ? 5 : Number(currentpage) + 3;
 
-
-
     return (
         <section className='text-center'>
             <div className='site-paginate-theme spcmt-60 d-inline-block'>
                 <ul className="pagination">
 
-                    {current || currentpage == 1 ? null : <>
+                    { currentpage == 1 ? null : <>
                         <li className="page-item">
                             <Link href={page}>
                                 <a className="page-link" role="button" tabIndex={0}>
                                     <span aria-hidden="true">
-                                       <i class="bi bi-chevron-left"></i>
-                                    </span>
-                                    <span className="visually-hidden">First</span>
+                                       <i class="bi bi-chevron-double-left"></i>
+                                    </span> 
                                 </a>
                             </Link>
                         </li>
@@ -39,7 +36,7 @@ const PaginateBlog = ({ type, page, total, current }) => {
                             <Link href={prev}>
                                 <a className="page-link" role="button" tabIndex={0}>
                                     <span aria-hidden="true">
-                                             <i class="bi bi-chevron-double-left"></i>
+                                             <i class="bi bi-chevron-left"></i>
                                     </span>
                                 </a>
                             </Link>
