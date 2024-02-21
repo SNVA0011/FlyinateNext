@@ -39,7 +39,7 @@ export default function BlogDetails(props) {
       <Navbar />
 
 
-      {props.singleblog.length > 0 ?
+      {props.singleblog?.length > 0 ?
         <>
           <Head>
             <title>{props.singleblog[0].title}</title>

@@ -39,7 +39,7 @@ export default function BlogDetails(props) {
     <>
       <Header />
 
-      {props.singleblog.length > 0 ?
+      {props.singleblog?.length > 0 ?
         <>
 
           <Head>

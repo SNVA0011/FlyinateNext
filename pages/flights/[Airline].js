@@ -37,7 +37,7 @@ export default function Airline(props) {
       <Navbar />
 
 
-      {props.flight.length > 0 ?
+      {props.flight?.length > 0 ?
         <>
           <Head>
             <title>{props.flight[0].metaTitle}</title>

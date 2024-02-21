@@ -35,7 +35,7 @@ export default function Airline(props) {
   return (
     <>
       <Header />
-      {props.flight.length > 0 ?
+      {props.flight?.length > 0 ?
         <>
           <Head>
             <title>{props.flight[0].metaTitle}</title>

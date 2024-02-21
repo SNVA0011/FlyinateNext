@@ -1,5 +1,4 @@
-import { GetServerSideProps } from "next";
-import { getServerSideSitemap, ISitemapField } from "next-sitemap";
+import { getServerSideSitemapLegacy } from "next-sitemap";
 import { baseUrl, siteid } from "../utils/static";
 
 export const getJsonbyPost = async (url, options) => {
@@ -89,7 +88,7 @@ export const getServerSideProps = async (ctx) => {
     ...flightsSitemaps, ...esFlightsSitemaps
   ];
 
-  return getServerSideSitemap(ctx, fields);
+  return getServerSideSitemapLegacy(ctx, fields);
 };
 
 export default function Site() {

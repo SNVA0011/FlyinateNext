@@ -1,5 +1,4 @@
-import { GetServerSideProps } from "next";
-import { getServerSideSitemap, ISitemapField } from "next-sitemap";
+import { getServerSideSitemapLegacy } from "next-sitemap";
 import { cms_trav_api, cms_trav_authcode, paginateSize, siteid ,baseUrl} from "../utils/static";
 
 export const getJsonbyPaginate = async (url, options) => {
@@ -54,7 +53,7 @@ export const getServerSideProps = async (ctx) => {
     ...PagiMapEn, ...PagiMapEs, ...PagiMapIt
   ];
 
-  return getServerSideSitemap(ctx, fields);
+  return getServerSideSitemapLegacy(ctx, fields);
 };
 
 export default function Site() {
