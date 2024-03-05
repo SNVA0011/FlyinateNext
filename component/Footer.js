@@ -179,7 +179,7 @@ export default function Footer() {
                 <Image alt="logos" src="/images/card-logos-footer.png"   width={780} height={58}></Image> 
                 </p>
                 <p className="footer_disclaimer">
-                  © 2022 flyinate.com, having its registered office in the state
+                  © {new Date().getFullYear()} flyinate.com, having its registered office in the state
                   of USA located at W Ray Rd in the city of Chandler with Zip
                   Code 85226. All rights reserved.
                 </p>
