@@ -82,7 +82,7 @@ export default function articulos({ blogdata }) {
                             <div className='h4 title'>
                               {items.title}
                             </div>
-                            <p dangerouslySetInnerHTML={{ __html: items.description }} />
+                            <div dangerouslySetInnerHTML={{ __html: items.description }}></div>
                             <hr className="mx-row-hr" />
                             <Link href={`/es/articulos/${items.titleUrl}`}>
                               <a className='btn btn-site ripple-effbtn btn-40'>

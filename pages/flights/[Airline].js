@@ -58,7 +58,7 @@ export default function Airline(props) {
                     <div className='blogaddalist-inner'>
 
                       <div className="blog-inner-box2">
-                        <p dangerouslySetInnerHTML={{ __html: items.contentData }} />
+                        <div dangerouslySetInnerHTML={{ __html: items.contentData }}></div>
                       </div>
 
                     </div>

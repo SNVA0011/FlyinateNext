@@ -66,7 +66,7 @@ export default function BlogDetails(props) {
                                   - <Moment date={props.singleblog[0].posttime} format="MMM DD, YYYY" />
                                 </div>
 
-                                <div className="blog-inner-box2" dangerouslySetInnerHTML={{ __html: items.content }} />
+                                <div className="blog-inner-box2" dangerouslySetInnerHTML={{ __html: items.content }}></div>
                               </div>
                             </div>
                           ))}

@@ -74,7 +74,7 @@ export default function Blog({ blogdata }) {
                           <div className='h4 title'>
                             {items.title}
                           </div> 
-                          <p dangerouslySetInnerHTML={{ __html: items.description }} />
+                          <div dangerouslySetInnerHTML={{ __html: items.description }}></div>
                           <hr className="mx-row-hr" />
                           <Link href={`/blog/${items.titleUrl}`}>
                             <a className='btn btn-site ripple-effbtn btn-40'>
