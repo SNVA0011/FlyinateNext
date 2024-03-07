@@ -19,7 +19,7 @@ export default function Home() {
         <meta name="description" content="" />
         <meta name="keywords" content="" /> 
         <link rel="canonical" href={`https://www.flyinate.com${router.asPath}`} />
-				<link rel="alternate" href={`https://www.flyinate.com${router.asPath}`} />
+				
       </Head>
       <Header />
       <Enginebox />

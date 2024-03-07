@@ -12,10 +12,11 @@ import Header from '../../component/es/Navbar';
 import Footer from '../../component/es/Footer';
 import Head from 'next/head' 
 import { siteid } from '../../utils/static';
+import { useRouter } from 'next/router';
 
 export default function vuelos(props, pageValue, pageType) {
- 
- 
+  const router = useRouter()
+
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
@@ -33,6 +34,7 @@ export default function vuelos(props, pageValue, pageType) {
         <title>Vuelos - Flyinate</title>
         <meta name="description" content="" />
         <meta name="keywords" content="" />
+        <link rel="canonical" href={`https://www.flyinate.com${router.asPath}`} />  
       </Head>
 
       <Header />

@@ -15,7 +15,7 @@ export default function Footer() {
       <footer className="footer-area full-w">
         <Container className='inner_container_1'>
           <Row>
-            <Col xs={12} md={6} xl={4}>
+               <Col xs={12} md={6} xl={4}>
               <h5 className="use-head">Collegamenti utili</h5>
               <ul className="use-li">
                 <li>
@@ -54,7 +54,7 @@ export default function Footer() {
 
               </ul>
             </Col> 
-            <Col xs={12} md={6} xl={4}>
+               <Col xs={12} md={6} xl={4}>
               <h5 className="use-head">Connettiti con noi</h5>
               <ul className="use-li address">
                 <li>
@@ -107,7 +107,7 @@ export default function Footer() {
 
             </Col>
 
-            <Col xs={12} md={6} xl={3}>
+            {/* <Col xs={12} md={6} xl={3}>
               <div className="subscribe">
                 <h3 className='use-head'>sottoscrivi</h3>
                 <form className="subscribe-form" id="myForm">
@@ -118,9 +118,8 @@ export default function Footer() {
                     </Button>
                   </InputGroup>
                 </form>
-              </div>
-              {/*subscribe*/}
-            </Col>
+              </div> 
+            </Col> */}
           </Row>
         </Container>
 
@@ -129,7 +128,7 @@ export default function Footer() {
             <Row>
               <Col xs={12} className='text-center'>
                 <p className="footer_logos"> 
-                  <Image alt="logo" src={"/images/card-logos-footer.png"} width={780}  height={58}></Image>  
+                  <Image alt="logo" src={"/images/card-logos-footer.png"} width={570}  height={42}></Image>  
                 </p>
                 <p className="footer_disclaimer">
                   © {new Date().getFullYear()} flyinate.com, con sede legale nello stato americano.

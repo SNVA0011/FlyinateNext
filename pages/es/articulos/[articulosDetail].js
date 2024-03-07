@@ -47,11 +47,11 @@ export default function BlogDetails(props) {
             <meta name="description" content={props.singleblog[0].description} />
             <meta name="keywords" content={props.singleblog[0].keywords} />
             <link rel="canonical" href={`https://www.flyinate.com${router.asPath}`} />
-            <link rel="alternate" href={`https://www.flyinate.com${router.asPath}`} />
+            
           </Head>
 
           <div className='blogadda'>
-            <BreadHero title="Articulos" linkhtml={<><ul className='breadcrumb text-white'> <li className="breadcrumb-item" > <Link href="/es">Home</Link> </li> <li className='breadcrumb-item active' aria-current="page"> <Link href="/es/articulos"> articulos </Link></li> <li className='breadcrumb-item active' aria-current="page">{props.singleblog[0].title}</li> </ul></>} />
+            <BreadHero title="Articulos" linkhtml={<><ul className='breadcrumb text-white'> <li className="breadcrumb-item" > <Link href="/es/">Casa</Link> </li> <li className='breadcrumb-item active' aria-current="page"> <Link href="/es/articulos"> articulos </Link></li> <li className='breadcrumb-item active' aria-current="page">{props.singleblog[0].title}</li> </ul></>} />
 
             <div className='popular-destination blogaddalist details full-w'>
               <Container>

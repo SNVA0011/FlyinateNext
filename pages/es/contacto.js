@@ -18,7 +18,7 @@ export default function ContactUs() {
 				<meta name="description" content="¡Contacte y visite flyinate para reservar vuelos baratos y confiables ahora!" />
 				<meta name="keywords" content="flyinate, cheap flight booking website, best place to book flight, online flight booking" /> 
 				<link rel="canonical" href={`https://www.flyinate.com${router.asPath}`} />
-				<link rel="alternate" href={`https://www.flyinate.com${router.asPath}`} />
+				
 			</Head>
 
 			<Header />
@@ -32,7 +32,7 @@ export default function ContactUs() {
               {" "}
               <li className="breadcrumb-item">
                 {" "}
-                <Link href="/">Home</Link>{" "}
+                <Link href="/es/">Casa</Link>
               </li>{" "}
               <li className="breadcrumb-item active" aria-current="page">
                 {" "}

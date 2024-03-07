@@ -18,8 +18,7 @@ export default function ContactUs() {
 				<title>Contact Us - Flyinate</title>
 				<meta name="description" content="Contact & Visit flyinate for the cheap and reliable flights booking now! " />
 				<meta name="keywords" content="flyinate, cheap flight booking website, best place to book flight, online flight booking" />
-				<link rel="canonical" href={`https://www.flyinate.com${router.asPath}`} />
-				<link rel="alternate" href={`https://www.flyinate.com${router.asPath}`} />
+				<link rel="canonical" href={`https://www.flyinate.com${router.asPath}`} /> 
 			</Head>
 
 			<Header />

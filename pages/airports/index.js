@@ -28,7 +28,7 @@ export default function airports(props) {
         <meta name="description" content="" />
         <meta name="keywords" content="" /> 
         <link rel="canonical" href={`https://www.flyinate.com${router.asPath}`} />
-        <link rel="alternate" href={`https://www.flyinate.com${router.asPath}`} />
+        
       </Head>
       <Header />
 
@@ -52,13 +52,9 @@ export default function airports(props) {
               props.allblog?.length > 0 ?
                 <Row>
                   {props.allblog.filter((items) => items.status === "Active").map((items, i) => (
-                    <Col xs={12} md={6} key={i}>
+                    <Col xs={12} md={6} key={i} className='cardRead-more'>
                       <div className='blogaddalist-round'>
-                        <div className='image_area_partition'>
-                          <div className='wrapper'>
-                            <span>{items.posttime}</span>
-                          </div>
-                        </div>
+                       
                         <div className='blogaddalist-inner'>
                         <div className='text-sm text-secondary mb-2 fw-medium'>
                           <i className="bi bi-calendar4 mr-1"></i> <Moment date={items.posttime} format="MMM DD, YYYY" />   

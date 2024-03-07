@@ -12,8 +12,7 @@ const PageHead = ({ title, description, keywords }) => {
                 <title>{title}</title>
                 <meta name="description" content={description} />
                 <meta name="keywords" content={keywords} />
-                <link rel="canonical" href={baseUrl + router.asPath} />
-                <link rel="alternate" href={baseUrl + router.asPath} />
+                <link rel="canonical" href={baseUrl + router.asPath} /> 
             </Head>
         </>
     )

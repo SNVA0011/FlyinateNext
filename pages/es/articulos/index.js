@@ -34,7 +34,7 @@ export default function articulos({ blogdata }) {
         <title>Articulos - Flyinate</title>
         <meta name="description" content="" />
         <link rel="canonical" href={`https://www.flyinate.com${router.asPath}`} />
-        <link rel="alternate" href={`https://www.flyinate.com${router.asPath}`} />
+        
       </Head>
 
       <Header />
@@ -42,15 +42,7 @@ export default function articulos({ blogdata }) {
       <div>
         <div className='blogadda'>
 
-          {/* <Helmet>
-        <title>	Blog - Flyinate</title>
-        <meta name="description" content="text" />
-        <meta name="keywords" content="text" />
-        <link rel="canonical" href={window.location.href}/> 
-      </Helmet>
-
-      <BreadHero title="Blog" linkhtml={<><ul className='breadcrumb text-white'> <li className="breadcrumb-item" > <Linkhref="/es/" >Home</Link> </li> <li className='breadcrumb-item active' aria-current="page">Blog</li> </ul></>} /> */}
-
+       
           <BreadHero title="articulos" linkhtml={<><ul className='breadcrumb text-white'> <li className="breadcrumb-item" > <Link href="/es/">Casa</Link> </li> <li className='breadcrumb-item active' aria-current="page">articulos</li> </ul></>} />
 
           <div className='popular-destination blogaddalist full-w'>
@@ -68,13 +60,9 @@ export default function articulos({ blogdata }) {
                 blogitems?.length > 0 ?
                   <Row>
                     {blogitems.filter((items) => items.status === "Active").map((items, i) => (
-                      <Col xs={12} md={6} key={i}>
+                      <Col xs={12} md={6} key={i} className='cardRead-more'>
                         <div className='blogaddalist-round'>
-                          <div className='image_area_partition'>
-                            <div className='wrapper'>
-                              <span>{items.posttime}</span>
-                            </div>
-                          </div>
+                         
                           <div className='blogaddalist-inner'>
                             <div className='text-sm text-secondary mb-2 fw-medium'>
                               <i className="bi bi-calendar4 mr-1"></i> <Moment date={items.posttime} format="MMM DD, YYYY" />

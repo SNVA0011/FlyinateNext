@@ -23,9 +23,7 @@ export default function Terms() {
                 <title>Terms & Conditions - Flyinate</title>
                 <meta name="description" content="" />
                 <meta name="keywords" content="" /> 
-				<link rel="canonical" href={`https://www.flyinate.com${router.asPath}`} />
-				<link rel="alternate" href={`https://www.flyinate.com${router.asPath}`} />
-
+				<link rel="canonical" href={`https://www.flyinate.com${router.asPath}`} /> 
             </Head>
 
             <Header />

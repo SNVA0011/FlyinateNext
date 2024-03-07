@@ -47,7 +47,7 @@ export default function BlogDetails(props) {
             <meta name="description" content={props.singleblog[0].description} />
             <meta name="keywords" content={props.singleblog[0].keywords} /> 
             <link rel="canonical" href={`https://www.flyinate.com${router.asPath}`} />
-				<link rel="alternate" href={`https://www.flyinate.com${router.asPath}`} />
+				
           </Head>
 
           <div className='blogadda'>

@@ -25,7 +25,7 @@ export default function sobrenosotras() {
         
         <title>Sobre Nosotras - Flyinate</title>
         <link rel="canonical" href={`https://www.flyinate.com${router.asPath}`} />
-				<link rel="alternate" href={`https://www.flyinate.com${router.asPath}`} />
+				
       </Head>
 
       <Header />
