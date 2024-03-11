@@ -22,33 +22,31 @@ const PaginateBlog = ({ type, page, total, current }) => {
             <div className='site-paginate-theme spcmt-60 d-inline-block'>
                 <ul className="pagination">
 
-                    { currentpage == 1 ? null : <>
-                        <li className="page-item">
-                            <Link href={page}>
-                                <a className="page-link" role="button" tabIndex={0}>
-                                    <span aria-hidden="true">
-                                       <i class="bi bi-chevron-double-left"></i>
-                                    </span> 
-                                </a>
-                            </Link>
-                        </li>
-                        <li className="page-item">
-                            <Link href={prev}>
-                                <a className="page-link" role="button" tabIndex={0}>
-                                    <span aria-hidden="true">
-                                             <i class="bi bi-chevron-left"></i>
-                                    </span>
-                                </a>
-                            </Link>
-                        </li>
-                    </>}
+                    <li className={`page-item ${currentpage == 1 ? 'd-none' : ''}`}>
+                        <Link href={page}>
+                            <a className="page-link" role="button" tabIndex={0}>
+                                <span aria-hidden="true">
+                                    <i class="bi bi-chevron-double-left"></i>
+                                </span>
+                            </a>
+                        </Link>
+                    </li>
+                    <li className={`page-item ${currentpage == 1 ? 'd-none' : ''}`}>
+                        <Link href={prev}>
+                            <a className="page-link" role="button" tabIndex={0}>
+                                <span aria-hidden="true">
+                                    <i class="bi bi-chevron-left"></i>
+                                </span>
+                            </a>
+                        </Link>
+                    </li>
 
-
-                    {getllPagi.slice(numleft, numright).map((item, index) => {
+                    {getllPagi.map((item, index) => {
                         const name = item
                         const url = name == 1 ? page : `${type}/${name}`
+                        const between = numleft > item || numright < item ? 'd-none' : ''
                         return (
-                            <li className={`nv page-item${location.asPath === url ? ' active' : ''}`} key={index}>
+                            <li className={`nv page-item ${location.asPath === url ? 'active' : ''} ${between}`} key={index}>
                                 <Link href={url}>
                                     <a className="page-link">
                                         {name}
@@ -58,27 +56,24 @@ const PaginateBlog = ({ type, page, total, current }) => {
                         )
                     })}
 
-                    {location.asPath == lastpage ? null : <>
-                        <li className="page-item">
-                            <Link href={next}>
-                                <a className="page-link " role="button" tabIndex={0}>
-                                    <span aria-hidden="true">
+                    <li className={`page-item ${location.asPath == lastpage ? 'd-none' : ''}`}>
+                        <Link href={next}>
+                            <a className="page-link " role="button" tabIndex={0}>
+                                <span aria-hidden="true">
                                     <i class="bi bi-chevron-right"></i>
-                                    </span>
-                                </a>
-                            </Link>
-                        </li>
-                        <li className="page-item">
-                            <Link href={lastpage}>
-                                <a className="page-link" role="button" tabIndex={0}>
-                                    <span aria-hidden="true">
+                                </span>
+                            </a>
+                        </Link>
+                    </li>
+                    <li className={`page-item ${location.asPath == lastpage ? 'd-none' : ''}`}>
+                        <Link href={lastpage}>
+                            <a className="page-link" role="button" tabIndex={0}>
+                                <span aria-hidden="true">
                                     <i class="bi bi-chevron-double-right"></i>
-                                    </span>
-                                </a>
-                            </Link>
-                        </li>
-                    </>}
-
+                                </span>
+                            </a>
+                        </Link>
+                    </li>
 
                 </ul>
 
